@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KEEBD Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="keebd,doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages"/>
+    <meta name="description" content="KEEBD Keyboard Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+    <link rel="stylesheet" href="_css.css">
+</head>
+<body>
+    <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+    <div id="app">Loading ...</div>
+    <script>
+        window.$docsify = {
+            name: 'KEEBD Docs',
+            logo: '/_media/icon.svg',
+            themeColor: '#1ebf90',
+            auto2top: true,
+            coverpage: false,
+            onlyCover: false,
+            loadSidebar: true,
+            maxLevel: 4,
+            subMaxLevel: 2,
+            search: 'auto', // default
+            ga: 'UA-XXXXX-Y',
+            plugins: [
+            EditOnGithubPlugin.create(
+                'https://github.com/keebd/keebd-docs/blob/master/'
+                ),
+            ]
+        }
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+</body>
+</html>

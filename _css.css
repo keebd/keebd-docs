@@ -1,0 +1,23 @@
+/* Sidebar Logo Size */
+.sidebar h1 img {
+    width: 80%;
+}
+
+/* Sidebar Headings */
+.sidebar ul li {
+    color: #1ebf90;
+}
+
+/* Sidebar Active */
+.sidebar ul li.active > a {
+    color: #ffffff;
+}
+
+/* Document Titles */
+.anchor span {
+    color: #ffffff;
+}
+
+.markdown-section h1 {
+    color: #ffffff;
+}

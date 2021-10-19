@@ -4,7 +4,7 @@
 
 - Information
 
-  - [Keyboard Layouts](/information/keyboard-layouts.md)
+  - [Keyboard Layouts](/information/keyboard-layouts/)
 
 - Community
 

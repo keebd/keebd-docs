@@ -1,3 +1,8 @@
+/* Background Color */
+.sidebar, body {
+    background-color: #000;
+}
+
 /* Sidebar Logo Size */
 .sidebar h1 img {
     width: 80%;

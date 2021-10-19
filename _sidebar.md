@@ -4,6 +4,7 @@
 
 - Information
 
+  - [Glossary](/information/glossary/)
   - [Keyboard Layouts](/information/keyboard-layouts/)
 
 - Community

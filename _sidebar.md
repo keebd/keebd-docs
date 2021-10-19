@@ -4,6 +4,8 @@
 
 - Information
 
+  - [Keyboard Layouts](/information/keyboard-layouts.md)
+
 - Community
 
   - [Discord](https://discord.gg/wbHd7yTxb8)

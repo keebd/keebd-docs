@@ -6,6 +6,7 @@
 
   - [Glossary](/information/glossary/)
   - [Keyboard Layouts](/information/keyboard-layouts/)
+  - [Mill-Max Sockets](/information/mill-max-sockets/)
 
 - Community
 

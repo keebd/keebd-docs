@@ -26,3 +26,8 @@
 .markdown-section h1 {
     color: #ffffff;
 }
+
+/* Table Alternate Rows */
+.markdown-section tr:nth-child(2n) {
+    background-color: unset;
+}

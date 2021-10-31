@@ -34,6 +34,15 @@ body {
     color: #ffffff;
 }
 
+/* Table Styling */
+.markdown-section th {
+    border: 1px solid #1ebf90;
+}
+
+.markdown-section td {
+    border: 1px solid #1ebf90;
+}
+
 /* Table Alternate Rows */
 .markdown-section tr:nth-child(2n) {
     background-color: unset;

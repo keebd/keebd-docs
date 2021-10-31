@@ -1,21 +1,78 @@
 # Gateron Switches
 
-![](./gateron-switches.png ':size=700px')
+## Gateron Main
+![](./gateron-main-switches.png ':size=700px')
 
-* Gateron Clear – The lightest linear switch on this list, the Gateron Clear switches feature an actuation force of just 0.35 N.
-* Gateron Red – Gateron’s offering works similarly to the other red switches on this list with an actuation force of 0.45 N.
-* Gateron Black – A slightly heavier version of the Gateron Red, it is a linear switch with a slightly heavier actuation force at 0.50 N.
-* Gateron Blue – These switches feature the tactile and clicky nature of other blue switches on this list. Gateron Blue features an actuation force of 0.55 N.
-* Gateron Green – A heavier version of the Gateron Blue switch, this switch features a heavier actuation force than the blue switches – coming in at 0.80 N.
-* Gateron Brown – Similar to other brown switches on this list, it is a tactile switch with none of the blue switch’s clicky sound. The switch requires an actuation force of 0.45 N similar to the Gateron Red.
+| Color   | Type    | Operating Force | Activation Point | Noise Level |
+|---------|---------|-----------------|------------------|-------------|
+| Clear   | Linear  | 35cN            | 2mm              | Low         |
+| Red     | Linear  | 45cN            | 2mm              | Low         |
+| Yellow  | Linear  | 50cN            | 2mm              | Low         |
+| Black   | Linear  | 60cN            | 2mm              | Low         |
+| Blue    | Clicky  | 60cN            | 2.3mm            | Loud        |
+| Green   | Clicky  | 80cN            | 2.4mm            | Loud        |
+| Brown   | Tactile | 55cN            | 2mm              | Medium      |
 
-Here’s a chart of all the mechanical keyboard switches from Gateron.
+The main Gateron switch lineup consists of the typical switches: Red, Blue, Brown, etc.
 
-| Switch Type   | Actuation Force | Actuation Distance | Travel Distance | Characteristics |
-|---------------|-----------------|--------------------|-----------------|-----------------|
-| Gateron Clear | 0.35 N          | 2mm                | 4mm             | Linear          |
-| Gateron Red   | 0.45 N          | 2mm                | 4mm             | Linear          |
-| Gateron Black | 0.50 N          | 2mm                | 4mm             | Linear          |
-| Gateron Blue  | 0.55 N          | 2mm                | 4mm             | Tactile Clicky  |
-| Gateron Green | 0.80 N          | 2mm                | 4mm             | Tactile Clicky  |
-| Gateron Brown | 0.45 N          | 2mm                | 4mm             | Tactile         |
+All of the switches in this classification are considered “clones” since they mirror the design of the Cherry MX switch and use the same descriptive names where the colors represent the actuation type and spring force.
+
+The only switch that differs slightly is the Gateron Clear switch which is totally different from the Cherry MX Clear. Instead of being a heavy tactile, the Gateron Clear is a super-light linear switch.
+
+While being Cherry MX clones, Gateron’s main switch lineup does differ slightly from Cherry MX. Gateron switches are typically smoother due to a slightly smaller stem which can make using a Gateron linear switch much more enjoyable than a Cherry MX one.
+
+## Gateron Silent Switches
+![](./gateron-silent-switches.png ':size=700px')
+
+| Color         | Type    | Operating Force | Activation Point | Noise Level |
+|---------------|---------|-----------------|------------------|-------------|
+| Silent Clear  | Linear  | 35cN            | 2mm              | Silent      |
+| Silent Red 	| Linear  | 45cN            | 2mm              | Silent      |
+| Silent Yellow | Linear  | 50cN            | 2mm              | Silent      |
+| Silent Black 	| Linear  |	60cN            | 2mm              | Silent      |
+| Silent Brown 	| Tactile | 45cN            | 2mm              | Silent      |
+
+A silent switch is different from a normal switch because the stem has small rubber padding on the top and bottom, so the sound is dampened when striking and bouncing back.
+
+## Gateron Milk/Milky Switches
+![](./gateron-milky-switches.png ':size=700px')
+
+| Color         | Type    | Operating Force | Activation Point | Noise Level |
+|---------------|---------|-----------------|------------------|-------------|
+| Milk Clear    | Linear  | 35cN            | 2mm              | Low         |
+| Milk Red      | Linear  | 45cN            | 2mm              | Low         |
+| Milk Yellow   | Linear  | 50cN            | 2mm              | Low         |
+| Milk Black    | Linear  | 60cN            | 2mm              | Low         |
+| Milk Blue     | Clicky  | 60cN            | 2.3mm            | Loud        |
+| Milk Green    | Clicky  | 80cN            | 2.4mm            | Loud        |
+| Milk Brown    | Tactile | 55cN            | 2mm              | Medium      |
+
+Gateron Milk switches are pretty interesting. They are very similar to normal Gateron switches except they come with a different housing design. Instead of the typical clear top housing and black bottom housing, the milk switches come with a “milky” tinted housing that help diffuse the RGB lights.
+
+## Gateron Ink Switches
+![](./gateron-ink-switches.png ':size=700px')
+
+| Color            | Type    | Operating Force | Activation Point | Noise Level |
+|------------------|---------|-----------------|------------------|-------------|
+| Ink Red          | Linear  | 45cN            | 2mm              |	Low         |
+| Ink Yellow       | Linear  | 50cN            | 2mm              |	Low         |
+| Ink Black        | Linear  | 60cN            | 2mm              |	Low         |
+| Ink Blue         | Clicky  | 60cN            | 2.3mm            |	Loud        |
+| Silent Ink Black | Linear  | 60cN            | 2mm              |	Silent      |
+
+Gateron Ink switches are a bit different from the normal Gateron switch, they are what we would consider Gateron’s “premium switch” due to the higher price point.
+
+The hallmark differences of the Ink switches are the clear smoky housing, different plastic material, lower pitch sound, and smoother feel.
+
+The smoky housing is what gives the Ink’s their name, both the lower and upper housing are the same colors depending on what type of switch you use.
+
+## Gateron Low-Profile Switches
+![](./gateron-low-profile-switches.png ':size=700px')
+
+| Color             | Type    | Operating Force | Activation Point | Noise Level |
+|-------------------|---------|-----------------|------------------|-------------|
+| Low-Profile Red   | Linear  | 45cN            | 1.5mm            | Low         |
+| Low-Profile Brown | Tactile | 55cN            | 1.5mm            | Medium      |
+| Low-Profile Blue  | Clicky  | 50cN            | 1.5mm            | Loud        |
+
+Gateron low profile switches have a completely different design than a normal switch. Gateron low-profile switches have a different shaped stem and a much short actuation and travel distance. 

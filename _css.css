@@ -10,6 +10,11 @@ body {
     background-color: #1a1a1a;
 }
 
+/* Reset Content Top Padding */
+.content {
+    padding-top: 0;
+}
+
 /* Sidebar Logo Size */
 .sidebar h1 img {
     width: 80%;

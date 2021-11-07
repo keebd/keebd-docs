@@ -52,3 +52,8 @@ body {
 .markdown-section tr:nth-child(2n) {
     background-color: unset;
 }
+
+/* Tip Styling */
+.markdown-section p.tip {
+    color: #ffffff;
+}

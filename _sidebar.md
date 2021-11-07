@@ -12,6 +12,7 @@
   - [Cherry MX Switches](/information/cherry-mx-switches/)
   - [Razer Switches](/information/razer-switches/)
   - [Mill-Max Sockets](/information/mill-max-sockets/)
+  - [Update Pro Micro Bootloader](/information/update-pro-micro-bootloader/)
 
 - Community
 

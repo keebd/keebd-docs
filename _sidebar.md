@@ -1,6 +1,6 @@
 - Build Guides
 
-  - [Fourier](/build-guides/fourier.md)
+  - [Fourier v1.3](/build-guides/fourier-v1.3/)
 
 - Information
 

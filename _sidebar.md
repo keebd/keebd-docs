@@ -1,6 +1,7 @@
 - Build Guides
 
   - [Fourier v1.3](/build-guides/fourier-v1.3/)
+  - [Keyboard PCB Switch Tester](/build-guides/keyboard-pcb-switch-tester/)
 
 - Information
 

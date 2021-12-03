@@ -14,11 +14,12 @@ Here's a list of parts needed for the build:
   * 2 x Reset Buttons
   * 2 x 4.7kΩ Resistors
   * 2 x TRRS Jacks
-  * 1 x TRRS Cable
+  * 1 x TRS Cable
   * 49 x 1N4148 Diodes - through hole \(included in kit\) and [SMD diodes](https://keebd.com/products/1n4148-diodes-pack-of-10?variant=40957931126936) supported
-  * 14 x M2 6mm Screws
-  * 14 x M2 4mm Screws
-  * 14 x M2 10mm Standoffs
+  * 10 x M2 6mm Hex Screws
+  * 10 x M2 4mm Hex Screws
+  * 10 x M2 10mm Standoffs
+  * 8 x Clear Rubber Feet
 
 Not included in the kit but required to complete:
 * 2 x [Arduino Pro Micros](https://keebd.com/products/pro-micro-controller-atmega32u4)

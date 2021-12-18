@@ -41,6 +41,7 @@ Not included in the kit but required to complete:
 4. Flash Pro Micro
 5. Solder Pro Micro
 6. Solder RGB strip \(optional\)
+7. Acrylic Case
 
 ## Prepare Components
 
@@ -106,6 +107,8 @@ Install the TRRS jack.
 
 Install the reset switch and controller header pins.
 
+!> NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves. 
+
 ![](./solder-right-half.jpg ':size=700px')
 
 Repeat the same process with the diodes, TRRS jack, reset switch and controller header pins with the right half. Note that there's no I2C resistor slots on this side, as they're only needed on one half.
@@ -124,17 +127,25 @@ Due to the multiple layout options, it may be helpful to put keycaps on the swit
 
 All the switches installed and soldered in.
 
-![](./left-controller.jpg ':size=700px')
+## Solder Pro Micro
 
 Time to install the Pro Micro now that the switches have been soldered in.
 
 !> Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)
 
-![](./right-complete.jpg ':size=700px')
+![](./controller-mill-max.jpg ':size=700px')
+
+If using Mill-Max pins to socket the Controller place them into the machined headers.
+
+![](./controller.jpg ':size=700px')
+
+Place Controller onto the Mill-Max pins and solder into place.
+
+![](./controller-soldered.jpg ':size=700px')
+
+Soldering complete for each of the pins into the Controller.
 
 Repeat the process of stabilizer, switch, and Pro Micro installation on the right PCB.
-
-![](./right-controller.jpg ':size=700px')
 
 Once again, the component side of the Pro Micro will be hidden from you.
 
@@ -156,6 +167,24 @@ Right Side
 - Extra Data goes to Din on strip
 - RGB breakout remains empty for now
 
-![](./complete.jpg ':size=700px')
+## Acrylic Case
+
+![](./standoffs.jpg ':size=700px')
+
+Using 5 of the 4mm Hex Screws, attach the Standoffs as shown above.
+
+![](./acrylic.jpg ':size=700px')
+
+Peel the protective layer from the Acrylic base plates and using 5 of the 6mm Hex Screws, attach the Acrylic bottom plates to Standoffs.
+
+![](./feet.jpg ':size=700px')
+
+Using 4 rubber feet, add one to each corner.
+
+Repeat the above 3 steps on the right side and you are done!
+
+![](./fourier-v1-3-built-1.png ':size=700px')
+
+![](./fourier-v1-3-built-2.png ':size=700px')
 
 Complete with screws, standoffs, and bottom plates.

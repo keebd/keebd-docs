@@ -1,27 +1,20 @@
 # Glossary
-
 There are lots of acronyms in the Electronics/Keyboard scene and we will attempt to explain some of the most common ones here.
 
-### LED
-
+#### LED
 Light-emitting diode. These are great if you want to add one or more of the different keyboard [lighting options](keyboard-led-options) or just the [keyboard underglow](keyboard-led-underglow).
 
-### PCB
-
+#### PCB
 "Printed Circuit Board" is the layer of your keyboard that the electronics components attach to including the switches.
 
-### Rotary Encoder
-
+#### Rotary Encoder
 This is a part that takes information to the computer from being pivoted left and right. With an attached knob, you'll be able to input some sliding scale info.
 
-### Stabilizers
-
+#### Stabilizers
 Stabs, for short, provide support to a larger keycap.
 
-### Standoffs
-
+#### Standoffs
 These pieces attach to screws and allow space to be created between the keyboard layers.
 
-### TRRS cable
-
+#### TRRS cable
 This will let your split keyboard left and right sides talk with one another. The acronym stands for **T**ip **R**ing **R**ing **S**leeve. Usually used for audio, but in the context, is needed to connect split keyboards.

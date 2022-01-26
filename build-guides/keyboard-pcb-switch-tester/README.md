@@ -21,7 +21,7 @@ Not included in the kit but required to complete:
 2. Solder Test Pins
 3. Add Keyboard Switch
 
-## Prepare PCBs
+## 1. Prepare PCBs
 
 ![](./components.jpg ':size=700px')
 
@@ -44,7 +44,7 @@ Using the remaining 4mm screws, screw the bottom place to the brass standoffs.
 
 The main housing assembly is now complete and we are ready to solder the test springs.
 
-## Solder Test Springs
+## 2. Solder Test Springs
 
 ![](/place-test-springs.jpg ':size=700px')
 
@@ -67,7 +67,11 @@ Once the iron has heated the pad and pin for a few seconds slowly push solder on
 
 When the solder hardens you should now be able to turn the tester over and ensure the test pins are flush with the PCB on top.
 
+## 3. Add Keyboard Switch
+
 ![](./completed.jpg ':size=700px')
+
+Firmly press fit a MX switch to the top.
 
 Assembly is complete.
 

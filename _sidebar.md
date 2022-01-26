@@ -1,5 +1,6 @@
 - Build Guides
 
+  - [Contra](/build-guides/contra/)
   - [Fourier v1.3](/build-guides/fourier-v1.3/)
   - [Keyboard PCB Switch Tester](/build-guides/keyboard-pcb-switch-tester/)
   - [Yampad v2](/build-guides/yampad-v2/)

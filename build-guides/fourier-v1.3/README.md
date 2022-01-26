@@ -1,7 +1,5 @@
 # Fourier v1.3
 
-!> This page is not complete.
-
 ## Parts List
 
 Here's a list of parts needed for the build:
@@ -38,12 +36,11 @@ Not included in the kit but required to complete:
     * Solder Reset Button
     * Solder Pro Micro Header Pins
 3. Solder Switches
-4. Flash Pro Micro
-5. Solder Pro Micro
-6. Solder RGB strip \(optional\)
-7. Acrylic Case
+4. Solder Pro Micro
+5. Solder RGB strip \(optional\)
+6. Acrylic Case
 
-## Prepare Components
+## 1. Prepare Components
 
 ![](./fourier-v1-3-pcb-left.png ':size=350px')
 ![](./fourier-v1-3-pcb-right.png ':size=350px')
@@ -75,7 +72,7 @@ Ripping off the paper holding all the resistors together. Grip the diodes tightl
 
 All separated from the paper
 
-## Solder Components
+## 2. Solder Components
 
 ![](./solder-through-hole-diodes.jpg ':size=350px')
 ![](./solder-smd-diodes-2.jpg ':size=350px')
@@ -117,6 +114,8 @@ Repeat the same process with the diodes, TRRS jack, reset switch and controller 
 
 Add stabilizers to the keys you want to stabilize.
 
+## 3. Solder Switches
+
 ![](./install-switches.jpg ':size=700px')
 
 Time to add the switches. Put a few switches into the corners of the switch plate and then attach the switches to the PCB. Make sure the switches are pushed all the way down onto the PCB.
@@ -127,7 +126,7 @@ Due to the multiple layout options, it may be helpful to put keycaps on the swit
 
 All the switches installed and soldered in.
 
-## Solder Pro Micro
+## 4. Solder Pro Micro
 
 Time to install the Pro Micro now that the switches have been soldered in.
 
@@ -149,6 +148,8 @@ Repeat the process of stabilizer, switch, and Pro Micro installation on the righ
 
 Once again, the component side of the Pro Micro will be hidden from you.
 
+## 5. Solder RGB Strip (Optional)
+
 ![](./install-led-strip-left.jpg ':size=700px')
 
 Optional, add the RGB strip to the backside of the PCB and solder to the following points:
@@ -167,7 +168,7 @@ Right Side
 - Extra Data goes to Din on strip
 - RGB breakout remains empty for now
 
-## Acrylic Case
+## 6. Acrylic Case
 
 ![](./standoffs.jpg ':size=700px')
 

@@ -19,7 +19,7 @@ Here's a list of parts needed for the build:
   * 4 x Clear Rubber Feet
 
 Not included in the kit but required to complete:
-* 1 x [Pro Micro Controller (USB Micro)](https://keebd.com/products/pro-micro-controller-usb-micro-atmega32u4) or [Pro Micro Controller USB C](https://keebd.com/products/pro-micro-controller-usb-type-c-atmega32u4)
+* 1 x [Pro Micro Controller](https://keebd.com/collections/controllers)
 * 18 x [Keyboard Switches](https://keebd.com/collections/switches)
 * 18 x [Keycaps](https://keebd.com/collections/caps)
 

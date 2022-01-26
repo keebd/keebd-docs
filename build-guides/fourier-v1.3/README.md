@@ -22,7 +22,7 @@ Here's a list of parts needed for the build:
   * 8 x Clear Rubber Feet
 
 Not included in the kit but required to complete:
-* 2 x [Arduino Pro Micros](https://keebd.com/products/pro-micro-controller-atmega32u4)
+* 2 x [Pro Micro Controllers](https://keebd.com/collections/controllers)
 * 1 x Micro USB Cable
 * [PCB-mount MX stabilizers](https://keebd.com/products/cherry-screw-in-stabilizers)
 * [MX or Alps compatible keyswitches](https://keebd.com/collections/switches)

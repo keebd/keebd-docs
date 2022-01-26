@@ -25,19 +25,19 @@ Not included in the kit but required to complete:
 
 ## Build Steps
 
-1. Solder components
+1. Solder Components
   * Solder LEDs
   * Solder Diodes
   * Solder Hotswap Sockets
   * Solder Controller & OLED Headers
   * Solder Reset Button
-2. Assemble case
-3. Install stabilisers
-4. Install switches
-5. Connect OLED display
-6. Stick on feet
+2. Assemble Case
+3. Install Stabilisers
+4. Install Switches
+5. Connect OLED Display
+6. Stick on Feet
 
-## Solder components
+## 1. Solder Components
 
 ### Solder LEDs
 
@@ -73,7 +73,7 @@ Attach the controller first to the top side of the board and then attach the OLE
 
 Solder the reset button to the underside of the board.
 
-## Assemble Case
+## 2. Assemble Case
 
 ![](/case.jpg ':size=700px')
 
@@ -81,13 +81,13 @@ Remove the protective film from the acrylic plates and attach the brass standoff
 
 Place the PCB onto the middle standoff and screw on the top acrylic plate using the remaining hex screws.
 
-## Install Stabilisers
+## 3. Install Stabilisers
 
 ![](./stabilisers.jpg ':size=700px')
 
 You can press fit plate mount stabilisers onto the PCB with the case assembled but you may need to remove the PCB to use screw in stabilisers.
 
-## Install Switches
+## 4. Install Switches
 
 ![](./switches.jpg ':size=700px')
 
@@ -98,13 +98,13 @@ Your switches can now be press fit into the Kailh sockets.
 
 Looking from the side to make sure the switches are pushed firmly onto the PCB and there are limited gaps.
 
-## Connect OLED Display
+## 5. Connect OLED Display
 
 ![](./oled.jpg ':size=700px')
 
 If you direct attached your OLD display above then you can skip this step otherwise you can now install the display using diode-legs or thin wire as legs into the machined header pins. This allows for the display to be removed, replace, upgraded as well as easy access to the controller.
 
-## Stick on Feet
+## 6. Stick on Feet
 
 ![](./feet.jpg ':size=700px')
 

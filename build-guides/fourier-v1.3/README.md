@@ -1,4 +1,4 @@
-# Fourier v1.3
+# Fourier v1.3 Build Guide
 
 ## Parts List
 
@@ -45,12 +45,12 @@ Not included in the kit but required to complete:
 ![](./fourier-v1-3-pcb-left.png ':size=350px')
 ![](./fourier-v1-3-pcb-right.png ':size=350px')
 
-Grab your PCBs. Pictured bottoms up -- left is on the left, right is on the right.
+Grab your PCBs. Pictured bottoms up. Left is on the left, right is on the right.
 
 ![](./diode-through-hole-1.jpg ':size=700px')
 
 
-If you're using through hole diodes, bend 'em up. Here, I'm just bending it around my finger
+If you're using through hole diodes, bend them into shape. Here, I'm just bending it around my finger
 
 ![](./diode-through-hole-2.jpg ':size=700px')
 

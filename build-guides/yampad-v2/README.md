@@ -1,4 +1,4 @@
-# Yampad v2
+# Yampad v2 Build Guide
 
 ## Parts List
 

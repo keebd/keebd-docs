@@ -1,4 +1,4 @@
-# Keyboard PCB Switch Tester
+# Keyboard PCB Switch Tester Build Guide
 
 ## Parts List
 

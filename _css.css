@@ -1,18 +1,21 @@
 body {
-    font-family: Montserrat, sans-serif;
+    font-family: 'ITC Avant Garde Gothic Std Medium Condensed';
     font-style: normal;
-    line-height: 1.5;
-    font-size: 15;
+    color: #000;
 }
 
-/* Background Color */
-.sidebar, body {
-    background-color: #1a1a1a;
+h1, h2, h3 {
+    font-family: 'ITC Avant Garde Gothic Std Demi Condensed';
+    font-style: normal;
 }
 
 /* Reset Content Top Padding */
 .content {
     padding-top: 0;
+}
+
+.sidebar {
+    color: #000;
 }
 
 /* Sidebar Logo Size */
@@ -25,18 +28,26 @@ body {
     color: #1ebf90;
 }
 
+.sidebar ul li > a {
+    color: #000;
+}
+
 /* Sidebar Active */
 .sidebar ul li.active > a {
-    color: #ffffff;
+    color: #D01A6D;
+}
+
+.app-sub-sidebar li::before {
+    content: unset;
 }
 
 /* Document Titles */
 .anchor span {
-    color: #ffffff;
+    color: #000;
 }
 
 .markdown-section h1 {
-    color: #ffffff;
+    color: #000;
 }
 
 /* Table Styling */
@@ -55,5 +66,5 @@ body {
 
 /* Tip Styling */
 .markdown-section p.tip {
-    color: #ffffff;
+    color: #000;
 }

@@ -4,9 +4,7 @@ title: "Documentation"
 
 # KEEBD Docs
 
-> An awesome project.
-
-This is where we are going to store all our build guides and how to articles.
+This is where we are going to store all of our build guides and knowledge articles. Please feel free to contribute if you have useful information to share.
 
 ## Contribute Documentation
 Want to contribute to the documentation?
@@ -27,21 +25,18 @@ git clone https://github.com/username/keebd-docs
 
 ### Commit Changes
 ```
-git add file_changed.md
-git add file2_changed.jpg
-git commit 'descroption of changes made'
+git add content/type/file_changed.md
+git add content/type/file2_changed.jpg
+git commit 'description of changes made'
 git push
 ```
 
 ### View Local Changes
 
-Install `docsify-cli` globally
-```
-npm i docsify-cli -g
-```
+Install `hugo` as per the official [Hugo Install](https://gohugo.io/getting-started/installing/) guide
 
-Run docsify server
+Run `hugo` server inside the `keebd-docs` folder
 ```
-docsify serve
+hugo server
 ```
 

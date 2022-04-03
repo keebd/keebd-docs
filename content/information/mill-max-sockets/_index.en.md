@@ -1,4 +1,6 @@
-# Mill-Max Socket Guide
+---
+title: Mill-Max Socket Guide
+---
 
 There’s a large number of SKU’s for Mill-Max sockets. This guide will focus on the 3 most commonly used sockets for building mechanical keyboards
 

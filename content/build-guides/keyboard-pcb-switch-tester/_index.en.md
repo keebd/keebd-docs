@@ -1,4 +1,7 @@
-# Keyboard PCB Switch Tester Build Guide
+---
+title: PCB Switch Tester Build Guide
+weight: 20
+---
 
 ## Parts List
 

@@ -1,5 +1,6 @@
-
-# Update Pro Micro Bootloader to DFU Bootloader
+---
+title: Update Pro Micro Bootloader to DFU Bootloader
+---
 
 !> This page is not complete.
 

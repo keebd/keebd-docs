@@ -1,4 +1,6 @@
-# Gateron Switches
+---
+title: Gateron Switches
+---
 
 ## Gateron Main
 ![](./gateron-main-switches.png ':size=700px')

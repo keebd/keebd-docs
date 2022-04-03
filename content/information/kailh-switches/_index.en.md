@@ -1,4 +1,7 @@
-# Kailh/Kaihua Switches
+---
+title: Kailh/Kaihua Switches
+---
+
 ![](./kailh-switches.png ':size=700px')
 
 * Kailh Red – Kailh’s linear switch is nearly identical to Cherry’s offering. The main difference is that this switch features a slightly heavier actuation force – at 0.50 N.

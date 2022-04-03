@@ -1,4 +1,6 @@
-# Keyboard Layouts
+---
+title: Keyboard Layouts
+---
 
 ## ISO vs ANSI
 ![ISO vs ANSI](ISO-ANSI.png)

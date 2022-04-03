@@ -1,4 +1,7 @@
-# Contra Build Guide
+---
+title: Contra Build Guide
+weight: 20
+---
 
 ## Parts List
 

@@ -1,4 +1,7 @@
-# Razer Switches
+---
+title: Razer Switches
+---
+
 ![](./razer-switches.png ':size=700px')
 
 Razer mechanical keyboard switches are manufactured by the folks at Kailh however, they are designed by Razer themselves. These mechanical keyboard switches are generally developed for gaming above else. Here are all the types of Razer switches available.

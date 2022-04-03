@@ -1,4 +1,7 @@
-# Fourier v1.3 Build Guide
+---
+title: Fourier v1.3 Build Guide
+weight: 20
+---
 
 ## Parts List
 

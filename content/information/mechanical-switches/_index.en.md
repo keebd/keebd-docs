@@ -1,4 +1,6 @@
-# Mechanical Switches
+---
+title: Mechanical Switches
+---
 
 ## Linear
 

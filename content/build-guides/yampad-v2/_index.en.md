@@ -1,4 +1,7 @@
-# Yampad v2 Build Guide
+---
+title: Yampad v2 Build Guide
+weight: 20
+---
 
 ## Parts List
 

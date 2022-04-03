@@ -1,4 +1,7 @@
-# Glossary
+---
+title: Glossary
+---
+
 There are lots of acronyms in the Electronics/Keyboard scene and we will attempt to explain some of the most common ones here.
 
 #### LED

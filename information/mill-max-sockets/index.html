@@ -1,0 +1,325 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=description content="Documentation">
+<meta name=author content="KEEBD">
+<link rel=icon href=/images/favicon.png type=image/png>
+<title>Mill-Max Socket Guide | KEEBD</title>
+<link href=/css/nucleus.css?1648963765 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1648963765 rel=stylesheet>
+<link href=/css/hybrid.css?1648963765 rel=stylesheet>
+<link href=/css/featherlight.min.css?1648963765 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1648963765 rel=stylesheet>
+<link href=/css/auto-complete.css?1648963765 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1648963765 rel=stylesheet>
+<link href=/css/theme.css?1648963765 rel=stylesheet>
+<link href=/css/tabs.css?1648963765 rel=stylesheet>
+<link href=/css/hugo-theme.css?1648963765 rel=stylesheet>
+<link href=/css/theme-keebd.css?1648963765 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1648963765></script>
+<style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=/information/mill-max-sockets/>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=/>
+<img src=/images/KEEBDlogo_Light.png alt="Mill-Max Socket Guide">
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span>
+</div>
+<script type=text/javascript src=/js/lunr.min.js?1648963765></script>
+<script type=text/javascript src=/js/auto-complete.js?1648963765></script>
+<script type=text/javascript>var baseurl="/"</script>
+<script type=text/javascript src=/js/search.js?1648963765></script>
+</div>
+<section id=homelinks>
+<ul>
+<li>
+<a class=padding href=/><i class="fas fa-home"></i> Home</a>
+</li>
+</ul>
+</section>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/build-guides/ title="Build Guides" class=dd-item>
+<a href=/build-guides/>
+<b>1. </b>Build Guides
+</a>
+<ul>
+<li data-nav-id=/build-guides/contra/ title="Contra Build Guide" class=dd-item>
+<a href=/build-guides/contra/>
+Contra Build Guide
+</a>
+</li>
+<li data-nav-id=/build-guides/fourier-v1.3/ title="Fourier v1.3 Build Guide" class=dd-item>
+<a href=/build-guides/fourier-v1.3/>
+Fourier v1.3 Build Guide
+</a>
+</li>
+<li data-nav-id=/build-guides/keyboard-pcb-switch-tester/ title="PCB Switch Tester Build Guide" class=dd-item>
+<a href=/build-guides/keyboard-pcb-switch-tester/>
+PCB Switch Tester Build Guide
+</a>
+</li>
+<li data-nav-id=/build-guides/yampad-v2/ title="Yampad v2 Build Guide" class=dd-item>
+<a href=/build-guides/yampad-v2/>
+Yampad v2 Build Guide
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/information/ title=Information class="dd-item
+parent">
+<a href=/information/>
+<b>2. </b>Information
+</a>
+<ul>
+<li data-nav-id=/information/cherry-mx-switches/ title="Cherry MX Switches" class=dd-item>
+<a href=/information/cherry-mx-switches/>
+Cherry MX Switches
+</a>
+</li>
+<li data-nav-id=/information/gateron-switches/ title="Gateron Switches" class=dd-item>
+<a href=/information/gateron-switches/>
+Gateron Switches
+</a>
+</li>
+<li data-nav-id=/information/glossary/ title=Glossary class=dd-item>
+<a href=/information/glossary/>
+Glossary
+</a>
+</li>
+<li data-nav-id=/information/kailh-switches/ title="Kailh/Kaihua Switches" class=dd-item>
+<a href=/information/kailh-switches/>
+Kailh/Kaihua Switches
+</a>
+</li>
+<li data-nav-id=/information/keyboard-layouts/ title="Keyboard Layouts" class=dd-item>
+<a href=/information/keyboard-layouts/>
+Keyboard Layouts
+</a>
+</li>
+<li data-nav-id=/information/mechanical-switches/ title="Mechanical Switches" class=dd-item>
+<a href=/information/mechanical-switches/>
+Mechanical Switches
+</a>
+</li>
+<li data-nav-id=/information/mill-max-sockets/ title="Mill-Max Socket Guide" class="dd-item
+parent
+active">
+<a href=/information/mill-max-sockets/>
+Mill-Max Socket Guide
+</a>
+</li>
+<li data-nav-id=/information/razer-switches/ title="Razer Switches" class=dd-item>
+<a href=/information/razer-switches/>
+Razer Switches
+</a>
+</li>
+<li data-nav-id=/information/update-pro-micro-bootloader/ title="Update Pro Micro Bootloader to DFU Bootloader" class=dd-item>
+<a href=/information/update-pro-micro-bootloader/>
+Update Pro Micro Bootloader to DFU Bootloader
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/firmware/ title=Firmware class=dd-item>
+<a href=/firmware/>
+<b>3. </b>Firmware
+</a>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li>
+<a class=padding href=https://keebd.com/><i class="fas fa-store-alt"></i> Shop</a>
+</li>
+<li>
+<a class=padding href=https://discord.gg/wbHd7yTxb8><i class="fab fa-discord"></i> Discord</a>
+</li>
+<li>
+<a class=padding href=https://www.instagram.com/keebdcom/><i class="fab fa-instagram"></i> Instagram</a>
+</li>
+<li>
+<a class=padding href=https://www.facebook.com/KEEBDcom><i class="fab fa-facebook"></i> Facebook</a>
+</li>
+</ul>
+</section>
+<section id=footer>
+<center>
+<a class=github-button href=https://github.com/keebd/keebd-docs/issues data-size=large data-show-count=true aria-label="Issue keebd/keebd-docs on GitHub">Report Issue</a>
+<p>Copyright <a href=https://keebd.com>KEEBD</a></p>
+</center>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable">
+<div>
+<div id=top-bar>
+<div id=top-github-link>
+<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/information/mill-max-sockets/_index.en.md target=blank>
+<i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span>
+</a>
+</div>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fas fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links>
+<a href=/>Documentation</a> > <a href=/information/>Information</a> > Mill-Max Socket Guide
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#the-basics>The Basics</a></li>
+<li><a href=#where-to-buy-mill-max-sockets>Where to buy Mill-Max sockets?</a></li>
+<li><a href=#length-difference>Length Difference</a></li>
+<li><a href=#case-compatibility>Case Compatibility</a></li>
+<li><a href=#key-switch-compatibility>Key Switch Compatibility</a></li>
+<li><a href=#pcb-compatibility>PCB Compatibility</a></li>
+<li><a href=#soldering-sockets>Soldering Sockets</a></li>
+<li><a href=#how-to-solder-mill-max-sockets>How to Solder Mill-Max Sockets</a></li>
+<li><a href=#video-tutorial>Video Tutorial</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=head-tags>
+</div>
+<div id=body-inner>
+<h1>
+Mill-Max Socket Guide
+</h1>
+<p>There’s a large number of SKU’s for Mill-Max sockets. This guide will focus on the 3 most commonly used sockets for building mechanical keyboards</p>
+<table>
+<thead>
+<tr>
+<th><img src=mill-max-3305.png alt="Mill-Max 3305" title=":size=70%"></th>
+<th><img src=mill-max-7305.png alt="Mill-Max 7305" title=":size=70%"></th>
+<th><img src=mill-max-0305.png alt="Mill-Max 0305" title=":size=70%"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mill-Max 3305</td>
+<td>Mill-Max 7305</td>
+<td>Mill-Max 0305</td>
+</tr>
+<tr>
+<td>3305-0-15-15-47-27-10-0</td>
+<td>7305-0-15-15-47-27-10-0</td>
+<td>0305-1-15-80-47-80-10-0</td>
+</tr>
+<tr>
+<td>Gold over Nickel</td>
+<td>Gold over Nickel</td>
+<td>Tin over Nickel</td>
+</tr>
+<tr>
+<td>Length: 2.67mm</td>
+<td>Length: 2.67 mm</td>
+<td>Length: 3.94mm</td>
+</tr>
+<tr>
+<td>Very expensive</td>
+<td>Expensive</td>
+<td>Cheap</td>
+</tr>
+<tr>
+<td>100+ unit price: $0.50AUD</td>
+<td>100+ unit price: $0.37AUD</td>
+<td>100+ unit price: $0.15AUD</td>
+</tr>
+</tbody>
+</table>
+<h2 id=the-basics>The Basics</h2>
+<p>Mill-Max sockets are used for solderable PCBs to convert them to hotswap. This is achieved by soldering the sockets where switch pins would normally be soldered. The sockets have a series of metal fingers that taper to a point inside, and when a switch pin is inserted, an electrical contact is made.</p>
+<p>You need 2 Mill-Max sockets per switch (one for each metal leg).</p>
+<p><img src=mill-max-anatomy.png alt="Mill-Max Anatomy" title=":size=50%"></p>
+<h2 id=where-to-buy-mill-max-sockets>Where to buy Mill-Max sockets?</h2>
+<p><a href="https://keebd.com/products/mill-max-socket-7305-pack-of-10?_pos=2&_sid=9e8c716f6&_ss=r">KEEBD 7305 Sockets</a></p>
+<p><a href="https://keebd.com/products/mill-max-socket-0305-pack-of-10?_pos=3&_sid=9e8c716f6&_ss=r">KEEBD 0305 Sockets</a></p>
+<h2 id=length-difference>Length Difference</h2>
+<p>The main difference between these sockets is their overall height, and the height of the portion that sits above the PCB (referred to as the lip).</p>
+<p>The extra height of 0305 sockets causes switches to sit slightly higher than 7305 and 3305 sockets - this can lead to wobbly switches as the extra alignment pins in a 5 pin switch are not fully seated in the PCB. It can also cause fitment issues for cases with very tight tolerances.</p>
+<p>Pictures below are courtesy of u/tonsoffun49 and demonstrate the difference between 0305 and 7305.</p>
+<p><img src=mill-max-differences.png alt="Mill-Max Differences" title=":size=70%"></p>
+<p>And the following picture demonstrates the lip difference between 7305 and 3305 sockets.</p>
+<p><img src=mill-max-lips.png alt="Mill-Max Lips" title=":size=70%"></p>
+<h2 id=case-compatibility>Case Compatibility</h2>
+<p>When planning to Mill-Max a board, it’s best to check Reddit or other communities first to see if anyone has successfully modded that specific board before. 7305 sockets have much better case compatibility than 0305 due to their shorter height.</p>
+<p>Sometimes the plate and PCB being pushed a little further away from each other can cause fitment issues when reassembling a case (due to the presence of the hotswap socket lip between the switch and PCB).</p>
+<p>For metal keyboards, especially those with flexible plates such as POM and PC, it’s possible for 0305 sockets to cause electrical bridging between the socket and the bottom of the case. This can be prevented by using 7305 or 3305, which do not stick out further than a regular MX switch pin would, or by using insulating material as a buffer between the PCB and bottom case. Materials such as dense foam, thin rubber, or kapton tape work well.</p>
+<h2 id=key-switch-compatibility>Key Switch Compatibility</h2>
+<p>Not all switch pins are built the same - some switches (such as Kailh) have wide switch pins. Due to the tight tolerances involved in using Mill-Max sockets, some switches are NOT compatible with Mill-Max sockets as the switch pins are too wide to fit.</p>
+<p>u/Keybonbon maintains a compatibility chart available here <a href="https://docs.google.com/spreadsheets/d/1NhrXy6k88eY9bBqVuPWTAGW2q3GzszJ1JH-zuuGQ-iU/edit#gid=0">Mill-Max Hotswap Keyboard Switch Compatibility (0305 and 7305)</a></p>
+<h2 id=pcb-compatibility>PCB Compatibility</h2>
+<p>Most PCBs are compatible with Mill-Max sockets, however some PCBs (such as the Fuji65 PCB) use a larger hole for the switch pins, meaning that the PCB is not compatible with Mill-Max sockets.</p>
+<h2 id=soldering-sockets>Soldering Sockets</h2>
+<p>Due to the much shorter height of 7305 and 3305 sockets, they are more difficult to solder. It can be easy to flood the open end with solder, which will harden inside the socket, causing it to no longer function. When soldering 7305 and 3305 sockets it is recommended to use solder wire that is 0.51mm in diameter or less. On your first few boards you will definitely flood some sockets, so make sure you have more sockets than you need.</p>
+<h2 id=how-to-solder-mill-max-sockets>How to Solder Mill-Max Sockets</h2>
+<ol>
+<li>Firstly insert your sockets into the PCB.</li>
+</ol>
+<p><img src=mill-max-soldering-1.jpg alt="Mill-Max Soldering" title=":size=70%"></p>
+<ol start=2>
+<li>Now put masking tape over the top, and rub your finger over it to ensure that all the sockets are fully flush with the PCB and that the tape is firmly sticking to the PCB.</li>
+</ol>
+<p><img src=mill-max-soldering-2.jpg alt="Mill-Max Soldering" title=":size=70%"></p>
+<ol start=3>
+<li>Now flip the PCB over, and you can see the tails of the sockets poking through.</li>
+</ol>
+<p><img src=mill-max-soldering-3.jpg alt="Mill-Max Soldering" title=":size=70%"></p>
+<ol start=4>
+<li>To solder, place your soldering iron tip to one edge and is mostly flush with the PCB, then feed the solder wire under the tip. Feeding solder under the soldering iron tip ensures that as it melts it flows around the socket and not into the socket.</li>
+</ol>
+<p>Once you have some solder around the sockets, you can keep the soldering iron tip in place and feed solder into the opposite side of the socket - the socket and surrounding solder will be hot enough to melt your wire without it being near the soldering iron.</p>
+<p>Keep the soldering iron in place for 0.5 - 1 seconds after removing the solder wire for cleaner solder joints.</p>
+<h2 id=video-tutorial>Video Tutorial</h2>
+<p><a href=https://www.youtube.com/channel/UCv2t7m4ugYqXo9xcY7VyhyA>KeyBonbon</a> on YouTube has an excellent video showing how to solder and de-solder the Mill-Max sockets and also does some testing with different switches.</p>
+<p><a href="http://www.youtube.com/watch?v=wmkTVsZ97Vk" title="How to Solder Mill-Max Hotswap Sockets (0305 & 7305) on keyboard PCBs"><img src=http://img.youtube.com/vi/wmkTVsZ97Vk/0.jpg alt="How to Solder Mill-Max Hotswap Sockets (0305 & 7305) on keyboard PCBs" title=":size=70%"></a></p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=/js/clipboard.min.js?1648963765></script>
+<script src=/js/perfect-scrollbar.min.js?1648963765></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1648963765></script>
+<script src=/js/jquery.sticky.js?1648963765></script>
+<script src=/js/featherlight.min.js?1648963765></script>
+<script src=/js/highlight.pack.js?1648963765></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=/js/modernizr.custom-3.6.0.js?1648963765></script>
+<script src=/js/learn.js?1648963765></script>
+<script src=/js/hugo-learn.js?1648963765></script>
+<script src=https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-236N20H7R7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-236N20H7R7')</script>
+</body>
+</html>

@@ -11,3 +11,4 @@ chapter: false
 | BM65 v2 RGB       | [Download](./bm65v2_via.hex)                    | [Download](./bm65v2_via.json)               |
 | Dumbpad OLED      | [Download](./dumbpad_combo_oled_default.hex)    | [Download](./dumbpad_combo_oled_via.json)   | 
 | Dumbpad OLED Via  | [Download](./dumbpad_combo_oled_via.hex)        | [Download](./dumbpad_combo_oled_via.json)   | 
+| Rhymestone        | [Download](./rhymestone_rev1_default.hex)       |                                             | 

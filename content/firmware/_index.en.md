@@ -12,3 +12,4 @@ chapter: false
 | Dumbpad OLED          | [Download](./dumbpad_combo_oled_default.hex)    | [Download](./dumbpad_combo_oled_via.hex)    | [Download](./dumbpad_combo_oled_via.json)   | [Download](./dumbpad_combo_oled_vial.hex) | 
 | Fourier v1.3 (KEEBD)  | [Download](./keebd_fourier_default.hex)         |                                             |                                             |                                           |
 | Rhymestone            | [Download](./rhymestone_rev1_default.hex)       |                                             |                                             |                                           |
+| Treadstone48          | [Download](./treadstone48_rev1_default.hex)     |                                             |                                             |                                           |

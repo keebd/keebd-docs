@@ -5,7 +5,7 @@ pre: "<b>3. </b>"
 chapter: false
 ---
 
-| PCB Name              | QMK Firmware                                    | VIA Firmware                                | VIA Layout JSON                             | VIAL Firmware                             | nice!nano Firmware             |
+| PCB Name              | QMK Firmware                                    | VIA Firmware                                | VIA Layout JSON                             | VIAL Firmware                             | ZMK Firmware             |
 |-----------------------|-------------------------------------------------|---------------------------------------------|---------------------------------------------|-------------------------------------------|--------------------------------|
 | BM60 v2 POKER RGB     |                                                 | [Download](./bm60v2_poker_via.hex)          | [Download](./bm60v2_poker_via.json)         |                                           |                                |
 | BM65 v2 RGB           |                                                 | [Download](./bm65v2_via.hex)                | [Download](./bm65v2_via.json)               |                                           |                                |

@@ -41,13 +41,13 @@ Not included in the kit but required to complete:
 
 ## 1. Prepare Diodes
 
-![](./step_01.png ':size=300px')
+![](./step_01.png?height=300px)
 
 Cut 48 diodes from the included strip. Bend the diode pins 90 degrees (as shown in illustration).
 
 ## 2. Install Diodes
 
-![](./step_02.png ':size=300px')
+![](./step_02.png?height=300px)
 
 Install diodes to the top of the PCB. Solder diode pins where they stick out of the bottom of the PCB. 48 diodes must be used for all switches to function.
 
@@ -55,7 +55,7 @@ Install diodes to the top of the PCB. Solder diode pins where they stick out of 
 
 ## 3. Solder Pro Micro Headers & Reset Button
 
-![](./step_03.png ':size=300px')
+![](./step_03.png?height=300px)
 
 Install Pro Micro headers so that shorter pins are in the PCB and black plastic is on the bottom of the PCB. Solder pins where they stick out of the top of the PCB.
 
@@ -65,7 +65,7 @@ Install reset button to the bottom of the PCB. Solder reset button pins where th
 
 ## 4. Install Stabilizer (Optional)
 
-![](./step_04.png ':size=300px')
+![](./step_04.png?height=300px)
 
 Install a stabilizer for spacebars if used.
 
@@ -73,20 +73,20 @@ Install a stabilizer for spacebars if used.
 
 ## 5. Screw on Standoffs
 
-![](./step_05.png ':size=300px')
+![](./step_05.png?height=300px)
 
 Install 5 screws and standoffs to the PCB, so that the standoffs are on the bottom (the same side as the Pro Micro legs).
 
 ## 6. Solder Switches
 
-![](./step_06.png ':size=300px')
+![](./step_06.png?height=300px)
 
 Starting from the outer corners, install all switches by snapping them in to top switch plate and then pressing the pins through the top of the PCB. Solder metal switch pins on the bottom of the PCB where they stick through.
 
 ## 7. Install Pro Micro Controller
 
-![](./step_07a.png ':size=300px')
-![](./step_07b.png ':size=300px')
+![](./step_07a.png?height=300px)
+![](./step_07b.png?height=300px)
 
 Install the Pro Micro on to the bottom of the PCB so that the components face down (away from the PCB).
 
@@ -94,7 +94,7 @@ Solder pins to Pro Micro where they stick through. Take care to prevent or remov
 
 ## 8. Screw on Bottom Plate
 
-![](./step_08.png ':size=300px')
+![](./step_08.png?height=300px)
 
 Screw the bottom plate to the standoffs you installed earlier.
 

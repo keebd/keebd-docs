@@ -45,40 +45,40 @@ Not included in the kit but required to complete:
 
 ## 1. Prepare Components
 
-![](./fourier-v1-3-pcb-left.png ':size=350px')
-![](./fourier-v1-3-pcb-right.png ':size=350px')
+![](./fourier-v1-3-pcb-left.png?height=350px)
+![](./fourier-v1-3-pcb-right.png?height=350px)
 
 Grab your PCBs. Pictured bottoms up. Left is on the left, right is on the right.
 
-![](./diode-through-hole-1.jpg ':size=700px')
+![](./diode-through-hole-1.jpg?height=700px)
 
 
 If you're using through hole diodes, bend them into shape. Here, I'm just bending it around my finger
 
-![](./diode-through-hole-2.jpg ':size=700px')
+![](./diode-through-hole-2.jpg?height=700px)
 
 
 Another way to do it, resistors shown here
 
-![](./diode-through-hole-3.jpg ':size=700px')
+![](./diode-through-hole-3.jpg?height=700px)
 
 
 Strip of diodes bent
 
-![](./diode-through-hole-4.jpg ':size=700px')
+![](./diode-through-hole-4.jpg?height=700px)
 
 
 Ripping off the paper holding all the resistors together. Grip the diodes tightly so they don't bend as you're ripping the paper off.
 
-![](./diode-through-hole-5.jpg ':size=700px')
+![](./diode-through-hole-5.jpg?height=700px)
 
 
 All separated from the paper
 
 ## 2. Solder Components
 
-![](./solder-through-hole-diodes.jpg ':size=350px')
-![](./solder-smd-diodes-2.jpg ':size=350px')
+![](./solder-through-hole-diodes.jpg?height=350px)
+![](./solder-smd-diodes-2.jpg?height=350px)
 
 Install either the through hole or SMD diodes (example shown above). SMD diodes will be used for the following steps.
 
@@ -86,46 +86,46 @@ Install either the through hole or SMD diodes (example shown above). SMD diodes 
 
 SMD diodes have a white band and through-hole diodes will have a black band.
 
-![](./solder-smd-diodes-1.jpg ':size=700px')
+![](./solder-smd-diodes-1.jpg?height=700px)
 
 Add a small amount of solder to one of the diode pads first.
 
-![](./solder-smd-diodes-2.jpg ':size=700px')
+![](./solder-smd-diodes-2.jpg?height=700px)
 
 Hold the diode with tweezers and melt the solder on the pad before placing the diode into position. Let the solder cool to hold the diode in place.
 Add some solder to the other side of the diode to ensure a good connection on both ends.
 
-![](./solder-resistors.jpg ':size=700px')
+![](./solder-resistors.jpg?height=700px)
 
 Install the I2C resistors (optional).
 
-![](./solder-trrs-jack.jpg ':size=700px')
+![](./solder-trrs-jack.jpg?height=700px)
 
 Install the TRRS jack.
 
-![](./solder-reset-switch.jpg ':size=700px')
+![](./solder-reset-switch.jpg?height=700px)
 
 Install the reset switch and controller header pins.
 
 !> NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves. 
 
-![](./solder-right-half.jpg ':size=700px')
+![](./solder-right-half.jpg?height=700px)
 
 Repeat the same process with the diodes, TRRS jack, reset switch and controller header pins with the right half. Note that there's no I2C resistor slots on this side, as they're only needed on one half.
 
-![](./install-stabilizers.jpg ':size=700px')
+![](./install-stabilizers.jpg?height=700px)
 
 Add stabilizers to the keys you want to stabilize.
 
 ## 3. Solder Switches
 
-![](./install-switches.jpg ':size=700px')
+![](./install-switches.jpg?height=700px)
 
 Time to add the switches. Put a few switches into the corners of the switch plate and then attach the switches to the PCB. Make sure the switches are pushed all the way down onto the PCB.
 
 Due to the multiple layout options, it may be helpful to put keycaps on the switches to make sure everything is in the correct slots.
 
-![](./left-switches.jpg ':size=700px')
+![](./left-switches.jpg?height=700px)
 
 All the switches installed and soldered in.
 
@@ -135,15 +135,15 @@ Time to install the Pro Micro now that the switches have been soldered in.
 
 !> Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)
 
-![](./controller-mill-max.jpg ':size=700px')
+![](./controller-mill-max.jpg?height=700px)
 
 If using Mill-Max pins to socket the Controller place them into the machined headers.
 
-![](./controller.jpg ':size=700px')
+![](./controller.jpg?height=700px)
 
 Place Controller onto the Mill-Max pins and solder into place.
 
-![](./controller-soldered.jpg ':size=700px')
+![](./controller-soldered.jpg?height=700px)
 
 Soldering complete for each of the pins into the Controller.
 
@@ -153,7 +153,7 @@ Once again, the component side of the Pro Micro will be hidden from you.
 
 ## 5. Solder RGB Strip (Optional)
 
-![](./install-led-strip-left.jpg ':size=700px')
+![](./install-led-strip-left.jpg?height=700px)
 
 Optional, add the RGB strip to the backside of the PCB and solder to the following points:
 
@@ -163,7 +163,7 @@ Left Side
 - GND breakout goes to GND on strip
 - Extra Data goes to Do/Dout on strip
 
-![](./install-led-strip-right.jpg ':size=700px')
+![](./install-led-strip-right.jpg?height=700px)
 
 Right Side
 - VCC breakout goes to +5V on strip
@@ -173,22 +173,22 @@ Right Side
 
 ## 6. Acrylic Case
 
-![](./standoffs.jpg ':size=700px')
+![](./standoffs.jpg?height=700px)
 
 Using 5 of the 4mm Hex Screws, attach the Standoffs as shown above.
 
-![](./acrylic.jpg ':size=700px')
+![](./acrylic.jpg?height=700px)
 
 Peel the protective layer from the Acrylic base plates and using 5 of the 6mm Hex Screws, attach the Acrylic bottom plates to Standoffs.
 
-![](./feet.jpg ':size=700px')
+![](./feet.jpg?height=700px)
 
 Using 4 rubber feet, add one to each corner.
 
 Repeat the above 3 steps on the right side and you are done!
 
-![](./fourier-v1-3-built-1.png ':size=700px')
+![](./fourier-v1-3-built-1.png?height=700px)
 
-![](./fourier-v1-3-built-2.png ':size=700px')
+![](./fourier-v1-3-built-2.png?height=700px)
 
 Complete with screws, standoffs, and bottom plates.

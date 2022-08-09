@@ -2,7 +2,7 @@
 title: Cherry MX Switches
 ---
 
-![](./cherry-mx-switches.png ':size=700px')
+![](./cherry-mx-switches.png?height=700px)
 
 * Cherry MX Red – The most popular choice amongst gamers, Cherry MX Reds are linear switches that are very light to use as they don’t require much force to press – at only 0.45 N.
 * Cherry MX Speed – This switch is as light as the Red switches however it comes with a shorter actuation distance of 1.2mm.

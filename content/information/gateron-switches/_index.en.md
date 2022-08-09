@@ -3,7 +3,7 @@ title: Gateron Switches
 ---
 
 ## Gateron Main
-![](./gateron-main-switches.png ':size=700px')
+![](./gateron-main-switches.png?height=700px)
 
 | Color   | Type    | Operating Force | Activation Point | Noise Level |
 |---------|---------|-----------------|------------------|-------------|
@@ -24,7 +24,7 @@ The only switch that differs slightly is the Gateron Clear switch which is total
 While being Cherry MX clones, Gateron’s main switch lineup does differ slightly from Cherry MX. Gateron switches are typically smoother due to a slightly smaller stem which can make using a Gateron linear switch much more enjoyable than a Cherry MX one.
 
 ## Gateron Silent Switches
-![](./gateron-silent-switches.png ':size=700px')
+![](./gateron-silent-switches.png?height=700px)
 
 | Color         | Type    | Operating Force | Activation Point | Noise Level |
 |---------------|---------|-----------------|------------------|-------------|
@@ -37,7 +37,7 @@ While being Cherry MX clones, Gateron’s main switch lineup does differ slightl
 A silent switch is different from a normal switch because the stem has small rubber padding on the top and bottom, so the sound is dampened when striking and bouncing back.
 
 ## Gateron Milk/Milky Switches
-![](./gateron-milky-switches.png ':size=700px')
+![](./gateron-milky-switches.png?height=700px)
 
 | Color         | Type    | Operating Force | Activation Point | Noise Level |
 |---------------|---------|-----------------|------------------|-------------|
@@ -52,7 +52,7 @@ A silent switch is different from a normal switch because the stem has small rub
 Gateron Milk switches are pretty interesting. They are very similar to normal Gateron switches except they come with a different housing design. Instead of the typical clear top housing and black bottom housing, the milk switches come with a “milky” tinted housing that help diffuse the RGB lights.
 
 ## Gateron Ink Switches
-![](./gateron-ink-switches.png ':size=700px')
+![](./gateron-ink-switches.png?height=700px)
 
 | Color            | Type    | Operating Force | Activation Point | Noise Level |
 |------------------|---------|-----------------|------------------|-------------|
@@ -69,7 +69,7 @@ The hallmark differences of the Ink switches are the clear smoky housing, differ
 The smoky housing is what gives the Ink’s their name, both the lower and upper housing are the same colors depending on what type of switch you use.
 
 ## Gateron Low-Profile Switches
-![](./gateron-low-profile-switches.png ':size=700px')
+![](./gateron-low-profile-switches.png?height=700px)
 
 | Color             | Type    | Operating Force | Activation Point | Noise Level |
 |-------------------|---------|-----------------|------------------|-------------|

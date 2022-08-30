@@ -2,7 +2,7 @@
 title: Kailh Mouse Switches
 ---
 
-![](./kailh-mouse-switches.png?height=700px)
+![](./kailh-mouse-switches.png?height=400px)
 
 * Kailh Blue - Sky blue housing, silver plated, medium switches.
 * Kailh Red – Red housing, silver plated, medium switches.

@@ -51,7 +51,9 @@ Cut 48 diodes from the included strip. Bend the diode pins 90 degrees (as shown 
 
 Install diodes to the top of the PCB. Solder diode pins where they stick out of the bottom of the PCB. 48 diodes must be used for all switches to function.
 
-!> Warning: Diodes are direction sensitive. Be sure to install all diodes with the black side aligned to the side with the square solder pad and line through the diode outline (as shown in illustration).
+{{% notice info %}}
+Diodes are direction sensitive. Be sure to install all diodes with the black side aligned to the side with the square solder pad and line through the diode outline (as shown in illustration).
+{{% /notice %}}
 
 ## 3. Solder Pro Micro Headers & Reset Button
 
@@ -61,7 +63,9 @@ Install Pro Micro headers so that shorter pins are in the PCB and black plastic 
 
 Install reset button to the bottom of the PCB. Solder reset button pins where they stick out of the top.
 
-!> Warning: Do not install the Pro Micro itself until Step 7.
+{{% notice info %}}
+Do not install the Pro Micro itself until Step 7.
+{{% /notice %}}
 
 ## 4. Install Stabilizer (Optional)
 
@@ -69,7 +73,9 @@ Install reset button to the bottom of the PCB. Solder reset button pins where th
 
 Install a stabilizer for spacebars if used.
 
-!> Warning: Only Cherry-style PCB mount stabilizers can be used.
+{{% notice info %}}
+Only Cherry-style PCB mount stabilizers can be used.
+{{% /notice %}}
 
 ## 5. Screw on Standoffs
 
@@ -100,7 +106,9 @@ Screw the bottom plate to the standoffs you installed earlier.
 
 (Optional) Install the provided self-adhesive rubber bumpon feet to the bottom plate.
 
-!> Warning: Ensure the reset hole on the bottom plate aligns with the reset switch on the PCB.
+{{% notice info %}}
+Ensure the reset hole on the bottom plate aligns with the reset switch on the PCB.
+{{% /notice %}}
 
 All Done!
 

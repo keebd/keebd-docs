@@ -7,18 +7,18 @@
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
 <title>Contra Build Guide | KEEBD</title>
-<link href=/css/nucleus.css?1662669947 rel=stylesheet>
-<link href=/css/fontawesome-all.min.css?1662669947 rel=stylesheet>
-<link href=/css/hybrid.css?1662669947 rel=stylesheet>
-<link href=/css/featherlight.min.css?1662669947 rel=stylesheet>
-<link href=/css/perfect-scrollbar.min.css?1662669947 rel=stylesheet>
-<link href=/css/auto-complete.css?1662669947 rel=stylesheet>
-<link href=/css/atom-one-dark-reasonable.css?1662669947 rel=stylesheet>
-<link href=/css/theme.css?1662669947 rel=stylesheet>
-<link href=/css/tabs.css?1662669947 rel=stylesheet>
-<link href=/css/hugo-theme.css?1662669947 rel=stylesheet>
-<link href=/css/theme-keebd.css?1662669947 rel=stylesheet>
-<script src=/js/jquery-3.3.1.min.js?1662669947></script>
+<link href=/css/nucleus.css?1663223781 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1663223781 rel=stylesheet>
+<link href=/css/hybrid.css?1663223781 rel=stylesheet>
+<link href=/css/featherlight.min.css?1663223781 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1663223781 rel=stylesheet>
+<link href=/css/auto-complete.css?1663223781 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1663223781 rel=stylesheet>
+<link href=/css/theme.css?1663223781 rel=stylesheet>
+<link href=/css/tabs.css?1663223781 rel=stylesheet>
+<link href=/css/hugo-theme.css?1663223781 rel=stylesheet>
+<link href=/css/theme-keebd.css?1663223781 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1663223781></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=/build-guides/contra/>
@@ -34,10 +34,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/js/lunr.min.js?1662669947></script>
-<script type=text/javascript src=/js/auto-complete.js?1662669947></script>
+<script type=text/javascript src=/js/lunr.min.js?1663223781></script>
+<script type=text/javascript src=/js/auto-complete.js?1663223781></script>
 <script type=text/javascript>var baseurl="/"</script>
-<script type=text/javascript src=/js/search.js?1662669947></script>
+<script type=text/javascript src=/js/search.js?1663223781></script>
 </div>
 <section id=homelinks>
 <ul>
@@ -59,6 +59,11 @@ parent
 active">
 <a href=/build-guides/contra/>
 Contra Build Guide
+</a>
+</li>
+<li data-nav-id=/build-guides/dumbpad/ title="Dumbpad Build Guide" class=dd-item>
+<a href=/build-guides/dumbpad/>
+Dumbpad Build Guide
 </a>
 </li>
 <li data-nav-id=/build-guides/fourier-v1.3/ title="Fourier v1.3 Build Guide" class=dd-item>
@@ -264,16 +269,19 @@ Contra Build Guide
 <h2 id=2-install-diodes>2. Install Diodes</h2>
 <p><img src="./step_02.png?height=300px" alt></p>
 <p>Install diodes to the top of the PCB. Solder diode pins where they stick out of the bottom of the PCB. 48 diodes must be used for all switches to function.</p>
-<p>!> Warning: Diodes are direction sensitive. Be sure to install all diodes with the black side aligned to the side with the square solder pad and line through the diode outline (as shown in illustration).</p>
+<div class="notices info"><p>Diodes are direction sensitive. Be sure to install all diodes with the black side aligned to the side with the square solder pad and line through the diode outline (as shown in illustration).</p>
+</div>
 <h2 id=3-solder-pro-micro-headers--reset-button>3. Solder Pro Micro Headers & Reset Button</h2>
 <p><img src="./step_03.png?height=300px" alt></p>
 <p>Install Pro Micro headers so that shorter pins are in the PCB and black plastic is on the bottom of the PCB. Solder pins where they stick out of the top of the PCB.</p>
 <p>Install reset button to the bottom of the PCB. Solder reset button pins where they stick out of the top.</p>
-<p>!> Warning: Do not install the Pro Micro itself until Step 7.</p>
+<div class="notices info"><p>Do not install the Pro Micro itself until Step 7.</p>
+</div>
 <h2 id=4-install-stabilizer-optional>4. Install Stabilizer (Optional)</h2>
 <p><img src="./step_04.png?height=300px" alt></p>
 <p>Install a stabilizer for spacebars if used.</p>
-<p>!> Warning: Only Cherry-style PCB mount stabilizers can be used.</p>
+<div class="notices info"><p>Only Cherry-style PCB mount stabilizers can be used.</p>
+</div>
 <h2 id=5-screw-on-standoffs>5. Screw on Standoffs</h2>
 <p><img src="./step_05.png?height=300px" alt></p>
 <p>Install 5 screws and standoffs to the PCB, so that the standoffs are on the bottom (the same side as the Pro Micro legs).</p>
@@ -289,7 +297,8 @@ Contra Build Guide
 <p><img src="./step_08.png?height=300px" alt></p>
 <p>Screw the bottom plate to the standoffs you installed earlier.</p>
 <p>(Optional) Install the provided self-adhesive rubber bumpon feet to the bottom plate.</p>
-<p>!> Warning: Ensure the reset hole on the bottom plate aligns with the reset switch on the PCB.</p>
+<div class="notices info"><p>Ensure the reset hole on the bottom plate aligns with the reset switch on the PCB.</p>
+</div>
 <p>All Done!</p>
 <p>Install your choice of keycaps on to the switches, plug in the USB cable to the keyboard and your computer, and you’re good to go!</p>
 <footer class=footline>
@@ -302,16 +311,16 @@ Contra Build Guide
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/js/clipboard.min.js?1662669947></script>
-<script src=/js/perfect-scrollbar.min.js?1662669947></script>
-<script src=/js/perfect-scrollbar.jquery.min.js?1662669947></script>
-<script src=/js/jquery.sticky.js?1662669947></script>
-<script src=/js/featherlight.min.js?1662669947></script>
-<script src=/js/highlight.pack.js?1662669947></script>
+<script src=/js/clipboard.min.js?1663223781></script>
+<script src=/js/perfect-scrollbar.min.js?1663223781></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1663223781></script>
+<script src=/js/jquery.sticky.js?1663223781></script>
+<script src=/js/featherlight.min.js?1663223781></script>
+<script src=/js/highlight.pack.js?1663223781></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/js/modernizr.custom-3.6.0.js?1662669947></script>
-<script src=/js/learn.js?1662669947></script>
-<script src=/js/hugo-learn.js?1662669947></script>
+<script src=/js/modernizr.custom-3.6.0.js?1663223781></script>
+<script src=/js/learn.js?1663223781></script>
+<script src=/js/hugo-learn.js?1663223781></script>
 <script src=https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-236N20H7R7"></script>

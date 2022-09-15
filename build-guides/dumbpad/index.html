@@ -6,7 +6,7 @@
 <meta name=description content="Documentation">
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
-<title>Yampad v2 Build Guide | KEEBD</title>
+<title>Dumbpad Build Guide | KEEBD</title>
 <link href=/css/nucleus.css?1663223781 rel=stylesheet>
 <link href=/css/fontawesome-all.min.css?1663223781 rel=stylesheet>
 <link href=/css/hybrid.css?1663223781 rel=stylesheet>
@@ -21,12 +21,12 @@
 <script src=/js/jquery-3.3.1.min.js?1663223781></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
-<body data-url=/build-guides/yampad-v2/>
+<body data-url=/build-guides/dumbpad/>
 <nav id=sidebar>
 <div id=header-wrapper>
 <div id=header>
 <a id=logo href=/>
-<img src=/images/KEEBDlogo_Light.png alt="Yampad v2 Build Guide">
+<img src=/images/KEEBDlogo_Light.png alt="Dumbpad Build Guide">
 </a>
 </div>
 <div class=searchbox>
@@ -59,7 +59,9 @@ parent">
 Contra Build Guide
 </a>
 </li>
-<li data-nav-id=/build-guides/dumbpad/ title="Dumbpad Build Guide" class=dd-item>
+<li data-nav-id=/build-guides/dumbpad/ title="Dumbpad Build Guide" class="dd-item
+parent
+active">
 <a href=/build-guides/dumbpad/>
 Dumbpad Build Guide
 </a>
@@ -74,9 +76,7 @@ Fourier v1.3 Build Guide
 PCB Switch Tester Build Guide
 </a>
 </li>
-<li data-nav-id=/build-guides/yampad-v2/ title="Yampad v2 Build Guide" class="dd-item
-parent
-active">
+<li data-nav-id=/build-guides/yampad-v2/ title="Yampad v2 Build Guide" class=dd-item>
 <a href=/build-guides/yampad-v2/>
 Yampad v2 Build Guide
 </a>
@@ -183,7 +183,7 @@ Update Pro Micro Bootloader to DFU Bootloader
 <div>
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/build-guides/yampad-v2/_index.en.md target=blank>
+<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/build-guides/dumbpad/_index.en.md target=blank>
 <i class="fas fa-code-branch"></i>
 <span id=top-github-link-text>Edit this page</span>
 </a>
@@ -196,7 +196,7 @@ Update Pro Micro Bootloader to DFU Bootloader
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/>Documentation</a> > <a href=/build-guides/>Build Guides</a> > Yampad v2 Build Guide
+<a href=/>Documentation</a> > <a href=/build-guides/>Build Guides</a> > Dumbpad Build Guide
 </span>
 </div>
 <div class=progress>
@@ -205,16 +205,14 @@ Update Pro Micro Bootloader to DFU Bootloader
 <ul>
 <li><a href=#parts-list>Parts List</a></li>
 <li><a href=#build-steps>Build Steps</a></li>
-<li><a href=#1-solder-components>1. Solder Components</a>
-<ul>
-<li><a href=#solder-leds>Solder LEDs</a></li>
-</ul>
-</li>
-<li><a href=#2-assemble-case>2. Assemble Case</a></li>
-<li><a href=#3-install-stabilisers>3. Install Stabilisers</a></li>
-<li><a href=#4-install-switches>4. Install Switches</a></li>
-<li><a href=#5-connect-oled-display>5. Connect OLED Display</a></li>
-<li><a href=#6-stick-on-feet>6. Stick on Feet</a></li>
+<li><a href=#1-prepare-diodes>1. Prepare Diodes</a></li>
+<li><a href=#2-install-diodes>2. Install Diodes</a></li>
+<li><a href=#3-solder-pro-micro-headers>3. Solder Pro Micro Headers</a></li>
+<li><a href=#4-install-pro-micro-controller>4. Install Pro Micro Controller</a></li>
+<li><a href=#5-solder-oled-optional>5. Solder OLED (Optional)</a></li>
+<li><a href=#6-solder-switches>6. Solder Switches</a></li>
+<li><a href=#7-solder-encoders-optional>7. Solder Encoders (Optional)</a></li>
+<li><a href=#8-case-setup>8. Case Setup</a></li>
 </ul>
 </nav>
 </div>
@@ -225,91 +223,61 @@ Update Pro Micro Bootloader to DFU Bootloader
 </div>
 <div id=body-inner>
 <h1>
-Yampad v2 Build Guide
+Dumbpad Build Guide
 </h1>
 <h2 id=parts-list>Parts List</h2>
 <p>Here&rsquo;s a list of parts needed for the build:</p>
 <ul>
 <li>
-<p>1 x <a href=https://keebd.com/products/yampad-v2-rgb-macropad-keyboard-kit>Yampad v2 RGB Macropad Keyboard Kit</a></p>
+<p>1 x <a href=https://keebd.com/products/dumbpad-macropad-keyboard-kit>Dumbpad Keyboard Kit</a></p>
 <p>Kit Includes:</p>
 <ul>
-<li>1 x Yampad v2 PCBs</li>
-<li>1 x Yampad v2 Acrylic Bottom Plate</li>
-<li>1 x Yampad v2 Acrylic Switch Plate</li>
-<li>18 x SOD-123 Diodes</li>
-<li>18 x Kailh Hotswap Sockets</li>
-<li>7 x 7mm Brass Standoffs</li>
-<li>14 x 6mm Hex Screws</li>
-<li>1 x .91" OLED Display</li>
-<li>1 x 6x6 Button</li>
-<li>4 x Clear Rubber Feet</li>
+<li>1 x Dumbpad PCB</li>
+<li>1 x OLED Display</li>
+<li>17 x Diodes (through hole)</li>
+<li>1 x 6x6 Tactile Switch</li>
 </ul>
 </li>
 </ul>
 <p>Not included in the kit but required to complete:</p>
 <ul>
 <li>1 x <a href=https://keebd.com/collections/controllers>Pro Micro Controller</a></li>
-<li>18 x <a href=https://keebd.com/collections/switches>Keyboard Switches</a></li>
-<li>18 x <a href=https://keebd.com/collections/caps>Keycaps</a></li>
+<li>14-16 x <a href=https://keebd.com/collections/switches>MX or Alps Switches</a></li>
+<li>14-16 x <a href=https://keebd.com/collections/caps>Key Caps</a></li>
 </ul>
 <h2 id=build-steps>Build Steps</h2>
 <ol>
-<li>Solder Components</li>
+<li>Prepare Diodes</li>
+<li>Install Diodes</li>
+<li>Solder Pro Micro Headers</li>
+<li>Install Pro Micro Controller</li>
+<li>Solder OLED (Optional)</li>
+<li>Solder Switches</li>
+<li>Solder Encoders (Optional)</li>
+<li>Case Setup</li>
 </ol>
-<ul>
-<li>Solder LEDs</li>
-<li>Solder Diodes</li>
-<li>Solder Hotswap Sockets</li>
-<li>Solder Controller & OLED Headers</li>
-<li>Solder Reset Button</li>
-</ul>
-<ol start=2>
-<li>Assemble Case</li>
-<li>Install Stabilisers</li>
-<li>Install Switches</li>
-<li>Connect OLED Display</li>
-<li>Stick on Feet</li>
-</ol>
-<h2 id=1-solder-components>1. Solder Components</h2>
-<h3 id=solder-leds>Solder LEDs</h3>
-<p><img src="./ws2812b.jpg?height=700px" alt></p>
-<p><img src="./silk.jpg?height=700px" alt></p>
-<p>!> The WS2812B LEDs have one corner different to the other three corners, this odd corner faces towards the marked corner on the silkscreen.</p>
-<p><img src="./leds.jpg?height=700px" alt></p>
-<p>Add a small amount of solder to one of the LED pads for each LED and then heat with your iron and place the LED into place.</p>
-<p>Solder the remaining three pads ensuring the solder flows to both the pad on the PCB and the pad on the LED.</p>
-<p><img src="./diodes.jpg?height=700px" alt></p>
-<p>!> Diodes are directional and the line on the diode faces the direction of the closed end of the silkscreen.</p>
-<p>Add a small amount of solder to one pad for each diode and then while heating the solder place a diode into place. Heat and add some solder to the second pad of the diodes.</p>
-<p><img src="./hotswap-sockets.jpg?height=700px" alt></p>
-<p>Place the Kailh hot swap sockets onto the board and while heating each pad, add solder.</p>
-<p><img src="./headers.jpg?height=700px" alt></p>
-<p>You can skip this step if you want to direct attach the controller and OLED display. The above are <a href=https://keebd.com/products/40-pin-machined-ic-breakable-female-header-strip>Machined Breakable Female Headers</a> and used with <a href=https://keebd.com/products/mill-max-low-profile-controller-pins-pack-of-25>Mill-Max Pins</a> allow the controller to be hot swapped (removed, replaced, upgraded etc).</p>
-<p>Attach the controller first to the top side of the board and then attach the OLED Display to the board second using the controller as a table for the display to reset evenly on.</p>
-<p><img src="./button.jpg?height=700px" alt></p>
-<p>Solder the reset button to the underside of the board.</p>
-<h2 id=2-assemble-case>2. Assemble Case</h2>
-<p><img src="/case.jpg?height=700px" alt></p>
-<p>Remove the protective film from the acrylic plates and attach the brass standoffs using the hex screws to the bottom acrylic plate.</p>
-<p>Place the PCB onto the middle standoff and screw on the top acrylic plate using the remaining hex screws.</p>
-<h2 id=3-install-stabilisers>3. Install Stabilisers</h2>
-<p><img src="./stabilisers.jpg?height=700px" alt></p>
-<p>You can press fit plate mount stabilisers onto the PCB with the case assembled but you may need to remove the PCB to use screw in stabilisers.</p>
-<h2 id=4-install-switches>4. Install Switches</h2>
-<p><img src="./switches.jpg?height=700px" alt></p>
-<p>Your switches can now be press fit into the Kailh sockets.</p>
-<p><img src="./side-1.jpg?height=700px" alt>
-<img src="./side-2.jpg?height=700px" alt></p>
-<p>Looking from the side to make sure the switches are pushed firmly onto the PCB and there are limited gaps.</p>
-<h2 id=5-connect-oled-display>5. Connect OLED Display</h2>
-<p><img src="./oled.jpg?height=700px" alt></p>
-<p>If you direct attached your OLD display above then you can skip this step otherwise you can now install the display using diode-legs or thin wire as legs into the machined header pins. This allows for the display to be removed, replace, upgraded as well as easy access to the controller.</p>
-<h2 id=6-stick-on-feet>6. Stick on Feet</h2>
-<p><img src="./feet.jpg?height=700px" alt></p>
-<p>Place one rubber foot onto each corner of the Yampad case.</p>
-<p><img src="./complete.jpg?height=700px" alt></p>
-<p>All done!</p>
+<h2 id=1-prepare-diodes>1. Prepare Diodes</h2>
+<p><img src="./diode-through-hole-1.jpg?height=600px" alt></p>
+<p>If you&rsquo;re using through hole diodes, bend them into shape. Here, I&rsquo;m just bending it around my finger</p>
+<p><img src="./diode-through-hole-2.jpg?height=600px" alt></p>
+<p>Another way to do it, resistors shown here</p>
+<p><img src="./diode-through-hole-3.jpg?height=600px" alt></p>
+<p>Strip of diodes bent</p>
+<p><img src="./diode-through-hole-4.jpg?height=600px" alt></p>
+<p>Ripping off the paper holding all the resistors together. Grip the diodes tightly so they don&rsquo;t bend as you&rsquo;re ripping the paper off.</p>
+<p><img src="./diode-through-hole-5.jpg?height=600px" alt></p>
+<p>All separated from the paper</p>
+<h2 id=2-install-diodes>2. Install Diodes</h2>
+<p><img src="./step_02.png?height=250px" alt></p>
+<p>Install diodes to the top of the PCB. Solder diode pins where they stick out of the bottom of the PCB. 48 diodes must be used for all switches to function.</p>
+<div class="notices info"><p>Diodes are direction sensitive. Be sure to install all diodes with the black side aligned to the side with the square solder pad and line through the diode outline (as shown in illustration).</p>
+</div>
+<h2 id=3-solder-pro-micro-headers>3. Solder Pro Micro Headers</h2>
+<h2 id=4-install-pro-micro-controller>4. Install Pro Micro Controller</h2>
+<h2 id=5-solder-oled-optional>5. Solder OLED (Optional)</h2>
+<h2 id=6-solder-switches>6. Solder Switches</h2>
+<h2 id=7-solder-encoders-optional>7. Solder Encoders (Optional)</h2>
+<h2 id=8-case-setup>8. Case Setup</h2>
 <footer class=footline>
 </footer>
 </div>

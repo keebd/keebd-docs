@@ -54,6 +54,10 @@ a:hover {
 	color: var(--MENU-VISITED-color);
 }
 
+#body a.highlight {
+    display: unset;
+}
+
 #body a.highlight:after {
     display: block;
     content: "";

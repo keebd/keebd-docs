@@ -107,7 +107,9 @@ Install the TRRS jack.
 
 Install the reset switch and controller header pins.
 
-!> NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves. 
+{{% notice info %}}
+NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves.
+{{% /notice %}}
 
 ![](./solder-right-half.jpg?height=700px)
 
@@ -133,7 +135,9 @@ All the switches installed and soldered in.
 
 Time to install the Pro Micro now that the switches have been soldered in.
 
-!> Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)
+{{% notice info %}}
+Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)
+{{% /notice %}}
 
 ![](./controller-mill-max.jpg?height=700px)
 

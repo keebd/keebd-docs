@@ -54,6 +54,10 @@ a:hover {
 	color: var(--MENU-VISITED-color);
 }
 
+#body div.padding.highlightable div#body-inner table tbody tr td a.highlight {
+    display: unset;
+}
+
 #body a.highlight:after {
     display: block;
     content: "";

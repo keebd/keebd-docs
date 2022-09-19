@@ -48,7 +48,10 @@ Not included in the kit but required to complete:
 
 ![](./silk.jpg?height=700px)
 
-!> The WS2812B LEDs have one corner different to the other three corners, this odd corner faces towards the marked corner on the silkscreen.
+{{% notice info %}}
+The WS2812B LEDs have one corner different to the other three corners, this odd corner faces towards the marked corner on the silkscreen.
+{{% /notice %}}
+
 
 ![](./leds.jpg?height=700px)
 
@@ -58,7 +61,9 @@ Solder the remaining three pads ensuring the solder flows to both the pad on the
 
 ![](./diodes.jpg?height=700px)
 
-!> Diodes are directional and the line on the diode faces the direction of the closed end of the silkscreen.
+{{% notice info %}}
+Diodes are directional and the line on the diode faces the direction of the closed end of the silkscreen.
+{{% /notice %}}
 
 Add a small amount of solder to one pad for each diode and then while heating the solder place a diode into place. Heat and add some solder to the second pad of the diodes.
 

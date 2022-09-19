@@ -6,7 +6,7 @@
 <meta name=description content="Documentation">
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
-<title>Razer Switches | KEEBD</title>
+<title>Christmas Tree Build Guide | KEEBD</title>
 <link href=/css/nucleus.css?1663587954 rel=stylesheet>
 <link href=/css/fontawesome-all.min.css?1663587954 rel=stylesheet>
 <link href=/css/hybrid.css?1663587954 rel=stylesheet>
@@ -21,12 +21,12 @@
 <script src=/js/jquery-3.3.1.min.js?1663587954></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
-<body data-url=/information/razer-switches/>
+<body data-url=/build-guides/christmas-tree/>
 <nav id=sidebar>
 <div id=header-wrapper>
 <div id=header>
 <a id=logo href=/>
-<img src=/images/KEEBDlogo_Light.png alt="Razer Switches">
+<img src=/images/KEEBDlogo_Light.png alt="Christmas Tree Build Guide">
 </a>
 </div>
 <div class=searchbox>
@@ -48,12 +48,15 @@
 </section>
 <div class=highlightable>
 <ul class=topics>
-<li data-nav-id=/build-guides/ title="Build Guides" class=dd-item>
+<li data-nav-id=/build-guides/ title="Build Guides" class="dd-item
+parent">
 <a href=/build-guides/>
 <b>1. </b>Build Guides
 </a>
 <ul>
-<li data-nav-id=/build-guides/christmas-tree/ title="Christmas Tree Build Guide" class=dd-item>
+<li data-nav-id=/build-guides/christmas-tree/ title="Christmas Tree Build Guide" class="dd-item
+parent
+active">
 <a href=/build-guides/christmas-tree/>
 Christmas Tree Build Guide
 </a>
@@ -85,8 +88,7 @@ Yampad v2 Build Guide
 </li>
 </ul>
 </li>
-<li data-nav-id=/information/ title=Information class="dd-item
-parent">
+<li data-nav-id=/information/ title=Information class=dd-item>
 <a href=/information/>
 <b>2. </b>Information
 </a>
@@ -136,9 +138,7 @@ Mechanical Switches
 Mill-Max Socket Guide
 </a>
 </li>
-<li data-nav-id=/information/razer-switches/ title="Razer Switches" class="dd-item
-parent
-active">
+<li data-nav-id=/information/razer-switches/ title="Razer Switches" class=dd-item>
 <a href=/information/razer-switches/>
 Razer Switches
 </a>
@@ -188,7 +188,7 @@ Update Pro Micro Bootloader to DFU Bootloader
 <div>
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/information/razer-switches/_index.en.md target=blank>
+<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/build-guides/christmas-tree/_index.en.md target=blank>
 <i class="fas fa-code-branch"></i>
 <span id=top-github-link-text>Edit this page</span>
 </a>
@@ -201,12 +201,27 @@ Update Pro Micro Bootloader to DFU Bootloader
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/>Documentation</a> > <a href=/information/>Information</a> > Razer Switches
+<a href=/>Documentation</a> > <a href=/build-guides/>Build Guides</a> > Christmas Tree Build Guide
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#parts-list>Parts List</a></li>
+<li><a href=#build-steps>Build Steps</a></li>
+<li><a href=#solder-resistors>Solder Resistors</a></li>
+<li><a href=#solder-transistors>Solder Transistors</a></li>
+<li><a href=#solder-capacitors>Solder Capacitors</a></li>
+<li><a href=#solder-leds>Solder LEDs</a></li>
+<li><a href=#solder-base-button>Solder Base Button</a></li>
+<li><a href=#solder-base-switch>Solder Base Switch</a></li>
+<li><a href=#solder-base-diodes>Solder Base Diodes</a></li>
+<li><a href=#solder-base-sockets>Solder Base Sockets</a></li>
+<li><a href=#solder-base-controller>Solder Base Controller</a></li>
+<li><a href=#assemble-acrylic-bottom-plate-case>Assemble Acrylic Bottom Plate Case</a></li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -215,58 +230,110 @@ Update Pro Micro Bootloader to DFU Bootloader
 </div>
 <div id=body-inner>
 <h1>
-Razer Switches
+Christmas Tree Build Guide
 </h1>
-<p><img src="./razer-switches.png?height=700px" alt></p>
-<p>Razer mechanical keyboard switches are manufactured by the folks at Kailh however, they are designed by Razer themselves. These mechanical keyboard switches are generally developed for gaming above else. Here are all the types of Razer switches available.</p>
+<h2 id=parts-list>Parts List</h2>
+<p>Here&rsquo;s a list of parts needed for the build:</p>
 <ul>
-<li>Razer Yellow – Razer’s only linear switch offering features an actuation force of 0.45 N, an actuation distance of 1.2mm and a travel distance of just 3.5mm.</li>
-<li>Razer Green – Razer’s equivalent of a blue switch in that it is both tactile and clicky, the Razer Green switches an actuation force of 0.55 N.</li>
-<li>Razer Orange – This switch is Razer’s answer to brown switches and features an actuation force of 0.55 N, the same as the Razer Greens.</li>
-<li>Razer Opto-Mechanical – Introduced in 2018, these switches are unique as they rely on not only mechanical parts but optical lasers as well. The Razer Opto-Mechanical Switches work by using infrared lasers to register each key press as opposed to the traditional metal contact points used by other mechanical keyboard switches. These switches have an actuation force of 0.45 N and a 1.5mm actuation point. Razer also rates these switches to survive up to 100 million clicks due to less moving parts involved. They are only available on Razer Huntsman keyboards.</li>
+<li>
+<p>1 x <a href=https://keebd.com/products/christmas-tree-macropad-keyboard-kit>Christmas Tree Keyboard Kit</a></p>
+<p>Kit Includes:</p>
+<ul>
+<li>2 x Tree Trunk PCBs</li>
+<li>1 x Tree Base PCB</li>
+<li>1 x Acrylic Base Plate</li>
+<li>2 x 1N4148 Diodes</li>
+<li>6 x 4.7k Resistors</li>
+<li>6 x 100R Resistors</li>
+<li>6 x 4.7uF Capacitors</li>
+<li>6 x Transistors</li>
+<li>2 x Kailh Hot Swap Sockets</li>
+<li>1 x Tactile Switch</li>
+<li>1 x Power Position Switch</li>
+<li>12 x Red LEDs</li>
+<li>12 x Green LEDs</li>
+<li>12 x Yellow LEDs</li>
+<li>4 x 6mm Screws</li>
+<li>4 x 4mm Screws</li>
+<li>4 x Brass Standoffs</li>
 </ul>
-<p>Here’s a chart of all the mechanical keyboard switches from Razer.</p>
-<table>
-<thead>
-<tr>
-<th>Switch Type</th>
-<th>Actuation Force</th>
-<th>Actuation Distance</th>
-<th>Travel Distance</th>
-<th>Characteristics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Razer Yellow</td>
-<td>0.45 N</td>
-<td>1.2mm</td>
-<td>3.5mm</td>
-<td>Linear</td>
-</tr>
-<tr>
-<td>Razer Green</td>
-<td>0.55 N</td>
-<td>2mm</td>
-<td>4mm</td>
-<td>Tactile Clicky</td>
-</tr>
-<tr>
-<td>Razer Orange</td>
-<td>0.55 N</td>
-<td>2mm</td>
-<td>4mm</td>
-<td>Tactile</td>
-</tr>
-<tr>
-<td>Razer Opto-Mechanical</td>
-<td>0.45 N</td>
-<td>1.5mm</td>
-<td>3.5mm</td>
-<td>Clicky/Linear</td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
+<p>Not included in the kit but required to complete:</p>
+<ul>
+<li>1 x <a href=https://keebd.com/collections/controllers>Pro Micro Controller</a></li>
+<li>2 x <a href=https://keebd.com/collections/switches>MX or Alps compatible keyswitches</a></li>
+</ul>
+<h2 id=build-steps>Build Steps</h2>
+<ol>
+<li>Solder Resistors</li>
+<li>Solder Transistors</li>
+<li>Solder Capacitors</li>
+<li>Solder LEDs</li>
+<li>Solder Base Button</li>
+<li>Solder Base Switch</li>
+<li>Solder Base Diodes</li>
+<li>Solder Base Sockets</li>
+<li>Solder Base Controller</li>
+<li>Assemble Acrylic Bottom Plate Case</li>
+</ol>
+<h2 id=solder-resistors>Solder Resistors</h2>
+<p>We will start by soldering the resistors to the two Tree Trunk PCBs</p>
+<div class="notices info"><p>Resisotrs can be soldered in any direction</p>
+</div>
+<p><img src="./resistors1.jpg?height=300px" alt>
+<img src="./resistors2.jpg?height=300px" alt></p>
+<h2 id=solder-transistors>Solder Transistors</h2>
+<p>Solder the Transistors to the two Tree Trunk PCBs</p>
+<div class="notices info"><p>The flat side of the transistor must face the direction of the flat line on the PCB</p>
+</div>
+<p><img src="./transistors1.jpg?height=300px" alt>
+<img src="./transistors2.jpg?height=300px" alt></p>
+<h2 id=solder-capacitors>Solder Capacitors</h2>
+<p>Solder the Capcitors to the two Tree Trunk PCBs</p>
+<div class="notices info"><p>The white line on the side of the capacitor must line up with the white line on the PCB (the square pad opposite to the pad with a plus (+) sign</p>
+</div>
+<p><img src="./capacitors1.jpg?height=300px" alt>
+<img src="./capacitors2.jpg?height=300px" alt></p>
+<h2 id=solder-leds>Solder LEDs</h2>
+<p>Now we need to slide the two Tree Trunk PCBs together. Start with the Tree Trunk PCB with the slot at the bottom and make sure the componenet side is facing you. Now slide the Tree Trunk PCB with the slot at the top up the first Tree Trunk PCB making sure the components are on the left.</p>
+<p><img src="./join1.jpg?height=300px" alt>
+<img src="./join2.jpg?height=300px" alt></p>
+<p>Now that the two Tree Trunk PCBs are together we can solder the LEDs in an alternating pattern (Red, Green, Yellow)</p>
+<div class="notices info"><p>The flat side or the short leg of the LED must be soldered into the flat/bottom side of the LED holes when looking at the tree trunks standing up</p>
+</div>
+<p><img src="./led1.jpg?height=300px" alt>
+<img src="./led2.jpg?height=300px" alt></p>
+<h2 id=solder-base-button>Solder Base Button</h2>
+<p>Now moving on to the Tree Base PCB we will start by soldering the controller reset button to the top side of the Tree Base PCB (the side with the artwork)</p>
+<p><img src="./button.jpg?height=300px" alt></p>
+<h2 id=solder-base-switch>Solder Base Switch</h2>
+<p>Now soldering the power position switch to the top side of the Tree Base PCB. This switch will control if the tree LED lights are on or off without needing to unplug the tree</p>
+<p><img src="./switch.jpg?height=300px" alt></p>
+<h2 id=solder-base-diodes>Solder Base Diodes</h2>
+<p>Solder the diodes to the top of the Tree Base PCB</p>
+<div class="notices info"><p>please note the black line on the diode must line up with the line on the PCB diode outline</p>
+</div>
+<p><img src="./diodes1.jpg?height=300px" alt>
+<img src="./diodes2.jpg?height=300px" alt></p>
+<h2 id=solder-base-sockets>Solder Base Sockets</h2>
+<p>Solder the Kailh Hot Swap switch sockets to the bottom/underside of the Tree Base PCB</p>
+<p><img src="./sockets1.jpg?height=300px" alt>
+<img src="./sockets2.jpg?height=300px" alt></p>
+<h2 id=solder-base-controller>Solder Base Controller</h2>
+<p>If you wish to socket your controller for easy replacement/upgrade later then we recommend soldering in machined female socket headers as per the pictures bellow on the bottom/underside of the Tree Base PCB</p>
+<p><img src="./headers1.jpg?height=300px" alt>
+<img src="./headers2.jpg?height=300px" alt></p>
+<p>Then proceed to socket the controller using Mill-Max pins or Machine Male headers.</p>
+<p>Alternativley you can solder the controller directly to the underside of the Tree Base PCB using the supplied header pins that came with the controller.</p>
+<h2 id=assemble-acrylic-bottom-plate-case>Assemble Acrylic Bottom Plate Case</h2>
+<p>Complete with screws, standoffs, and bottom plate.</p>
+<p><img src="./standoff.jpg/?height=300px" alt>
+<img src="./plate.jpg?height=300px" alt></p>
+<p>All Complete!</p>
+<p><img src="./complete1.jpg?height=300px" alt>
+<img src="./complete2.jpg?height=300px" alt>
+<img src="./complete3.jpg?height=300px" alt></p>
 <footer class=footline>
 </footer>
 </div>

@@ -7,18 +7,18 @@
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
 <title>Fourier v1.3 Build Guide | KEEBD</title>
-<link href=/css/nucleus.css?1663542765 rel=stylesheet>
-<link href=/css/fontawesome-all.min.css?1663542765 rel=stylesheet>
-<link href=/css/hybrid.css?1663542765 rel=stylesheet>
-<link href=/css/featherlight.min.css?1663542765 rel=stylesheet>
-<link href=/css/perfect-scrollbar.min.css?1663542765 rel=stylesheet>
-<link href=/css/auto-complete.css?1663542765 rel=stylesheet>
-<link href=/css/atom-one-dark-reasonable.css?1663542765 rel=stylesheet>
-<link href=/css/theme.css?1663542765 rel=stylesheet>
-<link href=/css/tabs.css?1663542765 rel=stylesheet>
-<link href=/css/hugo-theme.css?1663542765 rel=stylesheet>
-<link href=/css/theme-keebd.css?1663542765 rel=stylesheet>
-<script src=/js/jquery-3.3.1.min.js?1663542765></script>
+<link href=/css/nucleus.css?1663587954 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1663587954 rel=stylesheet>
+<link href=/css/hybrid.css?1663587954 rel=stylesheet>
+<link href=/css/featherlight.min.css?1663587954 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1663587954 rel=stylesheet>
+<link href=/css/auto-complete.css?1663587954 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1663587954 rel=stylesheet>
+<link href=/css/theme.css?1663587954 rel=stylesheet>
+<link href=/css/tabs.css?1663587954 rel=stylesheet>
+<link href=/css/hugo-theme.css?1663587954 rel=stylesheet>
+<link href=/css/theme-keebd.css?1663587954 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1663587954></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=/build-guides/fourier-v1.3/>
@@ -34,10 +34,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/js/lunr.min.js?1663542765></script>
-<script type=text/javascript src=/js/auto-complete.js?1663542765></script>
+<script type=text/javascript src=/js/lunr.min.js?1663587954></script>
+<script type=text/javascript src=/js/auto-complete.js?1663587954></script>
 <script type=text/javascript>var baseurl="/"</script>
-<script type=text/javascript src=/js/search.js?1663542765></script>
+<script type=text/javascript src=/js/search.js?1663587954></script>
 </div>
 <section id=homelinks>
 <ul>
@@ -54,6 +54,11 @@ parent">
 <b>1. </b>Build Guides
 </a>
 <ul>
+<li data-nav-id=/build-guides/christmas-tree/ title="Christmas Tree Build Guide" class=dd-item>
+<a href=/build-guides/christmas-tree/>
+Christmas Tree Build Guide
+</a>
+</li>
 <li data-nav-id=/build-guides/contra/ title="Contra Build Guide" class=dd-item>
 <a href=/build-guides/contra/>
 Contra Build Guide
@@ -302,7 +307,8 @@ Add some solder to the other side of the diode to ensure a good connection on bo
 <p>Install the TRRS jack.</p>
 <p><img src="./solder-reset-switch.jpg?height=700px" alt></p>
 <p>Install the reset switch and controller header pins.</p>
-<p>!> NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves.</p>
+<div class="notices info"><p>NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves.</p>
+</div>
 <p><img src="./solder-right-half.jpg?height=700px" alt></p>
 <p>Repeat the same process with the diodes, TRRS jack, reset switch and controller header pins with the right half. Note that there&rsquo;s no I2C resistor slots on this side, as they&rsquo;re only needed on one half.</p>
 <p><img src="./install-stabilizers.jpg?height=700px" alt></p>
@@ -315,7 +321,8 @@ Add some solder to the other side of the diode to ensure a good connection on bo
 <p>All the switches installed and soldered in.</p>
 <h2 id=4-solder-pro-micro>4. Solder Pro Micro</h2>
 <p>Time to install the Pro Micro now that the switches have been soldered in.</p>
-<p>!> Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)</p>
+<div class="notices info"><p>Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)</p>
+</div>
 <p><img src="./controller-mill-max.jpg?height=700px" alt></p>
 <p>If using Mill-Max pins to socket the Controller place them into the machined headers.</p>
 <p><img src="./controller.jpg?height=700px" alt></p>
@@ -363,16 +370,16 @@ Add some solder to the other side of the diode to ensure a good connection on bo
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/js/clipboard.min.js?1663542765></script>
-<script src=/js/perfect-scrollbar.min.js?1663542765></script>
-<script src=/js/perfect-scrollbar.jquery.min.js?1663542765></script>
-<script src=/js/jquery.sticky.js?1663542765></script>
-<script src=/js/featherlight.min.js?1663542765></script>
-<script src=/js/highlight.pack.js?1663542765></script>
+<script src=/js/clipboard.min.js?1663587954></script>
+<script src=/js/perfect-scrollbar.min.js?1663587954></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1663587954></script>
+<script src=/js/jquery.sticky.js?1663587954></script>
+<script src=/js/featherlight.min.js?1663587954></script>
+<script src=/js/highlight.pack.js?1663587954></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/js/modernizr.custom-3.6.0.js?1663542765></script>
-<script src=/js/learn.js?1663542765></script>
-<script src=/js/hugo-learn.js?1663542765></script>
+<script src=/js/modernizr.custom-3.6.0.js?1663587954></script>
+<script src=/js/learn.js?1663587954></script>
+<script src=/js/hugo-learn.js?1663587954></script>
 <script src=https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-236N20H7R7"></script>

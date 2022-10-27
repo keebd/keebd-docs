@@ -6,7 +6,7 @@
 <meta name=description content="Documentation">
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
-<title>Gateron Switches | KEEBD</title>
+<title>Corne Compatibility | KEEBD</title>
 <link href=/css/nucleus.css?1666848123 rel=stylesheet>
 <link href=/css/fontawesome-all.min.css?1666848123 rel=stylesheet>
 <link href=/css/hybrid.css?1666848123 rel=stylesheet>
@@ -21,12 +21,12 @@
 <script src=/js/jquery-3.3.1.min.js?1666848123></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
-<body data-url=/information/gateron-switches/>
+<body data-url=/information/corne-compatibility/>
 <nav id=sidebar>
 <div id=header-wrapper>
 <div id=header>
 <a id=logo href=/>
-<img src=/images/KEEBDlogo_Light.png alt="Gateron Switches">
+<img src=/images/KEEBDlogo_Light.png alt="Corne Compatibility">
 </a>
 </div>
 <div class=searchbox>
@@ -96,14 +96,14 @@ parent">
 Cherry MX Switches
 </a>
 </li>
-<li data-nav-id=/information/corne-compatibility/ title="Corne Compatibility" class=dd-item>
+<li data-nav-id=/information/corne-compatibility/ title="Corne Compatibility" class="dd-item
+parent
+active">
 <a href=/information/corne-compatibility/>
 Corne Compatibility
 </a>
 </li>
-<li data-nav-id=/information/gateron-switches/ title="Gateron Switches" class="dd-item
-parent
-active">
+<li data-nav-id=/information/gateron-switches/ title="Gateron Switches" class=dd-item>
 <a href=/information/gateron-switches/>
 Gateron Switches
 </a>
@@ -198,7 +198,7 @@ Update Pro Micro Bootloader to DFU Bootloader
 <div>
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/information/gateron-switches/_index.en.md target=blank>
+<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/information/corne-compatibility/_index.en.md target=blank>
 <i class="fas fa-code-branch"></i>
 <span id=top-github-link-text>Edit this page</span>
 </a>
@@ -211,20 +211,12 @@ Update Pro Micro Bootloader to DFU Bootloader
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/>Documentation</a> > <a href=/information/>Information</a> > Gateron Switches
+<a href=/>Documentation</a> > <a href=/information/>Information</a> > Corne Compatibility
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#gateron-main>Gateron Main</a></li>
-<li><a href=#gateron-silent-switches>Gateron Silent Switches</a></li>
-<li><a href=#gateron-milkmilky-switches>Gateron Milk/Milky Switches</a></li>
-<li><a href=#gateron-ink-switches>Gateron Ink Switches</a></li>
-<li><a href=#gateron-low-profile-switches>Gateron Low-Profile Switches</a></li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </div>
 </div>
 </div>
@@ -233,282 +225,104 @@ Update Pro Micro Bootloader to DFU Bootloader
 </div>
 <div id=body-inner>
 <h1>
-Gateron Switches
+Corne Compatibility
 </h1>
-<h2 id=gateron-main>Gateron Main</h2>
-<p><img src="./gateron-main-switches.png?height=700px" alt></p>
+<p>Different versions of the Corne (CRKBD) keyboard support different controllers, LEDs and switches.</p>
+<p>Here’s a chart of all the versions and the support they offer. <a href=https://docs.google.com/spreadsheets/d/1JLh0yxME6ry-PGoPHEyElbthcyuL1NXQGK774J_t8rU/edit>source</a>.</p>
 <table>
 <thead>
 <tr>
-<th>Color</th>
-<th>Type</th>
-<th>Operating Force</th>
-<th>Activation Point</th>
-<th>Noise Level</th>
+<th>Corne Version</th>
+<th>Switches</th>
+<th>Difficulty</th>
+<th>Hotswap</th>
+<th>RGB</th>
+<th>Handed PCBs</th>
+<th>Snappable to 5 Columns</th>
+<th>LED</th>
+<th>Controllers</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Clear</td>
-<td>Linear</td>
-<td>35cN</td>
-<td>2mm</td>
-<td>Low</td>
+<td>Classic</td>
+<td>MX/Alps/Choc v1</td>
+<td>Hard</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Mini Only</td>
+<td>Pro Micro</td>
 </tr>
 <tr>
-<td>Red</td>
-<td>Linear</td>
-<td>45cN</td>
-<td>2mm</td>
-<td>Low</td>
+<td>Cherry v2.1</td>
+<td>MX</td>
+<td>Hard</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Mini Only</td>
+<td>Pro Micro</td>
 </tr>
 <tr>
-<td>Yellow</td>
-<td>Linear</td>
-<td>50cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Black</td>
-<td>Linear</td>
-<td>60cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Blue</td>
-<td>Clicky</td>
-<td>60cN</td>
-<td>2.3mm</td>
-<td>Loud</td>
-</tr>
-<tr>
-<td>Green</td>
-<td>Clicky</td>
-<td>80cN</td>
-<td>2.4mm</td>
-<td>Loud</td>
-</tr>
-<tr>
-<td>Brown</td>
-<td>Tactile</td>
-<td>55cN</td>
-<td>2mm</td>
+<td>Cherry v3</td>
+<td>MX</td>
 <td>Medium</td>
-</tr>
-</tbody>
-</table>
-<p>The main Gateron switch lineup consists of the typical switches: Red, Blue, Brown, etc.</p>
-<p>All of the switches in this classification are considered “clones” since they mirror the design of the Cherry MX switch and use the same descriptive names where the colors represent the actuation type and spring force.</p>
-<p>The only switch that differs slightly is the Gateron Clear switch which is totally different from the Cherry MX Clear. Instead of being a heavy tactile, the Gateron Clear is a super-light linear switch.</p>
-<p>While being Cherry MX clones, Gateron’s main switch lineup does differ slightly from Cherry MX. Gateron switches are typically smoother due to a slightly smaller stem which can make using a Gateron linear switch much more enjoyable than a Cherry MX one.</p>
-<h2 id=gateron-silent-switches>Gateron Silent Switches</h2>
-<p><img src="./gateron-silent-switches.png?height=700px" alt></p>
-<table>
-<thead>
-<tr>
-<th>Color</th>
-<th>Type</th>
-<th>Operating Force</th>
-<th>Activation Point</th>
-<th>Noise Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Silent Clear</td>
-<td>Linear</td>
-<td>35cN</td>
-<td>2mm</td>
-<td>Silent</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Mini-E/WS2812</td>
+<td>Pro Micro</td>
 </tr>
 <tr>
-<td>Silent Red</td>
-<td>Linear</td>
-<td>45cN</td>
-<td>2mm</td>
-<td>Silent</td>
+<td>Chocolate</td>
+<td>Choc v1</td>
+<td>Hard</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Mini Only</td>
+<td>Pro Micro</td>
 </tr>
 <tr>
-<td>Silent Yellow</td>
-<td>Linear</td>
-<td>50cN</td>
-<td>2mm</td>
-<td>Silent</td>
-</tr>
-<tr>
-<td>Silent Black</td>
-<td>Linear</td>
-<td>60cN</td>
-<td>2mm</td>
-<td>Silent</td>
-</tr>
-<tr>
-<td>Silent Brown</td>
-<td>Tactile</td>
-<td>45cN</td>
-<td>2mm</td>
-<td>Silent</td>
-</tr>
-</tbody>
-</table>
-<p>A silent switch is different from a normal switch because the stem has small rubber padding on the top and bottom, so the sound is dampened when striking and bouncing back.</p>
-<h2 id=gateron-milkmilky-switches>Gateron Milk/Milky Switches</h2>
-<p><img src="./gateron-milky-switches.png?height=700px" alt></p>
-<table>
-<thead>
-<tr>
-<th>Color</th>
-<th>Type</th>
-<th>Operating Force</th>
-<th>Activation Point</th>
-<th>Noise Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Milk Clear</td>
-<td>Linear</td>
-<td>35cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Milk Red</td>
-<td>Linear</td>
-<td>45cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Milk Yellow</td>
-<td>Linear</td>
-<td>50cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Milk Black</td>
-<td>Linear</td>
-<td>60cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Milk Blue</td>
-<td>Clicky</td>
-<td>60cN</td>
-<td>2.3mm</td>
-<td>Loud</td>
-</tr>
-<tr>
-<td>Milk Green</td>
-<td>Clicky</td>
-<td>80cN</td>
-<td>2.4mm</td>
-<td>Loud</td>
-</tr>
-<tr>
-<td>Milk Brown</td>
-<td>Tactile</td>
-<td>55cN</td>
-<td>2mm</td>
+<td>Boardsource LP</td>
+<td>Choc v1</td>
 <td>Medium</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Mini-E/WS2812</td>
+<td>Pro Micro</td>
+</tr>
+<tr>
+<td>Light</td>
+<td>MX/Alps/Choc v1/Choc v2</td>
+<td>Easy</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+<td>Pro Micro</td>
+</tr>
+<tr>
+<td>R2G</td>
+<td>MX</td>
+<td>Effortless</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Mini-E/WS2812</td>
+<td>On the PCB &ldquo;PCBA&rdquo;</td>
 </tr>
 </tbody>
 </table>
-<p>Gateron Milk switches are pretty interesting. They are very similar to normal Gateron switches except they come with a different housing design. Instead of the typical clear top housing and black bottom housing, the milk switches come with a “milky” tinted housing that help diffuse the RGB lights.</p>
-<h2 id=gateron-ink-switches>Gateron Ink Switches</h2>
-<p><img src="./gateron-ink-switches.png?height=700px" alt></p>
-<table>
-<thead>
-<tr>
-<th>Color</th>
-<th>Type</th>
-<th>Operating Force</th>
-<th>Activation Point</th>
-<th>Noise Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ink Red</td>
-<td>Linear</td>
-<td>45cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Ink Yellow</td>
-<td>Linear</td>
-<td>50cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Ink Black</td>
-<td>Linear</td>
-<td>60cN</td>
-<td>2mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Ink Blue</td>
-<td>Clicky</td>
-<td>60cN</td>
-<td>2.3mm</td>
-<td>Loud</td>
-</tr>
-<tr>
-<td>Silent Ink Black</td>
-<td>Linear</td>
-<td>60cN</td>
-<td>2mm</td>
-<td>Silent</td>
-</tr>
-</tbody>
-</table>
-<p>Gateron Ink switches are a bit different from the normal Gateron switch, they are what we would consider Gateron’s “premium switch” due to the higher price point.</p>
-<p>The hallmark differences of the Ink switches are the clear smoky housing, different plastic material, lower pitch sound, and smoother feel.</p>
-<p>The smoky housing is what gives the Ink’s their name, both the lower and upper housing are the same colors depending on what type of switch you use.</p>
-<h2 id=gateron-low-profile-switches>Gateron Low-Profile Switches</h2>
-<p><img src="./gateron-low-profile-switches.png?height=700px" alt></p>
-<table>
-<thead>
-<tr>
-<th>Color</th>
-<th>Type</th>
-<th>Operating Force</th>
-<th>Activation Point</th>
-<th>Noise Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Low-Profile Red</td>
-<td>Linear</td>
-<td>45cN</td>
-<td>1.5mm</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Low-Profile Brown</td>
-<td>Tactile</td>
-<td>55cN</td>
-<td>1.5mm</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>Low-Profile Blue</td>
-<td>Clicky</td>
-<td>50cN</td>
-<td>1.5mm</td>
-<td>Loud</td>
-</tr>
-</tbody>
-</table>
-<p>Gateron low profile switches have a completely different design than a normal switch. Gateron low-profile switches have a different shaped stem and a much short actuation and travel distance.</p>
 <footer class=footline>
 </footer>
 </div>

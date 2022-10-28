@@ -139,7 +139,7 @@ Alternativley you can solder the controller directly to the underside of the Tre
 
 Complete with screws, standoffs, and bottom plate.
 
-![](./standoff.jpg/?height=300px)
+![](./standoff.jpg?height=300px)
 ![](./plate.jpg?height=300px)
 
 

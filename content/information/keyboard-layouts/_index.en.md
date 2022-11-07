@@ -5,12 +5,12 @@ title: Keyboard Layouts
 ## ISO vs ANSI
 ![ISO vs ANSI](ISO-ANSI.png)
 
-## 100% ANSI Layout
+## 100% ANSI
 > Full-size keyboards come with the traditional modifiers, arrow keys, and numpad.
 
 ![ANSI Layout](ANSI104.jpg)
 
-## 100% ISO Layout
+## 100% ISO
 ![ISO Layout](ISO105.jpg)
 
 ## TKL (Tenkeyless)
@@ -18,24 +18,23 @@ title: Keyboard Layouts
 
 ![TKL Layout](TKL.png)
 
-## 9800 Layout
-![9800 Layout](9800.png)
-
-## 1800 Layout
-> This full-size layout is a bit more compact than its standard counterpart—the navigation cluster has moved to sit above the numpad, allowing the clusters to shift a bit closer together.
+## 1800
+> Traditional 1800 - These will have blockers between arrow cluster, numpad, and/or navigation cluster.
 
 ![1800 Layout](1800.png)
 
-## 96-Key Layout
-![96-Key Layout](96KEY.png)
+## 96% ANSI
+> 96% or 96 - This a compact layout that often have 96-98 key there are no blockers between the arrow cluster, numpad and function rows
 
-## 75% ANSI Layout
+![96% ANSI Layout](96ANSI.png)
+
+## 75% ANSI
 > 75% boards compact the keys tightly together, fitting nearly as many keys as a TKL.
 > AKA: a 65% with a function row
 
 ![75% ANSI Layout](ANSI75.png)
 
-## 65% Layout
+## 65% ANSI
 > A 65% has alphas, modifiers, and an extra right column to accommodate arrow keys. 
 > AKA: a 75% without the function row or a 60% with arrow keys.
 
@@ -51,7 +50,7 @@ title: Keyboard Layouts
 
 ![60% ISO Layout](ISO60.jpg)
 
-## 40% Layout
+## 40% ANSI
 > 40% boards contain alphas—with no number row—and some modifiers. They rely on programmed layers for functionality.
 
 ![40% ANSI Layout](ANSI40.png)

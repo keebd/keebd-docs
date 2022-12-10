@@ -7,18 +7,18 @@
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
 <title>Firmware | KEEBD</title>
-<link href=/css/nucleus.css?1669231063 rel=stylesheet>
-<link href=/css/fontawesome-all.min.css?1669231063 rel=stylesheet>
-<link href=/css/hybrid.css?1669231063 rel=stylesheet>
-<link href=/css/featherlight.min.css?1669231063 rel=stylesheet>
-<link href=/css/perfect-scrollbar.min.css?1669231063 rel=stylesheet>
-<link href=/css/auto-complete.css?1669231063 rel=stylesheet>
-<link href=/css/atom-one-dark-reasonable.css?1669231063 rel=stylesheet>
-<link href=/css/theme.css?1669231063 rel=stylesheet>
-<link href=/css/tabs.css?1669231063 rel=stylesheet>
-<link href=/css/hugo-theme.css?1669231063 rel=stylesheet>
-<link href=/css/theme-keebd.css?1669231063 rel=stylesheet>
-<script src=/js/jquery-3.3.1.min.js?1669231063></script>
+<link href=/css/nucleus.css?1670658816 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1670658816 rel=stylesheet>
+<link href=/css/hybrid.css?1670658816 rel=stylesheet>
+<link href=/css/featherlight.min.css?1670658816 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1670658816 rel=stylesheet>
+<link href=/css/auto-complete.css?1670658816 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1670658816 rel=stylesheet>
+<link href=/css/theme.css?1670658816 rel=stylesheet>
+<link href=/css/tabs.css?1670658816 rel=stylesheet>
+<link href=/css/hugo-theme.css?1670658816 rel=stylesheet>
+<link href=/css/theme-keebd.css?1670658816 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1670658816></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=/firmware/>
@@ -34,10 +34,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/js/lunr.min.js?1669231063></script>
-<script type=text/javascript src=/js/auto-complete.js?1669231063></script>
+<script type=text/javascript src=/js/lunr.min.js?1670658816></script>
+<script type=text/javascript src=/js/auto-complete.js?1670658816></script>
 <script type=text/javascript>var baseurl="/"</script>
-<script type=text/javascript src=/js/search.js?1669231063></script>
+<script type=text/javascript src=/js/search.js?1670658816></script>
 </div>
 <section id=homelinks>
 <ul>
@@ -230,9 +230,10 @@ Firmware
 <thead>
 <tr>
 <th>PCB Name</th>
-<th>Atmega32u4 (ProMicro)</th>
-<th>RP2040 (Splinky)</th>
+<th>QMK Atmega32u4 (ProMicro)</th>
+<th>QMK RP2040 (Splinky)</th>
 <th>ZMK (nice!nano)</th>
+<th>QMK STM32F4*1 (Blackpill)</th>
 </tr>
 </thead>
 <tbody>
@@ -241,17 +242,27 @@ Firmware
 <td><a href=./bm60v2_poker_via.hex>VIA Firmware</a><a href=./bm60v2_poker_via.json>VIA Layout</a></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>BM65 v2 RGB</td>
 <td><a href=./bm65v2_via.hex>VIA Firmware</a><a href=./bm65v2_via.json>VIA Layout</a></td>
 <td></td>
 <td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cantor / Cantor Remix</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href=./cantor_default_legacy_wear.bin>Default Firmware</a></td>
 </tr>
 <tr>
 <td>Contra</td>
 <td><a href=./contra_default.hex>Default Firmware</a><a href=./contra_via.hex>VIA Firmware</a></td>
 <td><a href=./contra_default_promicro_rp2040.uf2>Default Firmware</a><a href=./contra_via_promicro_rp2040.uf2>VIA Firmware</a></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -259,10 +270,12 @@ Firmware
 <td><a href=./crkbd_rev1_default.hex>Default Firmware</a><a href=./crkbd_rev1_via.hex>VIA Firmware</a><a href=./crkbd_rev1_via.json>VIA Layout</a></td>
 <td><a href=./crkbd_rev1_default_promicro_rp2040.uf2>Default Firmware</a></td>
 <td><a href=corne-firmware.zip>Default Firmware</a></td>
+<td></td>
 </tr>
 <tr>
 <td>Discipad</td>
 <td><a href=./discipad_via.hex>VIA Firmware</a></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -271,11 +284,13 @@ Firmware
 <td><a href=./dumbpad_v1x_oled_default.hex>Default Firmware</a><a href=./dumbpad_v1x_oled_via.hex>VIA Firmware</a></td>
 <td><a href=./dumbpad_v1x_oled_default_promicro_rp2040.uf2>Default Firmware</a><a href=./dumbpad_v1x_oled_via_promicro_rp2040.uf2>VIA Firmware</a></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>ErgoDash</td>
 <td><a href=./omkbd_ergodash_rev1_default.hex>Default Firmware</a></td>
 <td><a href=./omkbd_ergodash_rev1_default_promicro_rp2040.uf2>Default Firmware</a></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -283,16 +298,19 @@ Firmware
 <td><a href=./omkbd_ergodash_mini_default.hex>Default Firmware</a></td>
 <td><a href=./omkbd_ergodash_mini_default_promicro_rp2040.uf2>Default Firmware</a></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Eternal Keypad</td>
 <td><a href=./eternal_keypad_default.hex>Default Firmware</a><a href=./eternal_keypad_lefty.hex>Lefty Firmware</a><a href=./eternal_keypad_lefty.hex>VIA Firmware</a></td>
 <td><a href=./eternal_keypad_default_promicro_rp2040.uf2>Default Firmware</a><a href=./eternal_keypad_lefty_promicro_rp2040.uf2>Lefty Firmware</a><a href=./eternal_keypad_via_promicro_rp2040.uf2>VIA Firmware</a></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Fourier v1.3 (KEEBD)</td>
 <td><a href=./keebd_fourier_default.hex>Default Firmware</a></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -301,16 +319,19 @@ Firmware
 <td><a href=./keebd_tree_default.hex>Default Firmware</a></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Lily58 Pro / Pro RE</td>
 <td><a href=./lily58_rev1_default.hex>Default Firmware</a><a href=./lily58_rev1_via.hex>VIA Firmware</a></td>
 <td><a href=./lily58_rev1_default_promicro_rp2040.uf2>Default Firmware</a><a href=./lily58_rev1_via_promicro_rp2040.uf2>VIA Firmware</a></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Model H</td>
 <td><a href=./modelh_default.bin>Default Firmware</a></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -319,10 +340,12 @@ Firmware
 <td><a href=./ardux_thepaintbrush_right.hex>Righty Firmware</a><a href=./ardux_thepaintbrush_left.hex>Lefty Firmware</a></td>
 <td><a href=./ardux_thepaintbrush_right_promicro_rp2040.uf2>Righty Firmware</a><a href=./ardux_thepaintbrush_left_promicro_rp2040.uf2>Lefty Firmware</a></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Pee-Two</td>
 <td><a href=./pee-two_vial.hex>VIAL Firmware</a></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -331,11 +354,13 @@ Firmware
 <td><a href=./rhymestone_rev1_default.hex>Default Firmware</a><a href=./rhymestone_rev1_via.hex>VIA Firmware</a><a href=./rhymestone_rev1.via.json>VIA Layout</a></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Satpad</td>
 <td><a href=./satpad_default.hex>Default Firmware</a></td>
 <td><a href=./satpad_default_promicro_rp2040.uf2>Default Firmware</a></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -343,10 +368,12 @@ Firmware
 <td></td>
 <td></td>
 <td><a href=sofle-firmware.zip>Default Firmware</a></td>
+<td></td>
 </tr>
 <tr>
 <td>Treadstone48 (Rev1)</td>
 <td><a href=./treadstone48_rev1_default.hex>Default Firmware</a><a href=./treadstone48_rev1_via.hex>VIA Firmware</a><a href=./treadstone48_rev1_via.json>VIA Layout</a></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -362,16 +389,16 @@ Firmware
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/js/clipboard.min.js?1669231063></script>
-<script src=/js/perfect-scrollbar.min.js?1669231063></script>
-<script src=/js/perfect-scrollbar.jquery.min.js?1669231063></script>
-<script src=/js/jquery.sticky.js?1669231063></script>
-<script src=/js/featherlight.min.js?1669231063></script>
-<script src=/js/highlight.pack.js?1669231063></script>
+<script src=/js/clipboard.min.js?1670658816></script>
+<script src=/js/perfect-scrollbar.min.js?1670658816></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1670658816></script>
+<script src=/js/jquery.sticky.js?1670658816></script>
+<script src=/js/featherlight.min.js?1670658816></script>
+<script src=/js/highlight.pack.js?1670658816></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/js/modernizr.custom-3.6.0.js?1669231063></script>
-<script src=/js/learn.js?1669231063></script>
-<script src=/js/hugo-learn.js?1669231063></script>
+<script src=/js/modernizr.custom-3.6.0.js?1670658816></script>
+<script src=/js/learn.js?1670658816></script>
+<script src=/js/hugo-learn.js?1670658816></script>
 <script src=https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-236N20H7R7"></script>

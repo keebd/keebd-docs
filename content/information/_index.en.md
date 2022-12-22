@@ -1,7 +1,7 @@
 ---
 title: Information
 weight: 6
-pre: "<b>2. </b>"
+pre: "<i class='fa fa-info-circle'></i> "
 chapter: false
 ---
 

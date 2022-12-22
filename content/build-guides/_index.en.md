@@ -1,7 +1,7 @@
 ---
 title: Build Guides
 weight: 5
-pre: "<b>1. </b>"
+pre: "<i class='fa fa-book'></i> "
 chapter: false
 ---
 

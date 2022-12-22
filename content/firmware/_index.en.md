@@ -1,7 +1,7 @@
 ---
 title: Firmware
-weight: 7
-pre: "<b>3. </b>"
+weight: 8
+pre: "<i class='far fa-file-code'></i> "
 chapter: false
 ---
 

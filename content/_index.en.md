@@ -22,6 +22,10 @@ You will need to change the `username` to be your username.
 ```
 git clone https://github.com/username/keebd-docs
 ```
+Initalize submodules for the them
+```
+git submodule update --init
+```
 
 ### Commit Changes
 ```

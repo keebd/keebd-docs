@@ -29,7 +29,7 @@ Before soldering the controller onto your pcb, you may want to test that you sol
 
 If you are concerned that you may have incorrectly soldered the jumpers on the back of the stemcell, you can use this firmware to test.
 
-Download the [testing firmware]("./stemcell_jumper_tester_default.uf2")
+Download the [testing firmware](stemcell_jumper_tester_default.uf2)
 
 - Load it onto your stemcell
 - Short the pins shown in the image below

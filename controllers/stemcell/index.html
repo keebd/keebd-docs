@@ -6,7 +6,7 @@
 <meta name=description content="Documentation">
 <meta name=author content="KEEBD">
 <link rel=icon href=/images/favicon.png type=image/png>
-<title>Christmas Tree Build Guide | KEEBD</title>
+<title>STeMcell | KEEBD</title>
 <link href=/css/nucleus.css?1699734549 rel=stylesheet>
 <link href=/css/fontawesome-all.min.css?1699734549 rel=stylesheet>
 <link href=/css/hybrid.css?1699734549 rel=stylesheet>
@@ -21,12 +21,12 @@
 <script src=/js/jquery-3.3.1.min.js?1699734549></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
-<body data-url=/build-guides/christmas-tree/>
+<body data-url=/controllers/stemcell/>
 <nav id=sidebar>
 <div id=header-wrapper>
 <div id=header>
 <a id=logo href=/>
-<img src=/images/KEEBDlogo_Light.png alt="Christmas Tree Build Guide">
+<img src=/images/KEEBDlogo_Light.png alt=STeMcell>
 </a>
 </div>
 <div class=searchbox>
@@ -48,15 +48,12 @@
 </section>
 <div class=highlightable>
 <ul class=topics>
-<li data-nav-id=/build-guides/ title="Build Guides" class="dd-item
-parent">
+<li data-nav-id=/build-guides/ title="Build Guides" class=dd-item>
 <a href=/build-guides/>
 <i class="fa fa-book"></i> Build Guides
 </a>
 <ul>
-<li data-nav-id=/build-guides/christmas-tree/ title="Christmas Tree Build Guide" class="dd-item
-parent
-active">
+<li data-nav-id=/build-guides/christmas-tree/ title="Christmas Tree Build Guide" class=dd-item>
 <a href=/build-guides/christmas-tree/>
 Christmas Tree Build Guide
 </a>
@@ -160,7 +157,8 @@ Update Pro Micro Bootloader to DFU Bootloader
 </li>
 </ul>
 </li>
-<li data-nav-id=/controllers/ title=Controllers class=dd-item>
+<li data-nav-id=/controllers/ title=Controllers class="dd-item
+parent">
 <a href=/controllers/>
 <i class="fab fa-usb"></i> Controllers
 </a>
@@ -170,7 +168,9 @@ Update Pro Micro Bootloader to DFU Bootloader
 Splinky
 </a>
 </li>
-<li data-nav-id=/controllers/stemcell/ title=STeMcell class=dd-item>
+<li data-nav-id=/controllers/stemcell/ title=STeMcell class="dd-item
+parent
+active">
 <a href=/controllers/stemcell/>
 STeMcell
 </a>
@@ -215,7 +215,7 @@ STeMcell
 <div>
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/build-guides/christmas-tree/_index.en.md target=blank>
+<a class=github-link title="Edit this page" href=https://github.com/keebd/keebd-docs/edit/main/content/controllers/stemcell/_index.en.md target=blank>
 <i class="fas fa-code-branch"></i>
 <span id=top-github-link-text>Edit this page</span>
 </a>
@@ -228,25 +228,20 @@ STeMcell
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/>Documentation</a> > <a href=/build-guides/>Build Guides</a> > Christmas Tree Build Guide
+<a href=/>Documentation</a> > <a href=/controllers/>Controllers</a> > STeMcell
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#parts-list>Parts List</a></li>
-<li><a href=#build-steps>Build Steps</a></li>
-<li><a href=#solder-resistors>Solder Resistors</a></li>
-<li><a href=#solder-transistors>Solder Transistors</a></li>
-<li><a href=#solder-capacitors>Solder Capacitors</a></li>
-<li><a href=#solder-leds>Solder LEDs</a></li>
-<li><a href=#solder-base-button>Solder Base Button</a></li>
-<li><a href=#solder-base-switch>Solder Base Switch</a></li>
-<li><a href=#solder-base-diodes>Solder Base Diodes</a></li>
-<li><a href=#solder-base-sockets>Solder Base Sockets</a></li>
-<li><a href=#solder-base-controller>Solder Base Controller</a></li>
-<li><a href=#assemble-acrylic-bottom-plate-case>Assemble Acrylic Bottom Plate Case</a></li>
+<li>
+<ul>
+<li><a href=#flashing>Flashing</a></li>
+<li><a href=#soldering>Soldering</a></li>
+<li><a href=#testing>Testing</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -257,110 +252,32 @@ STeMcell
 </div>
 <div id=body-inner>
 <h1>
-Christmas Tree Build Guide
+STeMcell
 </h1>
-<h2 id=parts-list>Parts List</h2>
-<p>Here&rsquo;s a list of parts needed for the build:</p>
+<h3 id=flashing>Flashing</h3>
+<h4 id=resetting-the-controller-for-flashing>Resetting the controller for flashing</h4>
+<p>You have a few options for putting the STeMcell into flashing mode</p>
 <ul>
-<li>
-<p>1 x <a href=https://keebd.com/products/christmas-tree-macropad-keyboard-kit>Christmas Tree Keyboard Kit</a></p>
-<p>Kit Includes:</p>
+<li>Short RST and GND pins on the controller itself</li>
+<li>Double tap the physical reset switch on the keyboard pcb itself</li>
+<li>Use the QMK reset keycode</li>
+</ul>
+<h4 id=flashing-the-firmware-itself>Flashing the firmware itself</h4>
+<p>Given this is using the tinyuf2 bootloader, flashing is VERY simple. When you go into flashing mode, a window will pop up on your machine (like putting a USB drive into your machine). All you need to do is copy the .uf2 file into the root directory, and you&rsquo;re done!</p>
+<h3 id=soldering>Soldering</h3>
+<h4 id=stemcell-jumpers>STeMcell Jumpers</h4>
+<p>The first thing you should do is solder the jumpers on the back of the STeMcell, as shown in the image below.</p>
+<p><img src="stemcell-jumpers.jpg?height=300px" alt="STeMcell jumpers"></p>
+<h3 id=testing>Testing</h3>
+<p>Before soldering the controller onto your pcb, you may want to test that you soldered the jumpers correctly.</p>
+<p>If you are concerned that you may have incorrectly soldered the jumpers on the back of the stemcell, you can use this firmware to test.</p>
+<p>Download the <a href=%22./stemcell_jumper_tester_default.uf2%22>testing firmware</a></p>
 <ul>
-<li>2 x Tree Trunk PCBs</li>
-<li>1 x Tree Base PCB</li>
-<li>1 x Acrylic Base Plate</li>
-<li>2 x 1N4148 Diodes</li>
-<li>6 x 4.7k Resistors</li>
-<li>6 x 100R Resistors</li>
-<li>6 x 4.7uF Capacitors</li>
-<li>6 x Transistors</li>
-<li>2 x Kailh Hot Swap Sockets</li>
-<li>1 x Tactile Switch</li>
-<li>1 x Power Position Switch</li>
-<li>12 x Red LEDs</li>
-<li>12 x Green LEDs</li>
-<li>12 x Yellow LEDs</li>
-<li>4 x 6mm Screws</li>
-<li>4 x 4mm Screws</li>
-<li>4 x Brass Standoffs</li>
+<li>Load it onto your stemcell</li>
+<li>Short the pins shown in the image below</li>
 </ul>
-</li>
-</ul>
-<p>Not included in the kit but required to complete:</p>
-<ul>
-<li>1 x <a href=https://keebd.com/collections/controllers>Pro Micro Controller</a></li>
-<li>2 x <a href=https://keebd.com/collections/switches>MX or Alps compatible keyswitches</a></li>
-</ul>
-<h2 id=build-steps>Build Steps</h2>
-<ol>
-<li>Solder Resistors</li>
-<li>Solder Transistors</li>
-<li>Solder Capacitors</li>
-<li>Solder LEDs</li>
-<li>Solder Base Button</li>
-<li>Solder Base Switch</li>
-<li>Solder Base Diodes</li>
-<li>Solder Base Sockets</li>
-<li>Solder Base Controller</li>
-<li>Assemble Acrylic Bottom Plate Case</li>
-</ol>
-<h2 id=solder-resistors>Solder Resistors</h2>
-<p>We will start by soldering the resistors to the two Tree Trunk PCBs</p>
-<div class="notices info"><p>Resisotrs can be soldered in any direction</p>
-</div>
-<p><img src="./resistors1.jpg?height=300px" alt>
-<img src="./resistors2.jpg?height=300px" alt></p>
-<h2 id=solder-transistors>Solder Transistors</h2>
-<p>Solder the Transistors to the two Tree Trunk PCBs</p>
-<div class="notices info"><p>The flat side of the transistor must face the direction of the flat line on the PCB</p>
-</div>
-<p><img src="./transistors1.jpg?height=300px" alt>
-<img src="./transistors2.jpg?height=300px" alt></p>
-<h2 id=solder-capacitors>Solder Capacitors</h2>
-<p>Solder the Capcitors to the two Tree Trunk PCBs</p>
-<div class="notices info"><p>The white line on the side of the capacitor must line up with the white line on the PCB (the square pad opposite to the pad with a plus (+) sign</p>
-</div>
-<p><img src="./capacitors1.jpg?height=300px" alt>
-<img src="./capacitors2.jpg?height=300px" alt></p>
-<h2 id=solder-leds>Solder LEDs</h2>
-<p>Now we need to slide the two Tree Trunk PCBs together. Start with the Tree Trunk PCB with the slot at the bottom and make sure the componenet side is facing you. Now slide the Tree Trunk PCB with the slot at the top up the first Tree Trunk PCB making sure the components are on the left.</p>
-<p><img src="./join1.jpg?height=300px" alt>
-<img src="./join2.jpg?height=300px" alt></p>
-<p>Now that the two Tree Trunk PCBs are together we can solder the LEDs in an alternating pattern (Red, Green, Yellow)</p>
-<div class="notices info"><p>The flat side or the short leg of the LED must be soldered into the flat/bottom side of the LED holes when looking at the tree trunks standing up</p>
-</div>
-<p><img src="./led1.jpg?height=300px" alt>
-<img src="./led2.jpg?height=300px" alt></p>
-<h2 id=solder-base-button>Solder Base Button</h2>
-<p>Now moving on to the Tree Base PCB we will start by soldering the controller reset button to the top side of the Tree Base PCB (the side with the artwork)</p>
-<p><img src="./button.jpg?height=300px" alt></p>
-<h2 id=solder-base-switch>Solder Base Switch</h2>
-<p>Now soldering the power position switch to the top side of the Tree Base PCB. This switch will control if the tree LED lights are on or off without needing to unplug the tree</p>
-<p><img src="./switch.jpg?height=300px" alt></p>
-<h2 id=solder-base-diodes>Solder Base Diodes</h2>
-<p>Solder the diodes to the top of the Tree Base PCB</p>
-<div class="notices info"><p>please note the black line on the diode must line up with the line on the PCB diode outline</p>
-</div>
-<p><img src="./diodes1.jpg?height=300px" alt>
-<img src="./diodes2.jpg?height=300px" alt></p>
-<h2 id=solder-base-sockets>Solder Base Sockets</h2>
-<p>Solder the Kailh Hot Swap switch sockets to the bottom/underside of the Tree Base PCB</p>
-<p><img src="./sockets1.jpg?height=300px" alt>
-<img src="./sockets2.jpg?height=300px" alt></p>
-<h2 id=solder-base-controller>Solder Base Controller</h2>
-<p>If you wish to socket your controller for easy replacement/upgrade later then we recommend soldering in machined female socket headers as per the pictures bellow on the bottom/underside of the Tree Base PCB</p>
-<p><img src="./headers1.jpg?height=300px" alt>
-<img src="./headers2.jpg?height=300px" alt></p>
-<p>Then proceed to socket the controller using Mill-Max pins or Machine Male headers.</p>
-<p>Alternativley you can solder the controller directly to the underside of the Tree Base PCB using the supplied header pins that came with the controller.</p>
-<h2 id=assemble-acrylic-bottom-plate-case>Assemble Acrylic Bottom Plate Case</h2>
-<p>Complete with screws, standoffs, and bottom plate.</p>
-<p><img src="./standoff.jpg?height=300px" alt>
-<img src="./plate.jpg?height=300px" alt></p>
-<p>All Complete!</p>
-<p><img src="./complete1.jpg?height=300px" alt>
-<img src="./complete2.jpg?height=300px" alt>
-<img src="./complete3.jpg?height=300px" alt></p>
+<p>If it outputs what is expected, you did it!</p>
+<p><img src="short_guide.png?height=300px" alt="STeMcell short guide"></p>
 <footer class=footline>
 </footer>
 </div>

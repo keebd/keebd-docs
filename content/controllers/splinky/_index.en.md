@@ -1,5 +1,0 @@
----
-title: Splinky
----
-
-Splinky controller

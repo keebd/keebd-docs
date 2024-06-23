@@ -1,0 +1,207 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+ /*
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+ 
+ /* You can override the default Infima variables here. */
+ :root {
+   --ifm-code-font-size: 95%;
+   --ifm-font-family-base: 'Inter', sans-serif;
+   --ifm-heading-font-family: 'Inter', sans-serif;
+   --ifm-color-primary: hsl(151, 55%, 45%);
+   --ifm-color-primary-dark: hsl(151, 55%, 41%);
+   --ifm-color-primary-darker: hsl(151, 55%, 38%);
+   --ifm-color-primary-darkest: hsl(151, 55%, 32%);
+   --ifm-color-primary-light: hsl(151, 55%, 50%);
+   --ifm-color-primary-lighter: hsl(151, 55%, 52%);
+   --ifm-color-primary-lightest: hsl(151, 55%, 59%);
+   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+ }
+
+ @media (min-width: 1616px) {
+	.main-wrapper {
+		align-self: center;
+		max-width: 1600px;
+		width: 1600px;
+	}
+}
+
+.navbar .navbar__inner {
+    margin: 0 auto;
+    max-width: 1560px;
+}
+
+.navbar__title {
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+}
+
+ .footer {
+   --ifm-footer-background-color: #37474f !important;
+ }
+ 
+ /* For readability concerns, you should choose a lighter palette in dark mode. */
+ [data-theme='dark'] {
+  --ifm-color-primary: hsl(151, 55%, 45%);
+  --ifm-color-primary-dark: hsl(151, 55%, 41%);
+  --ifm-color-primary-darker: hsl(151, 55%, 38%);
+  --ifm-color-primary-darkest: hsl(151, 55%, 32%);
+  --ifm-color-primary-light: hsl(151, 55%, 50%);
+  --ifm-color-primary-lighter: hsl(151, 55%, 52%);
+  --ifm-color-primary-lightest: hsl(151, 55%, 59%);
+  --ifm-background-color: hsl(0, 0%, 19%) !important;
+  --ifm-navbar-background-color: hsl(0, 0%, 19%) !important;
+  --ifm-card-background-color: hsl(0, 0%, 15%) !important;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+ }
+
+ [data-theme=dark] .header-shop-link:before {
+   background: url('/img/shop-dark.svg') no-repeat;
+ }
+ 
+ .header-shop-link:before {
+   background: url('/img/shop.svg') no-repeat;
+   content: "";
+   display: flex;
+   height: 20px;
+   width: 22px;
+ }
+ 
+ [data-theme=dark] .header-discord-link:before {
+   background: url('/img/discord-dark.svg') no-repeat;
+ }
+ 
+ .header-discord-link:before {
+   background: url('/img/discord.svg') no-repeat;
+   content: "";
+   display: flex;
+   height: 19px;
+   width: 24px;
+ }
+ 
+ [data-theme=dark] .header-facebook-link:before {
+  background: url('/img/facebook-dark.svg') no-repeat;
+ }
+
+ .header-facebook-link:before {
+  background: url('/img/facebook.svg') no-repeat;
+  content: "";
+  display: flex;
+  height: 19px;
+  width: 24px;
+ }
+
+ [data-theme=dark] .header-instagram-link:before {
+  background: url('/img/instagram-dark.svg') no-repeat;
+ }
+
+ .header-instagram-link:before {
+  background: url('/img/instagram.svg') no-repeat;
+  content: "";
+  display: flex;
+  height: 19px;
+  width: 24px;
+ }
+
+ .tooltip-header {
+   position: relative;
+ }
+ 
+ .tooltip-header::after {
+   background-color: #ffffff;
+   border-radius: 10px;
+   padding: 10px 15px;
+   visibility: hidden;
+   position: absolute;
+   text-align: center;
+   z-index: 999;
+   content: attr(data-tooltip);
+   bottom: 0;
+   left: 50%;
+   transform: translate(-50%, calc(100% + 10px));
+   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+   opacity: 0;
+   transition: opacity 0.2s 0.5s ease;
+ }
+ 
+ [data-theme=dark] .tooltip-header::after {
+   background-color: #262626;
+ }
+ 
+ .tooltip-header:hover::after {
+   visibility: visible;
+   opacity: 1;
+ }
+ 
+ .keymap {
+   width: 100%;
+   height: auto;
+ }
+ 
+ [data-theme='light'] .keymap {
+   fill: #eee !important;
+ }
+ 
+ [data-theme='dark'] .keymap {
+   fill: rgb(36, 41, 46) !important;
+ }
+ 
+ [data-theme='light'] .keymap text {
+   fill: rgb(36, 41, 46) !important;
+ }
+ 
+ [data-theme='dark'] .keymap text {
+   fill: #eee !important;
+ }
+ 
+ [data-theme='light'] .keymap .held {
+   fill: #e57373 !important;
+ }
+ 
+ [data-theme='dark'] .keymap .held {
+   fill: #7f1d1d !important;
+ }
+ 
+ .keymap .tap {
+   text-anchor: middle;
+   dominant-baseline: middle;
+ }
+ 
+ .keymap .hold {
+   text-anchor: middle;
+   dominant-baseline: middle;
+   font-size: 10px;
+ }
+ 
+ .theme-doc-sidebar-menu > li:not(:last-child) {
+   padding-bottom: 0.5rem;
+   border-bottom: 2px solid var(--ifm-hover-overlay);
+ }
+ 
+ .theme-doc-sidebar-menu > li:not(:first-child) {
+   padding-top: 0.5rem;
+   margin-top: 0;
+ }
+ 
+ @media only screen and (min-width: 996px) {
+   [data-theme='dark'] .theme-doc-sidebar-menu>li:not(:last-child) {
+     border-bottom: 2px solid var(--ifm-card-background-color);
+   }
+ }
+ 
+ .navbar-sidebar__back {
+   display: none;
+ }
+
+ table {
+  display: table;
+  width: 100%;
+ }

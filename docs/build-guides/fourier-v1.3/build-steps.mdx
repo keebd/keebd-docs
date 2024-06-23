@@ -1,47 +1,9 @@
 ---
-title: Fourier v1.3 Build Guide
-weight: 20
+sidebar_position: 2
+description: Step by step guide to build this keyboard
 ---
 
-## Parts List
-
-Here's a list of parts needed for the build:
-
-* 1 x [Fourier v1.3 Keyboard Kit](https://keebd.com/)
-
-  Kit Includes:
-  * 2 x Fourier PCBs (Left/Right)
-  * 2 x Fourier Switch Plates (Left/Right)
-  * 2 x Reset Buttons
-  * 2 x 4.7kΩ Resistors
-  * 2 x TRRS Jacks
-  * 1 x TRS Cable
-  * 49 x 1N4148 Diodes - through hole \(included in kit\) and [SMD diodes](https://keebd.com/products/1n4148-diodes-pack-of-10?variant=40957931126936) supported
-  * 10 x M2 6mm Hex Screws
-  * 10 x M2 4mm Hex Screws
-  * 10 x M2 10mm Standoffs
-  * 8 x Clear Rubber Feet
-
-Not included in the kit but required to complete:
-* 2 x [Pro Micro Controllers](https://keebd.com/collections/controllers)
-* 1 x Micro USB Cable
-* [PCB-mount MX stabilizers](https://keebd.com/products/cherry-screw-in-stabilizers)
-* [MX or Alps compatible keyswitches](https://keebd.com/collections/switches)
-* [WS2812B Compatible RGB LED strip](https://keebd.com/products/ws2812b-rgb-led-strip) \(optional, for underglow\)
-
-## Build Steps
-
-1. Prepare components
-2. Solder components
-    * Solder Diodes
-    * Solder 4.7kΩ Resistors \(optional\)
-    * Solder TRRS Jacks
-    * Solder Reset Button
-    * Solder Pro Micro Header Pins
-3. Solder Switches
-4. Solder Pro Micro
-5. Solder RGB strip \(optional\)
-6. Acrylic Case
+# Build Steps
 
 ## 1. Prepare Components
 
@@ -107,9 +69,9 @@ Install the TRRS jack.
 
 Install the reset switch and controller header pins.
 
-{{% notice info %}}
+:::info
 NOTE: DO NOT direct attach the controller until you solder the switches. You can add the controller here only if you are socketing it as there is a switch that needs to be soldered underneath the controller on both halves.
-{{% /notice %}}
+:::
 
 ![](./solder-right-half.jpg?height=700px)
 
@@ -135,9 +97,9 @@ All the switches installed and soldered in.
 
 Time to install the Pro Micro now that the switches have been soldered in.
 
-{{% notice info %}}
+:::info
 Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)
-{{% /notice %}}
+:::
 
 ![](./controller-mill-max.jpg?height=700px)
 
@@ -157,8 +119,6 @@ Once again, the component side of the Pro Micro will be hidden from you.
 
 ## 5. Solder RGB Strip (Optional)
 
-![](./install-led-strip-left.jpg?height=700px)
-
 Optional, add the RGB strip to the backside of the PCB and solder to the following points:
 
 Left Side
@@ -166,8 +126,6 @@ Left Side
 - VCC breakout goes to +5V on strip
 - GND breakout goes to GND on strip
 - Extra Data goes to Do/Dout on strip
-
-![](./install-led-strip-right.jpg?height=700px)
 
 Right Side
 - VCC breakout goes to +5V on strip

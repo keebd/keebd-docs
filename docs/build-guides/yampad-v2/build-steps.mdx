@@ -1,44 +1,9 @@
 ---
-title: Yampad v2 Build Guide
-weight: 20
+sidebar_position: 2
+description: Step by step guide to build this keyboard
 ---
 
-## Parts List
-
-Here's a list of parts needed for the build:
-
-* 1 x [Yampad v2 RGB Macropad Keyboard Kit](https://keebd.com/products/yampad-v2-rgb-macropad-keyboard-kit)
-
-  Kit Includes:
-  * 1 x Yampad v2 PCBs
-  * 1 x Yampad v2 Acrylic Bottom Plate
-  * 1 x Yampad v2 Acrylic Switch Plate
-  * 18 x SOD-123 Diodes
-  * 18 x Kailh Hotswap Sockets
-  * 7 x 7mm Brass Standoffs
-  * 14 x 6mm Hex Screws
-  * 1 x .91" OLED Display
-  * 1 x 6x6 Button
-  * 4 x Clear Rubber Feet
-
-Not included in the kit but required to complete:
-* 1 x [Pro Micro Controller](https://keebd.com/collections/controllers)
-* 18 x [Keyboard Switches](https://keebd.com/collections/switches)
-* 18 x [Keycaps](https://keebd.com/collections/caps)
-
-## Build Steps
-
-1. Solder Components
-  * Solder LEDs
-  * Solder Diodes
-  * Solder Hotswap Sockets
-  * Solder Controller & OLED Headers
-  * Solder Reset Button
-2. Assemble Case
-3. Install Stabilisers
-4. Install Switches
-5. Connect OLED Display
-6. Stick on Feet
+# Build Steps
 
 ## 1. Solder Components
 
@@ -48,10 +13,9 @@ Not included in the kit but required to complete:
 
 ![](./silk.jpg?height=700px)
 
-{{% notice info %}}
+:::info
 The WS2812B LEDs have one corner different to the other three corners, this odd corner faces towards the marked corner on the silkscreen.
-{{% /notice %}}
-
+:::
 
 ![](./leds.jpg?height=700px)
 
@@ -61,9 +25,9 @@ Solder the remaining three pads ensuring the solder flows to both the pad on the
 
 ![](./diodes.jpg?height=700px)
 
-{{% notice info %}}
+:::info
 Diodes are directional and the line on the diode faces the direction of the closed end of the silkscreen.
-{{% /notice %}}
+:::
 
 Add a small amount of solder to one pad for each diode and then while heating the solder place a diode into place. Heat and add some solder to the second pad of the diodes.
 
@@ -83,7 +47,7 @@ Solder the reset button to the underside of the board.
 
 ## 2. Assemble Case
 
-![](/case.jpg?height=700px)
+![](./case.jpg?height=700px)
 
 Remove the protective film from the acrylic plates and attach the brass standoffs using the hex screws to the bottom acrylic plate.
 

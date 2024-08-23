@@ -6,7 +6,7 @@ https://docs.keebd.com
 ### Installation
 
 ```
-$ yarn
+$ yarn install
 ```
 
 ### Update Dependencies

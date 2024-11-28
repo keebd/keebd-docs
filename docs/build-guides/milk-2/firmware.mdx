@@ -1,0 +1,35 @@
+---
+sidebar_position: 3
+description: Step by step guide to build firmware
+---
+
+# Firmware
+
+## Precompiled Firmware
+Ready to use firmware for the various controllers we sell can be downloaded easily from
+
+[KEEBD Firmware](https://docs.keebd.com/firmware)
+
+## Build Firmware
+Make example for this keyboard (after setting up your build environment):
+
+```bash
+make spaceman/2_milk:default
+```
+or
+```bash
+qmk compile -kb spaceman/2_milk -km default
+```
+For Pro Micro ATMega Controllers use [QMK Toolbox](https://github.com/qmk/qmk_toolbox) to flash the firmware on the Pro Micro.  
+
+For Pro Micro RP2040 Controllers convert the firmware using
+```bash
+qmk compile -kb spaceman/2_milk -km default -e CONVERT_TO=helios
+```
+
+Before connect RST and GND pins with a paper clip or tweezers, to bring the Pro Micro into the Bootloader Mode.
+
+
+See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information.
+
+Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).

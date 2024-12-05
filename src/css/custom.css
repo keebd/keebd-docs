@@ -151,11 +151,11 @@
  }
  
  [data-theme='dark'] .keymap {
-   fill: rgb(36, 41, 46) !important;
+   fill: rgb(28, 30, 33) !important;
  }
  
  [data-theme='light'] .keymap text {
-   fill: rgb(36, 41, 46) !important;
+   fill: rgb(28, 30, 33) !important;
  }
  
  [data-theme='dark'] .keymap text {
@@ -163,11 +163,11 @@
  }
  
  [data-theme='light'] .keymap .held {
-   fill: #e57373 !important;
+   fill: #D01A6D !important;
  }
  
  [data-theme='dark'] .keymap .held {
-   fill: #7f1d1d !important;
+   fill: #D01A6D !important;
  }
  
  .keymap .tap {

@@ -20,13 +20,6 @@ This bond is two-way. If you want to clear the bond to let the profile connect t
 
 Clearing a bond on the keyboard side is done by pressing the `&bt BT_CLR` button on the keyboard. This will clear the bond for the currently active profile. You can find where this key is on your keymap by searching for `BT_CLR` in your keymap file. If you don't have a custom keymap we have our default keymap in image form on our build guide's firmware page!
 
-To better visualize this profile, see the video below:
-
-<video width="100%" controls style={{maxWidth: '600px'}}>
-  <source src="/video/zmk-ble.mp4" type="video/mp4"/>
-  Your browser does not support the video tag.
-</video>
-
 ### Multiple Profiles
 
 Now that you understand what a profile is, let's talk about multiple profiles.
@@ -40,11 +33,10 @@ One special case to note is that a device can not be bonded to multiple profiles
 Now that you understand the ZMK pairing process, let's talk about troubleshooting. If you've ensured that the profile you're trying to pair to is active without any existing bonds try troubleshooting with the following steps:
 
 1. Ensure the keyboard is on.
-   - When pressing the reset button, you should see the blue LED blink to indicate the nice!nano is getting power.
+   - When pressing the reset button, you should see the blue LED blink to indicate the controller is getting power.
 2. Make sure your device supports *at least* BLE version 4.2.
    - If your device does not support BLE 4.2+, it will not be able to pair with your keyboard.
 3. If you're using a split keyboard, make sure you're pairing to the left half, the right half does not connect to your device.
-   - See [Right Half Not Working](/troubleshooting/right-half-not-working) for more information.
+   - See [Right Half Not Working](/troubleshooting/wireless/right-half-not-working) for more information.
 4. If you still cannot connect, try pairing to a mobile phone. They have better BLE support than most laptops and desktops and can help you determine if the issue is with your keyboard or your device.
    - If you can pair to your phone but not your device, the issue is likely with your device. Try updating drivers or try an alternate BLE card
-5. Reach out to us on [Discord](https://keebd.com/discord) for help!

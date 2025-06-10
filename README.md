@@ -1,6 +1,8 @@
 # KEEBD Docs Site
 https://docs.keebd.com
 
+Built using [Docusaurus](https://docusaurus.io)
+
 ## Setup / Dev
 
 ### Installation

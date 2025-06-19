@@ -1,0 +1,252 @@
+---
+title: Layout ISO Spanish
+---
+
+This guide will walk you through the process of creating a QMK keymap specifically designed for an **ISO Spanish layout**. This is ideal for users with keyboards that physically support an ISO layout (e.g., L-shaped Enter key, extra key between Left Shift and Z) and who want to type in Spanish.
+
+The most crucial step is understanding that QMK sends *keycodes*, not characters. Your **operating system** then interprets these keycodes based on its active keyboard layout to produce the correct characters.
+
+-----
+
+## 1\. Prerequisites
+
+Before you start, ensure you have the following:
+
+  * **QMK Firmware Cloned:** You have a local copy of the `qmk_firmware` repository on your computer.
+  * **QMK Build Environment Set Up:** You can compile QMK firmware (e.g., using `QMK MSYS` on Windows, or a properly configured Linux/macOS environment).
+  * **Basic QMK Knowledge:** You understand how to navigate the QMK firmware directory, modify `keymap.c` files, and use the QMK CLI (`qmk compile`, `qmk flash`).
+
+-----
+
+## 2\. Set Up Your Host Operating System Layout
+
+**This is the most important step.** Your keyboard will send keycodes, but your computer's OS will determine what character those keycodes represent.
+
+1.  **Windows:**
+
+      * Go to `Settings` \> `Time & Language` \> `Language & Region`.
+      * Under "Preferred languages," ensure "Spanish (Spain)" or your specific Spanish variant (e.g., "Spanish (Mexico)") is added. If not, click "Add a language."
+      * Once added, click on "Spanish (Spain)" and then "Options." Under "Keyboards," ensure "Spanish QWERTY" or "Spanish (Traditional)" (or the correct variant for your region) is listed and selected.
+      * Use the language bar (usually near the clock) or `Win + Space` to switch to the Spanish layout.
+
+2.  **macOS:**
+
+      * Go to `System Settings` \> `Keyboard` \> `Text Input` \> `Input Sources`.
+      * Click the '+' button.
+      * Search for and add "Spanish - ISO" (recommended for ISO layouts) or "Spanish" if that's what you prefer.
+      * Ensure the Spanish layout is selected in your menu bar (top right of screen).
+
+3.  **Linux (GNOME/KDE example):**
+
+      * Go to `Settings` \> `Keyboard` (or `Region & Language`).
+      * Under "Input Sources," click the '+' button.
+      * Search for and add "Spanish (Spain)" or "Spanish (Latin America)" and select the appropriate layout variant.
+      * Make sure it's enabled and at the top of your input source list if you want it as default.
+
+-----
+
+## 3\. Get Your Keyboard's Base Keymap
+
+Every QMK-supported keyboard has a default keymap. You'll start by copying and modifying this.
+
+1.  **Navigate to your keyboard's directory:**
+    Open your terminal or `QMK MSYS` and go to:
+    `cd qmk_firmware/keyboards/your_keyboard_name/keymaps/`
+
+2.  **Copy the default keymap:**
+    It's best practice to copy the `default` keymap folder and rename it. This keeps the original intact and gives you a clean starting point.
+
+    ```bash
+    cp -r default spanish_iso_custom
+    ```
+
+    (Replace `spanish_iso_custom` with your preferred keymap name.)
+
+3.  **Open `keymap.c`:**
+    Now, open the `keymap.c` file inside your newly created `spanish_iso_custom` folder using a text editor.
+
+-----
+
+## 4\. Modify `keymap.c` for Spanish ISO Layout
+
+This is where you define how your physical keys will behave.
+
+### 4.1. Include the Spanish Keycodes Header
+
+At the very top of your `keymap.c` file, add the following line. This makes all the `ES_` prefixed keycodes available for use.
+
+```c
+#include QMK_KEYBOARD_H
+#include "keymap_spanish.h" // Add this line!
+// Other includes may be here already, leave them.
+```
+
+### 4.2. Understand ISO Layout Macros
+
+ISO keyboards have a unique physical layout, most notably:
+
+  * A **large, L-shaped Enter key** that occupies two physical switch positions.
+  * An **extra key** (often `< >` in Spanish layouts) located to the left of the `Z` key, between Left Shift and Z.
+  * The `\` `|` key (or `º ª` in Spanish) might be located in a different spot than on ANSI layouts (e.g., between `P` and `Enter`).
+
+QMK provides `LAYOUT_ISO` macros (e.g., `LAYOUT_iso_105`, `LAYOUT_iso_60`) to correctly map these physical positions to a standard keymap array. You'll need to find the one that matches your specific keyboard.
+
+**Example of an ISO Layout (conceptual, your keyboard's actual macro will differ):**
+
+```c
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT_iso_standard( // Replace LAYOUT_iso_standard with your keyboard's actual ISO layout macro
+        KC_ESC, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR, KC_SLCK, KC_PAUS,
+        KC_GRV, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_INS,  KC_HOME, KC_PGUP,
+        KC_TAB, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, KC_DEL,  KC_END,  KC_PGDN,
+        KC_CAPS,KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENTER,
+        KC_LSFT,KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,
+        KC_LCTL,KC_LGUI, KC_LALT,                      KC_SPC,                                       KC_RALT, KC_APP,  KC_RCTL, KC_LEFT, KC_DOWN, KC_RIGHT
+    )
+    // ... define your other layers like a Fn layer for media keys etc.
+};
+```
+
+### 4.3. Map Spanish Keycodes
+
+Now, replace the standard `KC_` keycodes with their `ES_` equivalents where they would appear on a physical Spanish ISO layout, based on your OS setting.
+
+Here are common replacements and their typical positions on an **ISO Spanish QWERTY** layout:
+
+  * **`ñ` (eñe):** This is usually located where the semicolon (`;`) is on a US layout.
+      * Replace `KC_SCLN` with `ES_NTIL`.
+      * *Example:* `ES_NTIL`
+  * **`´` (acute accent - dead key):** This is typically to the right of `P`.
+      * Replace `KC_LBRC` (left bracket) with `ES_ACUT`.
+      * *Example:* `ES_ACUT`
+  * **`¨` (diaeresis - dead key):** This is sometimes `Shift + ´`. Or sometimes `Shift + [`. If your OS maps `Shift + ES_LBRC` to `¨`, then the `ES_ACUT` will serve this function via dead keys. If not, look for `ES_DIAE`.
+      * *Example:* `ES_DIAE`
+  * **`+` and `*`:** The `+` is often to the right of `´`.
+      * Replace `KC_RBRC` (right bracket) with `ES_PLUS`. `Shift + ES_PLUS` usually gives `*`.
+      * *Example:* `ES_PLUS`
+  * **`-` and `_`:** The `-` is usually to the right of `0`.
+      * Replace `KC_MINS` (minus) with `ES_MINS`.
+      * *Example:* `ES_MINS`
+  * **`º` and `ª` (ordinal indicators):** These are often found where `\` `|` is on a US ANSI layout, or to the right of `0`.
+      * Replace `KC_BSLS` (backslash) with `ES_ORD` (for `º`) or `ES_FORD` (for `ª` - typically `Shift + ES_ORD`).
+      * *Example:* `ES_ORD`
+  * **`¿` (inverted question mark):** This is commonly `Shift + =` or on the key to the left of `BackSpace`.
+      * Replace `KC_EQL` (equals) with `ES_EQL` for `=`, and `S(ES_EQL)` for `?` (question mark). The `¿` might be `ES_IQUE`.
+      * *Example:* `ES_IQUE`
+  * **`¡` (inverted exclamation mark):** This is commonly `Shift + 1` or on the key to the left of `Z`.
+      * Replace `KC_1` with `ES_1` for `1`, and `S(ES_1)` for `!`. The `¡` might be `ES_EXLM`.
+      * *Example:* `ES_EXLM`
+  * **`<` and `>`:** On ISO layouts, these are usually on the key between Left Shift and `Z`.
+      * Replace `KC_NUBS` (non-US backslash) with `ES_LESS` for `<` and `S(ES_LESS)` for `>`.
+      * *Example:* `ES_LESS` (This key is critical for ISO layouts)
+  * **`ç` (cedilla):** This character might be available via `AltGr` combinations or a dedicated key depending on the specific Spanish layout variant. For Spain, it's often `AltGr + ,`.
+      * *Example:* `ALGR(KC_COMM)`
+  * **`@` and `€` (euro symbol):** These are almost always accessed via `AltGr` (Right Alt) combinations.
+      * `@`: `ALGR(KC_2)`
+      * `€`: `ALGR(KC_E)`
+
+**Revised `keymap.c` snippet incorporating Spanish ISO keycodes (conceptual):**
+
+```c
+#include QMK_KEYBOARD_H
+#include "keymap_spanish.h" // This is essential!
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT_iso_105( // Ensure this matches your keyboard's actual ISO layout macro
+        // Row 1
+        KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR, KC_SLCK, KC_PAUS,
+        // Row 2
+        KC_GRV,  ES_1,    ES_2,    ES_3,    ES_4,    ES_5,    ES_6,    ES_7,    ES_8,    ES_9,    ES_0,    ES_MINS, ES_PLUS, KC_BSPC, KC_INS,  KC_HOME, KC_PGUP,
+        // Row 3
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    ES_ACUT, ES_DIAE,
+        KC_ENTER, // ISO Enter top half
+        // Row 4
+        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    ES_NTIL, ES_CCED, KC_QUOT, // ES_CCED for ç
+        // ISO Enter bottom half, handled by macro or KC_ENTER here again
+        // Row 5
+        KC_LSFT, ES_LESS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  ES_ORD,  KC_RSFT, KC_UP,   KC_DEL,  KC_END,  KC_PGDN,
+        // Row 6
+        KC_LCTL, KC_LGUI, KC_LALT,                      KC_SPC,                                       KC_RALT, KC_APP,  KC_RCTL, KC_LEFT, KC_DOWN, KC_RIGHT
+    ),
+    // ... Add more layers for your needs (e.g., a Function layer, media keys, etc.)
+};
+```
+
+:::warning
+The `LAYOUT_iso_105` (or similar) macro in the example above is generic. You *must* use the specific `LAYOUT_` macro defined for your keyboard in its QMK firmware folder. Check your keyboard's existing `keymap.c` or its `info.json` for the correct layout macro name.
+:::
+
+-----
+
+## 5\. Compile Your Firmware
+
+Once you've made your changes to `keymap.c`:
+
+1.  **Open your QMK terminal/MSYS.**
+
+2.  **Navigate to your QMK firmware root directory.**
+
+3.  **Run the compile command:**
+
+    ```bash
+    qmk compile -kb your_keyboard_name -km spanish_iso_custom
+    ```
+
+    (Replace `your_keyboard_name` and `spanish_iso_custom` with your actual keyboard and keymap names).
+
+    If there are no errors, the compilation will succeed and generate a `.hex` (for AVR) or `.uf2` (for ARM) firmware file in your QMK root directory.
+
+-----
+
+## 6\. Flash Your Firmware
+
+Now, load your new keymap onto your keyboard.
+
+1.  **Enter Bootloader Mode:**
+
+      * The method varies by keyboard. Common ways include:
+          * Pressing a physical `RESET` button on the PCB (double press quickly).
+          * Holding down a specific key (often `Esc` or the top-left key) while plugging in the keyboard.
+          * Shorting two specific pins on the PCB with tweezers.
+          * Using a `QK_BOOT` keycode if you have one on an existing layer.
+      * Consult your keyboard's build guide or search "\[Your Keyboard Name] QMK bootloader" for the exact method.
+
+2.  **Flash using QMK Toolbox:**
+
+      * Download and open [QMK Toolbox](https://www.google.com/search?q=https://qmk.fm/toolbox/).
+      * The Toolbox should detect your keyboard in bootloader mode (often indicated by a yellow message like "DFU device connected" or "STM32 DFU device connected").
+      * Click "Open" and select the `.hex` or `.uf2` file you just compiled.
+      * Click "Flash."
+      * Wait for the "Flash complete" message. Your keyboard should restart with the new layout.
+
+-----
+
+## 7\. Test Your Layout
+
+1.  **Use a Key Tester:**
+    Open an online key tester like [keyboardtester.com](https://keyboardtester.com/) or [key-test.ru](https://key-test.ru/).
+    Press all your keys, especially the Spanish-specific ones, and verify that your computer registers the correct characters (`ñ`, `á`, `¿`, etc.) according to your Spanish OS layout setting.
+
+2.  **Type in a Text Editor:**
+    Open Notepad, Word, or any text editor and practice typing Spanish characters and sentences to ensure everything feels natural and works as expected.
+
+-----
+
+## 8\. Troubleshooting Common Issues
+
+  * **Wrong Characters Outputted:**
+      * **Did you set your OS keyboard layout to Spanish (ISO)?** This is the most frequent cause. Double-check it.
+      * **Did you `#include "keymap_spanish.h"`?** Ensure this line is present at the top of your `keymap.c`.
+      * **Are you using the correct `ES_` keycodes?** Review the `keymap_spanish.h` file in the QMK source for the exact keycodes.
+      * **Is your `LAYOUT_` macro correct for your physical ISO board?** An ANSI `LAYOUT_` macro on an ISO board will cause mapping issues.
+  * **Key Not Responding:**
+      * Check for typos in your `keymap.c` (e.g., misspelled keycode).
+      * Ensure the firmware was successfully flashed.
+      * Refer to general QMK troubleshooting for hardware issues (bad solder joints, faulty switch).
+  * **`AltGr` (Right Alt) Not Working for `@`, `€` etc.:**
+      * Ensure `KC_RALT` is correctly mapped on your keymap layer.
+      * Confirm your OS layout is Spanish. `AltGr` is an OS-level function interpreted based on the selected layout.
+  * **Compilation Errors:**
+      * Carefully read the error messages in your QMK terminal. They often point directly to the line number and type of error (e.g., a missing comma, misspelled keycode).
+
+By following this guide, you should be well on your way to a fully functional ISO Spanish QMK keyboard\!

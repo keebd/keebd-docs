@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting Display Issues
+title: Display Troubleshooting
 ---
 This guide provides steps for identifying and resolving common issues with various displays (OLED, Low Power Display, nice\!view, etc.) on custom keyboards running QMK or ZMK firmware. These displays typically communicate via either I2C or SPI protocols.
 
@@ -63,9 +63,9 @@ This is a critical step as I2C and SPI displays have different configuration req
       * I2C displays use a specific address. The most common I2C addresses are `0x3C` and `0x3D`.
       * **QMK:** In your `config.h` or `rules.mk`, ensure `OLED_I2C_ADDRESS` is set correctly if not using the default (usually `0x3C`). For example: `#define OLED_I2C_ADDRESS 0x3D`.
       * **ZMK:** Check the `reg = <0x3c>;` line (or `0x3d`) in the `ssd1306` node within your `.dts` or `.dtsi` file.
-        \<Admonition type="tip" title="Pro Tip: I2C Scanner"\>
+        :::info
         If you have access to an Arduino or another microcontroller, you can run a simple I2C scanner sketch to detect the actual address of your display. This is invaluable for debugging.
-        \</Admonition\>
+        :::
 
   * **For SPI Displays (e.g., nice\!view):**
 

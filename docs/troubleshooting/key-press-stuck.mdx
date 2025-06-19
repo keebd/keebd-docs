@@ -1,0 +1,77 @@
+---
+title: Key Press Stuck
+---
+
+A "key press stuck until the next key is pressed" on a QMK keyboard is a frustrating issue that often points to a problem with how the key release is being registered, either in the hardware or the firmware. Here's a breakdown of common causes:
+
+## Hardware-Related Causes
+
+Even if it seems like a software issue, physical problems can manifest this way.
+
+1.  **Faulty Switch:**
+    * **Chatter/Bouncing:** Mechanical switches are physical contacts that "bounce" slightly when pressed or released. QMK has debounce algorithms to handle this, but a faulty switch might have excessive or unusual bouncing that the firmware isn't fully compensating for, causing it to register a release, then an immediate press again.
+    * **Sticking Mechanism:** The internal mechanism of the switch (stem, spring, leaves) could be physically sticking or binding. This is more common with linear switches that have too much lube, or if dust/debris gets inside.
+    * **Intermittent Contact:** The contacts within the switch might not be making a clean break when released, leading to an intermittent connection that keeps the key "down" in the eyes of the microcontroller until another keypress forces a full scan/reset of the state.
+
+2.  **Bad Solder Joint (Switch or Diode):**
+    * A cold solder joint or a hairline crack in the solder around the switch pins or its associated diode can cause intermittent connection issues. When you press the key, it makes contact, but when released, the connection might not fully break, or might quickly re-establish. The next key press might "shake" the connection enough to resolve it temporarily.
+    * Similarly, a partial short between a switch's pin and an adjacent trace could cause issues.
+
+3.  **Diode Issues:**
+    * Each switch in a matrix has a diode that prevents "ghosting" and "key blocking." If a diode is faulty (e.g., shorted or open intermittently), it can interfere with the matrix scanning, causing the microcontroller to incorrectly perceive a key as still pressed.
+
+4.  **PCB/Traces Damage:**
+    * Less common, but a damaged trace on the PCB leading to or from the switch or diode could cause an intermittent open or short circuit, leading to this behavior.
+
+## Firmware/Software-Related Causes (QMK Specific)
+
+QMK is highly configurable, and misconfigurations or specific features can sometimes lead to this problem.
+
+1.  **Insufficient Debouncing:**
+    * QMK uses debouncing to prevent multiple keypresses from a single physical press due to switch chatter. If your `DEBOUNCE` value in `config.h` is too low, or if a particular switch is exceptionally chatty, it might not be properly debounced, causing the "stuck" effect.
+    * Try increasing `DEBOUNCE` (e.g., `#define DEBOUNCE 10` or higher, default is often 5). This can sometimes mask hardware issues but might resolve the problem if it's borderline.
+
+2.  **Mod-Tap / Layer-Tap / Tap-Hold Timing Issues:**
+    * If the affected key is configured as a Mod-Tap (e.g., `LSFT_T(KC_ESC)` where tap is Escape, hold is Left Shift), Layer-Tap, or another tap-hold function, the timing might be off. If the release event isn't registered correctly within the `TAPPING_TERM` (the time window for a tap vs. hold), it might continue to send the "hold" action until another keypress "resets" the state.
+    * Experiment with `TAPPING_TERM` values in your `config.h`. If it's too long, it might be difficult to differentiate between a tap and a hold.
+    * Also, consider `PERMISSIVE_HOLD` (if enabled). If enabled, it allows the tap-hold key to be held down after tapping another key without activating the hold function immediately. If disabled, holding it after a tap might re-activate the hold.
+
+3.  **Custom Code or `process_record_user` Logic:**
+    * If you have custom code in your `process_record_user` function (or similar custom handlers) that interacts with key presses and releases, an error in this logic could cause a key to remain "registered" even after it's physically released. This is especially true if you are manually calling `register_code()` but failing to call `unregister_code()` in all scenarios.
+    * For example, if you're implementing complex layer switching, combos, or other advanced features, ensure that key states are always correctly handled for both press and release events.
+
+4.  **One-Shot Modifiers (OSM) / One-Shot Layers (OSL):**
+    * While usually very robust, a misconfiguration or interaction with other features could cause an OSM/OSL to remain active (or "stuck") until another key is pressed.
+
+5.  **Matrix Definition Errors:**
+    * An incorrect matrix definition in your `info.json` or `config.h` (e.g., `MATRIX_ROWS`, `MATRIX_COLS`, `MATRIX_ROW_PINS`, `MATRIX_COL_PINS`) could lead to misreading the keyboard's state. If a row or column is intermittently shorted or miswired in the definition, it could cause phantom presses or "stuck" keys.
+    * A rare but possible cause could be defining the same pin for both a row and a column.
+
+6.  **USB Polling Interval (Intermittent Issue):**
+    * In some rare cases, particularly with USB hubs, KVM switches, or specific operating system/hardware combinations, the USB polling interval might be too high for the connection to reliably transmit all key-up events. If a "key up" event is dropped, the computer will perceive the key as still being held until the next key press forces a new report.
+    * You might try defining `USB_POLLING_INTERVAL_MS` in your `config.h` to a higher value (e.g., 4 or 8 ms, default is often 1). This tells the keyboard to report less frequently, which can sometimes stabilize unreliable USB connections.
+
+7.  **EEPROM Corruption (Less Common):**
+    * Sometimes, if you've flashed many different keymaps or had power interruptions during flashing, the EEPROM (where persistent settings are stored) can become corrupted. This can lead to erratic behavior, including stuck keys.
+    * **Solution:** Perform an EEPROM clear. In QMK Toolbox, there's usually a "Clear EEPROM" option. After clearing, re-flash your firmware.
+
+## Troubleshooting Steps
+
+Given your symptoms, here's a systematic approach:
+
+1.  **Identify the Affected Key(s):** Is it always the same key, or random keys? If it's always the same key, it points strongly to a hardware issue with that specific switch/diode or a localized firmware config error. If it's random, it leans more towards a broader firmware issue, a general power/USB stability problem, or a widespread hardware issue (e.g., MCU).
+2.  **Test the Switch:**
+    * **Swap Keycap & Switch:** If it's a hotswap board, try swapping the problematic switch with a known good switch from a less-used key. If the problem moves, it's the switch. If it stays, it's the socket/PCB/firmware.
+    * **Physical Inspection:** Remove the keycap and inspect the switch stem and housing for any foreign objects, bent pins, or signs of physical sticking.
+    * **Clean the Switch:** For sticky switches, a small amount of isopropyl alcohol dropped into the switch (while inverted) and repeated pressing can sometimes clean out debris or excess lube.
+3.  **Inspect Solder Joints:** Very carefully examine the solder joints for the affected switch and its diode under good light. Re-solder if anything looks suspicious.
+4.  **Simplify Your Keymap:**
+    * Create a *very* basic keymap with only the standard keycodes, no custom functions, no layers, no Mod-Taps, etc.
+    * Flash this simplified firmware. If the problem disappears, it strongly suggests an issue within your custom keymap logic or interaction with specific QMK features. You can then re-introduce features one by one to find the culprit.
+5.  **Adjust Debounce/Tapping Term:** Experiment with slightly increasing `DEBOUNCE` and adjusting `TAPPING_TERM` if the issue seems related to tap-hold functions.
+6.  **Check for `USB_SUSPEND_WAKEUP_DELAY`:** If the issue occurs after your computer wakes from sleep or suspend, adding `#define USB_SUSPEND_WAKEUP_DELAY 200` (or higher, e.g., 500-1000) to your `config.h` might help. This gives the USB host more time to re-establish a stable connection.
+7.  **Clear EEPROM:** As a last resort on the firmware side, clear your EEPROM and re-flash.
+8.  **Test on Another Computer/USB Port:** Try the keyboard on a different computer, or a different USB port (preferably a direct port on the motherboard, not a hub or KVM). This helps rule out host-side issues.
+9.  **Serial Debugging:** Enable QMK's serial debugging (add `CONSOLE_ENABLE = yes` and `DEBUGS_ENABLE = yes` to `rules.mk`, and relevant `DEBUG_` flags to `config.h`). Use QMK Toolbox or a serial terminal to monitor the output as you type. This can provide valuable insights into what the microcontroller is actually registering (e.g., seeing multiple key-down events without corresponding key-up events).
+
+By systematically going through these causes and troubleshooting steps, you should be able to narrow down and resolve the "stuck key" issue on your QMK keyboard.

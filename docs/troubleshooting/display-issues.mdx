@@ -1,0 +1,166 @@
+---
+title: Troubleshooting Display Issues
+---
+This guide provides steps for identifying and resolving common issues with various displays (OLED, Low Power Display, nice\!view, etc.) on custom keyboards running QMK or ZMK firmware. These displays typically communicate via either I2C or SPI protocols.
+
+If your display isn't showing anything, is showing garbage, or isn't behaving as expected, work through these steps to pinpoint the problem.
+
+## 1\. Initial Checks (Hardware & Basic Connectivity)
+
+Before diving into firmware, let's rule out simple physical issues.
+
+### 1.1 Visual Inspection
+
+  * **Physical Damage:** Carefully inspect the display itself. Look for cracks, bent pins, or any visible damage. If the display came with a protective film, ensure it's removed.
+  * **Soldering Joints:**
+      * **Display Pins:** Check all pins connecting the display to the PCB (typically 4-5 pins: VCC, GND, and data/clock lines). Ensure they have clean, solid solder joints. Cold joints or bridges can prevent communication. Reflow them if they look suspicious.
+      * **MCU Pins:** If your display connects directly to the microcontroller (MCU), inspect the solder joints for the corresponding communication pins (SDA/SCL for I2C; CS/SCL/MOSI for SPI) on the MCU.
+      * **Resistors/Jumpers:** Some boards require pull-up resistors, specific jumpers, or bodge wires for display functionality. Consult your keyboard's build guide. Ensure any required jumpers are correctly soldered or bridged. For instance, some I2C displays have configurable address jumpers.
+
+### 1.2 Cables and Connections (Split Keyboards)
+
+  * **TRRS/USB-C Cable (Split Keyboards):** If you have a split keyboard, the display often relies on communication between the two halves.
+      * Ensure your TRRS/USB-C cable is fully seated and functional. Try swapping it with a known good cable.
+      * Check the TRRS/USB-C jacks on both halves for bent pins or debris.
+  * **Controller Connections:** For modular designs (e.g., Pro Micro, Mikoto, nice\!nano), ensure the controller is seated correctly and firmly in its sockets. Remove and re-seat it.
+
+### 1.3 Power Check
+
+  * **Is the keyboard powered on?** For wireless ZMK keyboards, ensure the battery is charged and the power switch is in the "on" position.
+  * **Display Glow/Backlight:** Does the display show *any* signs of life?
+      * **For OLEDs:** A faint glow, even if black, or random pixels lighting up indicates it's at least receiving power. No glow often points to a power issue (VCC/GND, bad solder, or dead display).
+      * **For nice\!view:** These are very low-power Memory-in-Pixel displays and may not have an obvious "glow." If you see static images or partial images, it indicates some power and communication.
+
+-----
+
+## 2\. Firmware Configuration (QMK & ZMK)
+
+Incorrect firmware configuration is a very common cause of display issues.
+
+### 2.1 Enable Display Support in Firmware
+
+Both QMK and ZMK require you to explicitly enable display support and specify the correct driver.
+
+  * **QMK:**
+      * Navigate to your keyboard's `rules.mk` file (e.g., `qmk_firmware/keyboards/your_keyboard/rules.mk`).
+      * Ensure you have `OLED_ENABLE = yes` (for OLEDs) or a similar `_ENABLE` flag for other display types.
+      * Specify the correct display driver: `OLED_DRIVER = SSD1306` (common for OLEDs) or other specific drivers if your display uses one.
+      * Check your `config.h` for macros defining the display resolution, e.g., `OLED_DISPLAY_128X64` or `OLED_DISPLAY_160X68`.
+  * **ZMK:**
+      * Display support is enabled via `Kconfig` options. Look in your `config/boards/arm/<your_board>/Kconfig.defconfig` or similar file.
+      * Ensure `CONFIG_ZMK_DISPLAY=y` is present.
+      * Enable the specific display driver:
+          * For **I2C OLEDs:** `CONFIG_ZMK_DISPLAY_SSD1306=y`
+          * For **nice\!view:** `CONFIG_ZMK_DISPLAY_SHARP_LS011B7DH03=y` AND `CONFIG_ZMK_DISPLAY_SSD1306_SPI=y` (the nice\!view uses the SSD1306 SPI protocol).
+      * Verify the correct communication bus (I2C or SPI) is referenced in your board's devicetree file (e.g., `boards/arm/<your_board>/<your_board>.dts` or `.dtsi`) or your shield's overlay file.
+
+### 2.2 Correct Communication Protocol Configuration (Address or Pin Assignments)
+
+This is a critical step as I2C and SPI displays have different configuration requirements.
+
+  * **For I2C Displays (e.g., many OLEDs):**
+
+      * I2C displays use a specific address. The most common I2C addresses are `0x3C` and `0x3D`.
+      * **QMK:** In your `config.h` or `rules.mk`, ensure `OLED_I2C_ADDRESS` is set correctly if not using the default (usually `0x3C`). For example: `#define OLED_I2C_ADDRESS 0x3D`.
+      * **ZMK:** Check the `reg = <0x3c>;` line (or `0x3d`) in the `ssd1306` node within your `.dts` or `.dtsi` file.
+        \<Admonition type="tip" title="Pro Tip: I2C Scanner"\>
+        If you have access to an Arduino or another microcontroller, you can run a simple I2C scanner sketch to detect the actual address of your display. This is invaluable for debugging.
+        \</Admonition\>
+
+  * **For SPI Displays (e.g., nice\!view):**
+
+      * SPI displays use specific pins for Chip Select (CS), Clock (SCL), and Master Out Slave In (MOSI).
+      * **Pin Assignments:** The physical wiring of these pins must match the firmware configuration. For example, if you're using a nice\!view on a PCB designed for a 4-pin OLED, you might need a "bodge wire" to connect the nice\!view's 5th (CS) pin to an available GPIO pin on your microcontroller. Consult your display's documentation or your keyboard's build guide for correct pin assignments.
+      * **ZMK Devicetree Configuration (example for nice\!view):**
+          * You'll define an SPI bus and then the display device on that bus, often in a shield overlay (`.overlay` file).
+          * Look for an `&spi<N>` node (e.g., `&spi0` or `&spi1`).
+          * The display will be a child node under the SPI bus. **Crucially, the `cs-gpios` property defines the Chip Select pin and must match your physical wiring.** The `reg` property here defines the chip select line number (`<0>` for the first).
+            ```dts
+            &spi0 { // Or &spi1 depending on your MCU
+                status = "okay";
+                cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>; // Example: P0.06 for CS
+                nice_view: sharp_ls011b7dh03@0 {
+                    compatible = "sharp,ls011b7dh03";
+                    label = "NICEVIEW";
+                    reg = <0>; // Chip Select line number
+                    spi-max-frequency = <4000000>;
+                    width = <160>;
+                    height = <68>;
+                };
+            };
+            ```
+          * If adapting a nice\!view to an OLED-compatible shield, ensure you include `nice_view_adapter nice_view` in your `build.yaml`'s shield definition.
+            ```yaml
+            - board: nice_nano_v2
+              shield: <your_shield_name> nice_view_adapter nice_view
+            ```
+
+### 2.3 Firmware Specifics (Split Keyboards)
+
+  * **QMK:**
+      * Ensure `MASTER_LEFT`, `MASTER_RIGHT`, or `MASTER_AUTO_DETECT` is defined in your `config.h` for split keyboards.
+      * If using `MASTER_AUTO_DETECT`, ensure `SPLIT_KEYBOARD_ENABLE = yes` is also in `rules.mk`.
+      * Confirm that the relevant `_ENABLE` flag for your display is in the `rules.mk` for *both* halves if both are supposed to have displays.
+  * **ZMK:**
+      * Both halves of a split keyboard need their respective firmware flashed.
+      * For displays on a split keyboard, ensure the display is correctly defined in the devicetree (or shield overlay) for the specific half it's on.
+
+### 2.4 Flash Firmware
+
+After making any configuration changes in your firmware files, you will need to re-flash your microcontroller(s).
+
+1.  **Download Precompiled Firmware:**
+      * **For pre-tested and compatible firmware, please visit the official KEEBD firmware repository:**<br />[https://docs.keebd.com/firmware](https://docs.keebd.com/firmware)
+      * Download the appropriate `.hex` (for QMK) or `.uf2` (for ZMK) file for your specific keyboard model and desired configuration.
+2.  **Flash Firmware to Microcontroller:**
+      * Use a flashing tool (e.g., QMK Toolbox for QMK, or simply drag-and-drop the `.uf2` file for ZMK on Mikoto or nice\!nanos) to flash the downloaded firmware.
+      * Ensure you are flashing the correct file to the correct half (if you have a split keyboard, e.g., left and right halves).
+
+-----
+
+## 3\. Advanced Troubleshooting
+
+If the above steps haven't resolved the issue, consider these more in-depth checks.
+
+### 3.1 Verify Communication Bus Operation (Advanced - Requires Multimeter)
+
+  * **For I2C Displays (SDA & SCL):**
+      * With the keyboard powered on, use a multimeter to check the voltage on the SDA (Data) and SCL (Clock) pins of the display. You should see a voltage close to VCC (e.g., 3.3V or 5V, depending on your board's logic level).
+      * While the keyboard is active (typing, or if the display is configured to show constant info), you might see slight fluctuations in voltage as data is transmitted. If both are stuck at 0V or VCC, there's a problem with the I2C bus or the MCU's I2C peripheral.
+  * **For SPI Displays (CS, SCL, MOSI):**
+      * With the keyboard powered on, check VCC and GND.
+      * Check SCL (clock) and MOSI (data out from MCU to display). Similar to I2C, you should see appropriate voltage levels and potentially fluctuations during data transfer.
+      * Check CS (Chip Select). This pin is typically high and goes low when the MCU wants to communicate with the display.
+  * **Continuity Check (Power Off):** With the keyboard *unplugged*, use a multimeter in continuity mode to check continuity between the display's communication pins and the corresponding MCU pins. Also, check for shorts between any of the communication pins or between these pins and VCC/GND.
+
+### 3.2 Sleep Mode / Power Saving (ZMK Specific)
+
+ZMK is optimized for wireless and power efficiency, which can sometimes lead to displays turning off or freezing. This is especially relevant for low-power displays like nice\!view.
+
+  * **ZMK Sleep Behavior:** By default, ZMK displays may turn off after a period of inactivity to save power. Try pressing a key to wake the keyboard and see if the display activates.
+  * **Troubleshooting Sleep-Related Freezes:** Some users have reported displays freezing after waking from deep sleep.
+      * Check the ZMK GitHub issues or Discord for solutions specific to your board or display type.
+      * Temporarily disabling deep sleep in your ZMK configuration (`Kconfig.defconfig`) might help diagnose if this is the cause, though it will impact battery life. Look for `CONFIG_ZMK_SLEEP=n` or related options.
+
+### 3.3 Default Firmware Test
+
+  * **Flash Default Firmware:** If your keyboard has a known good default firmware (either from the manufacturer or a widely used QMK/ZMK setup for your board) that *should* enable the display, try flashing that.
+      * If the display works with the default firmware, your issue is definitely in your custom keymap or configuration files. You can then carefully compare your custom files to the working default ones to find the discrepancy.
+      * If it still doesn't work, it points more strongly to a hardware issue (display, soldering, MCU).
+
+### 3.4 Isolate the Display Code
+
+  * **QMK Debugging:**
+      * Use QMK's debugging features to see if the display driver is initializing. You can add `xprintf` statements to your `oled_task_user` function or other display-related code to print messages to the serial console (viewable via `QMK Toolbox` or a serial terminal).
+      * Enable `CONSOLE_ENABLE = yes` and `DEBUGS_ENABLE = yes` in your `rules.mk` and relevant `DEBUG_` flags in `config.h`.
+  * **ZMK Logging:**
+      * ZMK also has logging capabilities. You can enable `CONFIG_LOG=y` and `CONFIG_ZMK_DEBUG_DISPLAY=y` (or similar) in your `Kconfig` to get more verbose output during runtime, which can be viewed via a serial terminal.
+
+### 3.5 Consider a Defective Display or MCU
+
+  * **Swap Components:** If you have a spare display or microcontroller, try swapping it out. This is often the quickest way to confirm if a component is faulty.
+  * **Purchase from Reputable Sources:** Always buy components from trusted vendors to minimize the risk of receiving faulty parts.
+
+----
+
+By systematically working through these troubleshooting steps, you should be able to identify and resolve most issues with your custom keyboard display. Good luck\!

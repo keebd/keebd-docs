@@ -3,8 +3,108 @@ description: 'MCU: nRF52840 / Footprint: Pro-micro'
 ---
 
 # nice!nano
-- Pro-micro footprint
-- nRF52840 MCU
-- UF2 storage firmware
 
-nice!nano controller
+## Specifications
+- MCU: nRF52840
+- Pro-micro footprint
+- Wireless Bluetooth Low Energy (BLE) capable
+- UF2 Bootloader for easy flashing
+- **ZMK Firmware** is highly recommended for wireless builds
+
+## Frequently Asked Questions (FAQ)
+
+This page addresses frequently asked questions regarding the nice!nano Keyboard Controller.
+
+### General Questions
+
+*   **What is the nice!nano Controller?**
+
+    The nice!nano is a wireless-first keyboard controller based on the nRF52840 microcontroller. It's designed with a Pro Micro footprint, making it a popular choice for building wireless custom mechanical keyboards, especially split keyboards. It primarily uses Bluetooth Low Energy (BLE) for communication.
+
+*   **What firmware is compatible with the nice!nano Controller?**
+
+    The nice!nano is primarily designed for and best supported by **ZMK Firmware**. While QMK has support for the nRF52840, ZMK offers more comprehensive wireless features and power management tailored for devices like the nice!nano.
+
+### Firmware and Flashing (ZMK)
+
+*   **How do I flash ZMK firmware onto my nice!nano Controller?**
+
+    Follow these general steps (refer to the [official ZMK documentation](https://zmk.dev/docs/user-setup) for the most up-to-date and detailed instructions):
+
+    1.  **Obtain your `.uf2` firmware file:** You'll typically build this using ZMK's build system (e.g., GitHub Actions) configured for your specific keyboard shield and keymap.
+    2.  Unplug the nice!nano from your computer and ensure any connected battery is also disconnected, especially if it's the first time flashing or you're encountering issues.
+    3.  Plug the nice!nano into your computer using a USB-C cable.
+    4.  Locate the RESET button on the nice!nano. It's a small physical button.
+    5.  Quickly double-press the RESET button.
+    6.  A new drive, typically named "NICENANO" or "FTHR840BOOT" (or similar), should appear on your computer.
+    7.  Copy your `.uf2` firmware file to this drive.
+    8.  The nice!nano will automatically eject the drive and reboot with the new firmware.
+    9.  After flashing, you can reconnect the battery if you disconnected it.
+
+    If you're having trouble entering the bootloader, you can also check our general Entering the Bootloader troubleshooting page, keeping in mind the method for nice!nano is the double-reset.
+
+*   **The "NICENANO" drive doesn't appear when I try to flash.**
+
+    *   Ensure you are double-pressing the RESET button quickly and firmly.
+    *   Try a different USB-C data cable (some cables are power-only).
+    *   Try a different USB port on your computer.
+    *   If a battery is connected, try disconnecting it and flashing with USB power only.
+    *   Ensure the nice!nano is properly seated if it's in a socket.
+
+*   **My keyboard doesn't work after flashing ZMK firmware.**
+
+    *   Ensure you're using the correct `.uf2` file built for your specific keyboard shield (e.g., `yourshield_left.uf2`, `yourshield_right.uf2`).
+    *   Double-check your ZMK configuration files (e.g., `<shield_name>.keymap`, `<shield_name>.conf`, `<shield_name>.overlay`).
+    *   Try re-flashing the firmware.
+    *   The firmware file may be corrupt. Try rebuilding it.
+    *   Consult the ZMK documentation and community for troubleshooting specific ZMK issues.
+
+### Hardware & Wireless Issues
+
+*   **My nice!nano isn't being recognized by my computer (not even for flashing).**
+
+    *   Follow the troubleshooting steps for the "NICENANO drive doesn't appear" issue above.
+    *   Check for any physical damage to the USB-C port or the controller.
+    *   If socketed, ensure all pins are making good contact.
+
+*   **One or more keys on my keyboard aren't working.**
+
+    *   This is often a hardware issue related to the keyboard PCB, switch soldering, or switch itself, rather than the nice!nano directly.
+    *   Check the soldering of the switches to the PCB.
+    *   Ensure the switches are properly inserted into hot-swap sockets (if used).
+    *   The switch may be faulty. Try replacing it.
+    *   Verify your ZMK keymap is correctly defining the problematic keys.
+
+*   **My wireless keyboard (or one half of a split) isn't pairing or connecting.**
+
+    *   Ensure the battery is charged and properly connected (correct polarity!).
+    *   Follow ZMK's Bluetooth pairing and bonding reset procedures.
+    *   Check for interference from other wireless devices or metal objects.
+    *   For split keyboards, ensure both halves are flashed with their respective `_left` and `_right` firmware and that they are trying to pair with each other correctly. See ZMK split keyboard documentation.
+
+*   **My battery drains very quickly.**
+
+    *   Ensure you're using a LiPo battery with the correct voltage (typically 3.7V).
+    *   Check for any shorts on the PCB or controller.
+    *   Verify your ZMK configuration has appropriate power-saving features enabled.
+    *   The battery itself might be old or faulty.
+
+### Layout and Configuration (ZMK)
+
+*   **How do I configure my keyboard layout with ZMK?**
+
+    Layout configuration in ZMK is done by defining a keymap file (e.g., `your_keyboard.keymap`) within your ZMK user configuration repository. Refer to the ZMK Keymap documentation for detailed instructions.
+
+*   **Where can I find pre-made ZMK configurations or keymaps?**
+
+    Many keyboard designers and communities share their ZMK configurations on GitHub. Search for your specific keyboard PCB or shield name along with "ZMK config."
+
+### Community and Support
+
+*   **Where can I get more help with my nice!nano Controller and ZMK?**
+
+    *   The official **ZMK Discord server** is the best place for ZMK-specific questions and community support.
+    *   Check the documentation for your specific keyboard PCB or kit.
+    *   Online keyboard communities like Reddit (r/olkb, r/ergomechkeyboards) or forums.
+
+This FAQ is a starting point. Always refer to the official ZMK documentation and your keyboard's specific documentation for the most accurate and up-to-date information.

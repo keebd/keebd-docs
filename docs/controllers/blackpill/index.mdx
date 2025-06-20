@@ -3,6 +3,95 @@ description: 'MCU: STM32F4x1 / Footprint: Other'
 ---
 
 # Blackpill
-STM32F4x1 series MCU
 
-Blackpill controller
+## Specifications
+- Microcontroller: STM32F4x1 (commonly STM32F401CCU6 or STM32F411CEU6)
+- Clock Speed: Up to 84MHz (F401) or 100MHz (F411)
+- Flash Memory: 256KB (F401) or 512KB (F411)
+- RAM: 64KB (F401) or 128KB (F411)
+- USB: Type-C connector
+- Bootloader: Typically DFU (Device Firmware Upgrade) bootloader pre-flashed.
+- Form Factor: "Blackpill" board. Pinout is distinct from Pro Micro but can be adapted for keyboard use.
+- Common Firmware: QMK
+
+## Frequently Asked Questions (FAQ)
+
+This page addresses frequently asked questions regarding the Blackpill Controller.
+
+### General Questions
+
+*   **What is the Blackpill Controller?**
+
+    The Blackpill is a compact development board based on the STM32F4x1 series microcontroller. It's a powerful and cost-effective option for custom keyboard builds and other embedded projects, often favored for its processing power and memory.
+
+*   **What firmware is compatible with the Blackpill?**
+
+    The Blackpill is most commonly used with **QMK Firmware** for custom keyboards. Due to its STM32 ARM Cortex-M4 core, it can run more complex QMK features.
+
+### Firmware and Flashing (QMK)
+
+*   **How do I flash QMK firmware onto my Blackpill?**
+
+    Flashing a Blackpill typically involves putting it into DFU (Device Firmware Upgrade) mode:
+
+    1.  **Obtain your `.bin` or `.hex` firmware file:** Build this using the QMK build environment, configured for your specific keyboard and STM32 target (e.g., `STM32F411`).
+    2.  Unplug the Blackpill from your computer.
+    3.  Locate the BOOT0 button (or pin) and the RESET button on the Blackpill.
+    4.  Press and hold the BOOT0 button.
+    5.  While holding BOOT0, plug the Blackpill into your computer via USB-C. Or, while holding BOOT0, press and release the RESET button if already plugged in.
+    6.  Release the BOOT0 button. The Blackpill should now be in DFU mode.
+    7.  Use a DFU programming tool (like `dfu-util` or STM32CubeProgrammer) to flash the firmware file.
+        *   Example `dfu-util` command: `dfu-util -a 0 -s 0x08000000:leave -D your_firmware.bin`
+    8.  After flashing, the Blackpill will typically reset and run the new firmware. If not, unplug and replug it.
+
+    For more general troubleshooting on entering bootloader modes, see the Entering the Bootloader troubleshooting page, though DFU mode steps are specific.
+
+*   **My computer doesn't recognize the Blackpill in DFU mode.**
+
+    *   Ensure you have the correct DFU drivers installed. For Windows, you might need to use Zadig to install WinUSB or libusbK drivers for the "STM32 BOOTLOADER" device.
+    *   Verify the BOOT0 and RESET sequence was performed correctly.
+    *   Try a different USB-C data cable (some are power-only) and a different USB port.
+    *   Check for any shorts or bad solder joints on the Blackpill.
+
+*   **My keyboard doesn't work after flashing QMK firmware.**
+
+    *   Ensure you're using the correct `.bin` or `.hex` file compiled for your specific keyboard layout and the correct STM32 variant (e.g., STM32F401 vs. STM32F411).
+    *   Double-check your QMK configuration files (`config.h`, `rules.mk`, keymap).
+    *   Verify your pin assignments in the QMK configuration match your keyboard's matrix and Blackpill connections.
+    *   Try re-flashing the firmware.
+
+### Hardware Issues
+
+*   **My Blackpill isn't being recognized by my computer at all.**
+
+    *   Try a different USB-C data cable and port.
+    *   Check for any physical damage to the USB-C port or the controller.
+    *   Ensure the Blackpill is receiving power (an LED might light up).
+    *   If the Blackpill was manually soldered, check all solder joints.
+
+*   **One or more keys on my keyboard aren't working.**
+
+    *   This is often a hardware issue (wiring, diode orientation, switch) or a QMK pin configuration error.
+    *   Carefully check your hand-wiring or PCB traces.
+    *   Ensure diodes are correctly oriented.
+    *   Verify the matrix pins in your QMK `config.h` correspond to how the Blackpill is wired to the rows and columns.
+
+### Layout and Configuration (QMK)
+
+*   **How do I configure my keyboard layout with QMK for the Blackpill?**
+
+    Layout configuration is done within your QMK keyboard folder, typically in a `keymap.c` file. You'll define layers and assign keycodes. Pin definitions for rows and columns are usually in `config.h`. Refer to the QMK documentation for detailed instructions.
+
+*   **Where can I find QMK configurations for Blackpill-based keyboards?**
+
+    Search on GitHub for "QMK Blackpill keyboard" or look for projects using similar STM32 chips. Many users share their QMK configurations.
+
+### Community and Support
+
+*   **Where can I get more help with my Blackpill Controller and QMK?**
+
+    *   The **QMK Discord server** is a primary resource.
+    *   Online keyboard communities like Reddit (r/olkb, r/MechanicalKeyboards).
+    *   Forums related to STM32 development.
+
+This FAQ is a starting point. Always refer to the official QMK documentation and STM32 resources for the most accurate information.

@@ -25,3 +25,91 @@ The Model H comes in two variants to match different internal connectors. Please
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
+
+## Specifications
+- Purpose: Drop-in replacement controller for IBM Model M keyboards.
+- Common Microcontrollers: Often STM32-based (e.g., STM32F103, STM32F303) or ATmega32U4 for older designs. This guide assumes a modern STM32-based version.
+- Connectivity: USB (typically Type-C or Type-B on the controller) to connect to a modern computer.
+- Firmware: **QMK Firmware** is standard, allowing for extensive customization.
+- Bootloader: DFU (Device Firmware Upgrade) for STM32-based versions.
+
+For specific Model M variants supported, see the Model H Variants page.
+
+## Frequently Asked Questions (FAQ)
+
+This page addresses frequently asked questions regarding the Model H Controller for IBM Model M keyboards.
+
+### General Questions
+
+*   **What is the Model H Controller?**
+
+    The Model H is an aftermarket replacement controller designed to upgrade original IBM Model M keyboards with modern USB connectivity and customizable firmware, typically QMK. This allows users to use these classic keyboards on modern computers and tailor their functionality.
+
+*   **Why would I need a Model H Controller?**
+
+    *   Original Model M keyboards use older interface (like AT or PS/2) not directly compatible with modern USB ports.
+    *   To add programmability and custom layouts/macros using QMK.
+    *   To replace a faulty original controller.
+
+### Firmware and Flashing (QMK)
+
+*   **How do I flash QMK firmware onto my Model H Controller?**
+
+    Assuming an STM32-based Model H, flashing involves DFU mode:
+
+    1.  **Obtain your `.bin` or `.hex` firmware file:** Build this using QMK, configured for the Model H and its specific STM32 chip.
+    2.  Disconnect the Model H from your computer.
+    3.  Locate the BOOT0 button/pin and RESET button on the Model H PCB. The method to enter DFU can vary slightly by design (e.g., a single button press, or jumper). Consult the Model H documentation.
+    4.  Typically, you'll press and hold BOOT0 (or set a jumper) and then press and release RESET, or plug in USB while BOOT0 is active.
+    5.  The controller should enter DFU mode.
+    6.  Use a DFU programming tool (e.g., `dfu-util`, STM32CubeProgrammer) to flash the firmware.
+        *   Example `dfu-util` command: `dfu-util -a 0 -s 0x08000000:leave -D your_firmware.bin` (address might vary).
+    7.  After flashing, the controller will reset with the new firmware.
+
+    Refer to the Entering the Bootloader troubleshooting page for general tips, but always prioritize Model H specific instructions.
+
+*   **My computer doesn't recognize the Model H in DFU mode.**
+
+    *   Ensure correct DFU drivers are installed (e.g., Zadig for Windows).
+    *   Verify the sequence for entering DFU mode for your specific Model H version.
+    *   Try a different USB cable and port.
+
+*   **My Model M doesn't work after flashing.**
+
+    *   Ensure you flashed firmware specifically built for the Model H and your Model M variant.
+    *   Double-check your QMK configuration.
+    *   Verify internal connections between the Model H and the Model M's membrane/PCB.
+
+### Hardware and Installation
+
+*   **Is the Model H compatible with my specific IBM Model M?**
+
+    Refer to the Model H Variants page or the documentation provided by the Model H manufacturer. Different Model M versions have different internal connectors and controller form factors.
+
+*   **Installation difficulties.**
+
+    *   Carefully follow the installation guide for your Model H.
+    *   Ensure all internal ribbon cables or connectors from the Model M are securely and correctly attached to the Model H.
+    *   Avoid damaging the Model M's membranes during installation.
+
+*   **Some keys are not working or are behaving erratically.**
+
+    *   This could be an issue with the Model M's membrane, a bad connection to the Model H, or a QMK configuration error.
+    *   Reseat all connections.
+    *   Clean the Model M's membranes if they are dirty.
+    *   Verify your QMK matrix and pin configuration.
+
+### Layout and Configuration (QMK)
+
+*   **How do I customize the layout for my Model M using Model H and QMK?**
+
+    Use QMK's standard keymap customization. You can remap keys, add layers, and create macros. The default Model H QMK firmware usually provides a standard Model M layout as a base.
+
+### Community and Support
+
+*   **Where can I get help with my Model H Controller?**
+
+    *   The **QMK Discord server**.
+    *   Forums and communities dedicated to IBM Model M keyboards (e.g., Deskthority, r/ModelM).
+
+Always consult the documentation specific to your Model H version for the most accurate installation and flashing instructions.

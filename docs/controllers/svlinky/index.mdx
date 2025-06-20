@@ -3,9 +3,93 @@ description: 'MCU: RP2040 / Footprint: Pro-micro'
 ---
 
 # Svlinky
-- Pro-micro footprint
-- Raspberry Pi RP2040 MCU
-- VIK connector on the bottom
-- UF2 storage firmware
 
-Svlinky controller
+## Specifications
+- Microcontroller: Raspberry Pi RP2040
+- Core: Dual-core ARM Cortex-M0+
+- Clock Speed: Up to 133MHz
+- Flash Memory: Typically 2MB or more (via external QSPI flash)
+- RAM: 264KB
+- USB: Type-C connector
+- Bootloader: UF2 (USB Flashing Format)
+- Form Factor: Pro Micro footprint.
+- Common Firmware: QMK, KMK, CircuitPython
+
+## Frequently Asked Questions (FAQ)
+
+This page addresses frequently asked questions regarding the Svlinky RP2040 Controller.
+
+### General Questions
+
+*   **What is the Svlinky Controller?**
+
+    The Svlinky is a compact keyboard controller featuring the Raspberry Pi RP2040 microcontroller and designed with a Pro Micro footprint. It's a popular choice for custom keyboard builds due to the RP2040's capabilities and the ease of UF2 flashing.
+
+*   **What firmware is compatible with the Svlinky?**
+
+    The Svlinky is compatible with firmware that supports the RP2040, including:
+    *   **QMK Firmware:** Offers extensive customization and features.
+    *   **KMK Firmware:** A Python-based firmware, often considered more beginner-friendly.
+    *   **CircuitPython:** Enables keyboard development using Python.
+
+### Firmware and Flashing
+
+*   **How do I flash firmware onto my Svlinky Controller?**
+
+    The Svlinky uses the UF2 bootloader:
+
+    1.  **Get your `.uf2` firmware file:** This file should be built or downloaded for your specific keyboard layout and the firmware you intend to use (QMK, KMK, etc.).
+    2.  Unplug the Svlinky from your computer.
+    3.  Plug the Svlinky (or the keyboard it's installed in) into your computer with a USB-C data cable.
+    4.  Locate the RESET button on the Svlinky. Some designs might also have a BOOTSEL button.
+    5.  Quickly double-press the RESET button. If a BOOTSEL button is present, you might need to hold it while plugging in or while pressing RESET.
+    6.  A new disk drive, usually named "RPI-RP2", will appear on your computer.
+    7.  Drag and drop your `.uf2` firmware file onto this "RPI-RP2" drive.
+    8.  The Svlinky will automatically eject the drive and restart with the new firmware.
+
+    For more details, see the general guide on Flashing RP2040 Controllers.
+    If you encounter issues, consult the Entering the Bootloader troubleshooting page.
+
+*   **The "RPI-RP2" drive is not appearing.**
+
+    *   Ensure you're correctly activating the bootloader (double-press RESET or using BOOTSEL as per your Svlinky's design).
+    *   Use a different USB-C data cable (some cables are for charging only) and try another USB port.
+    *   If the Svlinky is socketed, check that it's seated correctly.
+
+*   **My keyboard isn't working after flashing.**
+
+    *   Confirm you have the correct `.uf2` file for your keyboard model and firmware type.
+    *   Try re-flashing, ensuring the file transfer completes without errors.
+    *   The firmware file could be corrupted; try downloading or rebuilding it.
+
+### Hardware Issues
+
+*   **My Svlinky is not detected by the computer.**
+
+    *   Follow the troubleshooting steps for the "RPI-RP2 drive not appearing."
+    *   Inspect the USB-C port and the controller for any physical damage.
+    *   If socketed, ensure all pins have a good connection.
+
+*   **Specific keys are not working.**
+
+    *   This is commonly a hardware problem (e.g., soldering of switches/diodes, faulty switch) or an error in the firmware's pin configuration.
+    *   Review your soldering work, especially for switches and diodes (check orientation).
+    *   Verify the pin assignments in your QMK or KMK firmware configuration.
+
+### Layout and Configuration
+
+*   **How do I set up my keyboard layout?**
+
+    This process varies by firmware:
+    *   **QMK:** Modify `keymap.c` and potentially `config.h` within your QMK keyboard directory.
+    *   **KMK/CircuitPython:** Edit the main Python script (e.g., `code.py`).
+    Consult the documentation for your chosen firmware.
+
+### Community and Support
+
+*   **Where can I find help for my Svlinky Controller?**
+
+    *   Relevant Discord servers (QMK, KMK, or specific keyboard communities).
+    *   Online forums and communities for RP2040-based projects.
+
+Always check for any specific documentation or guides provided for the version of the Svlinky you are using.

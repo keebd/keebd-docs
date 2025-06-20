@@ -3,8 +3,90 @@ description: 'MCU: RP2040 / Footprint: Pro-micro'
 ---
 
 # Helios
+
+## Specifications
 - Pro-micro footprint
 - Raspberry Pi RP2040 MCU
 - UF2 storage firmware
 
-Helios controller
+## Frequently Asked Questions (FAQ)
+
+This page addresses frequently asked questions regarding the Helios Keyboard Controller.
+
+### General Questions
+
+*   **What is the Helios Controller?**
+
+    The Helios is a keyboard controller based on the Raspberry Pi RP2040 microcontroller. It allows for highly customizable keyboard layouts and functionality.
+
+*   **What firmware is compatible with the Helios Controller?**
+
+    The Helios is compatible with various firmware options, including QMK, KMK, and others that support the RP2040 microcontroller.
+
+### Firmware and Flashing
+
+*   **How do I flash firmware onto my Helios Controller?**
+
+    Follow these steps:
+
+    1.  Unplug the Helios from your computer.
+    2.  Plug the Helios (or the keyboard it's connected to) into your computer using a USB-C cable.
+    3.  Locate the RESET button. This might be on the Helios controller itself or on the main keyboard PCB if it has one. These buttons are usually small and may be recessed.
+    4.  Quickly double-press the RESET button.
+    5.  A new drive, typically named "RPI-RP2", should appear on your computer.
+    6.  Copy your .uf2 firmware file to this "RPI-RP2" drive.
+    7.  The Helios will automatically eject the drive and reboot with the new firmware.
+
+    For more detailed instructions and alternative methods for RP2040 controllers, see the [general guide on Flashing RP2040 Controllers](/general-guides/rp2040-controller-flash).
+    If you're having trouble, also check the [Entering the Bootloader troubleshooting page](/troubleshooting/entering-bootloader).
+    
+*   **The "RPI-RP2" drive doesn't appear when I try to flash.**
+
+    *   Ensure you are double-pressing the RESET button quickly.
+    *   Try a different USB cable and port.
+    *   Make sure the USB cable is properly connected to both the Helios and your computer.
+
+*   **My keyboard doesn't work after flashing the firmware.**
+
+    *   Ensure you're using the correct .uf2 file for your keyboard layout and chosen firmware (QMK, KMK, etc.).
+    *   Try re-flashing the firmware, making sure to follow the bootloader steps carefully.
+    *   The firmware file may be corrupt or incompatible. Try downloading a fresh copy or building it again if you are compiling it yourself.
+
+*   **Can I flash the Helios with ZMK firmware?**
+
+    While the RP2040 is *theoretically* capable of running ZMK, it may require a custom build or configuration. Refer to the ZMK documentation and community resources for details and compatibility information. Generally, QMK and KMK are easier starting points.
+
+### Hardware Issues
+
+*   **My Helios isn't being recognized by my computer.**
+
+    *   Try a different USB cable and port.
+    *   Make sure the cable is properly connected to both the Helios and your computer.
+    *   Ensure the controller is receiving power (LEDs may light up).
+    *   Try flashing the firmware.
+
+*   **One or more keys on my keyboard aren't working.**
+
+    *   Check the soldering of the switches to the PCB.
+    *   Ensure the switches are properly inserted into the sockets (if using hot-swap sockets).
+    *   The switch may be faulty. Try replacing it with a known working switch.
+    *   There may be a problem with the PCB itself (trace damage, etc.).
+
+### Layout and Configuration
+
+*   **How do I configure my keyboard layout?**
+
+    Layout configuration depends on the firmware you're using (QMK, KMK, etc.). Refer to the documentation for your chosen firmware for details on how to define your keymap and customize keyboard behavior.
+
+*   **Where can I find pre-made keymaps for the Helios?**
+
+    Check online keyboard communities, forums, and GitHub repositories for pre-made keymaps. You may also be able to find keymaps specific to your keyboard layout.
+
+### Community and Support
+
+*   **Where can I get more help with my Helios Controller?**
+
+    *   Consult online keyboard communities, forums, and Discord servers.
+    *   Search for existing posts and discussions related to the Helios and RP2040-based keyboards.
+
+This FAQ is a starting point for troubleshooting common issues. Always refer to the official documentation and community resources for the most accurate and up-to-date information.

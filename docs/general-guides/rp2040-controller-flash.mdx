@@ -1,0 +1,75 @@
+---
+title: Flashing RP2040 Controllers
+---
+
+# Flashing RP2040 Controllers
+
+This guide outlines how to flash new firmware onto keyboard controllers based on the Raspberry Pi RP2040 microcontroller, such as the Helios. This process generally involves putting the controller into a special "UF2 bootloader" mode and then copying the firmware file onto it.
+
+## Prerequisites
+
+*   **RP2040-based keyboard controller:** (e.g., Helios, or any other using the RP2040)
+*   **USB-C cable:**  For connecting the controller to your computer.
+*   **Firmware file (.uf2):** The compiled firmware you want to flash.  This could be a QMK, ZMK, KMK, or other compatible firmware.
+*   **A computer:** Running Windows, macOS, or Linux.
+
+## Putting the Controller into UF2 Bootloader Mode
+
+The RP2040 enters UF2 bootloader mode either through a button press or by shorting specific pins during power-up.  The method varies depending on the specific board.  **Consult your board's documentation for the correct method!**
+
+Here are common methods:
+
+*   **Button Press Method #1:**
+    1.  Plug the keyboard controller into your computer.
+    2.  Locate the RESET button on the controller or keyboard.  This button is usually small and recessed.
+    3.  Double press the RESET button in quick succession.
+
+*   **Button Press Method #2:**
+    1.  Unplug the keyboard controller from your computer.
+    2.  Locate the BOOTSEL button on the controller.  This button is usually small and recessed.
+    3.  Press and hold the BOOTSEL button.
+    4.  While holding the BOOTSEL button, plug the keyboard controller into your computer.
+    5.  Continue holding the BOOTSEL button for a few seconds after plugging it in.
+    6.  Release the BOOTSEL button.
+
+*   **Shorting Pins Method:** *USE WITH CAUTION, CONSULT YOUR BOARD'S DOCUMENTATION FIRST!*
+    1.  Unplug the keyboard controller from your computer.
+    2.  Locate the pins designated for entering bootloader mode (usually labeled BOOT or similar in the board documentation).
+    3.  Using a wire or tweezers, short these two pins together.
+    4.  While shorting the pins, plug the keyboard controller into your computer.
+    5.  Continue shorting the pins for a few seconds after plugging it in.
+    6.  Remove the short.
+
+**Successful UF2 Bootloader Entry:**
+
+If successful, a new drive will appear on your computer, usually named "RPI-RP2" or "CIRCUITPY."  This indicates the controller is in bootloader mode and ready to receive the firmware.
+
+If the drive *doesn't* appear, repeat the steps above, making sure you're holding the button or shorting the pins correctly.  Also, double-check your USB cable and try a different USB port.
+
+## Flashing the Firmware
+
+1.  **Locate the .uf2 firmware file** you wish to flash onto the controller.
+2.  **Copy the .uf2 file** to the "RPI-RP2" or "CIRCUITPY" drive that appeared when you entered bootloader mode.  Simply drag and drop the file onto the drive.
+
+   *The drive will automatically unmount and disappear.*
+
+3.  **The controller will automatically reboot** and begin running the new firmware.
+
+## Verification
+
+*   **Test the keyboard:**  Connect the keyboard controller to your computer and test all the keys to ensure the firmware was flashed correctly and the keyboard is functioning as expected.
+*   **Check in your OS:**  Your operating system should recognize the newly flashed keyboard.
+
+## Troubleshooting
+
+*   **"RPI-RP2" drive doesn't appear:**  Double-check the bootloader entry process.  Try a different USB cable and port.  Consult your board's documentation for specific troubleshooting steps.
+*   **Keyboard doesn't work after flashing:** Ensure you're using the correct .uf2 file for your keyboard layout and firmware. Re-flash the firmware.  If problems persist, the firmware may be corrupt or incompatible.
+*   **Controller gets stuck in bootloader mode:**  This is rare, but try flashing the firmware again. If the problem persists, consult the RP2040 documentation or the keyboard's specific community for support.
+
+## Important Considerations
+
+*   **Always consult your board's documentation:**  The exact steps for entering bootloader mode can vary significantly between different RP2040-based controllers.  Refer to the official documentation or community resources for your specific board.
+*   **Use the correct firmware:**  Make sure you're using the correct .uf2 file for your keyboard layout and firmware. Flashing the wrong firmware can damage your controller.
+*   **Static Electricity:**  Be mindful of static electricity when handling electronic components. Ground yourself before touching the controller.
+
+This guide provides general instructions.  Always refer to your specific keyboard controller's documentation for the most accurate and up-to-date information. Good luck!

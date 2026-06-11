@@ -63,7 +63,7 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
-      - uses: darrenjennings/algolia-docsearch-action@master
+      - uses: darrenjennings/algolia-docsearch-action@e3b8c5540e90a964b655be6ca73c1ee1aeba2719 # v0.2.0
         with:
           algolia_application_id: ${{ secrets.ALGOLIA_APP_ID }}
           algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}

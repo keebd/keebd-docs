@@ -1,0 +1,148 @@
+---
+sidebar_position: 2
+description: Step by step guide to build this keyboard
+---
+
+# Build Steps
+
+The Reviung 5 is a Pro Micro board, so unlike a fully through-hole kit there are
+only a handful of components to solder. We'll prepare the controller first, then
+work through the PCB from the lowest components upward before assembling the
+plates.
+
+![Front of the Reviung 5 PCB](./pcb-front.jpg?height=500px)
+
+:::tip
+The LEDs (Step 3) and rotary encoder (Step 6) are optional. If you're not
+fitting them, simply skip those steps.
+:::
+
+## 1. Prepare the Pro Micro
+
+![Pro Micro with Conthrough spring-pin headers soldered on](./promicro-headers.jpg?height=500px)
+
+The Pro Micro is socketed onto the PCB using two Conthrough spring-pin headers,
+so it can be removed later if needed. Solder the two headers to the Pro Micro
+with the end whose holes sit **closer to the pins** inserted into the Pro Micro.
+
+Before soldering, flash your firmware while the board is still easy to handle:
+
+1. Install [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases).
+2. Connect the Pro Micro over USB and flash the Reviung 5 firmware (a VIA/REMAP
+   compatible build is available, so you can remap keys later in
+   [REMAP](https://remap-keys.app/)).
+
+:::info
+The Reviung 5 uses a Micro-USB connector on the Pro Micro. Reinforcing the
+connector with a little glue is a good idea, as Micro-USB ports are prone to
+tearing off with repeated use.
+:::
+
+## 2. Solder the Reset Switch
+
+![Tactile reset switch soldered to the back of the PCB](./reset-switch.jpg?height=500px)
+
+Solder the tactile reset switch to the **back** of the PCB, in the position
+marked `RESET`. This lets you put the board into bootloader mode for future
+firmware flashing.
+
+## 3. Install the LEDs (Optional)
+
+![WS2812B LEDs soldered to the PCB](./led-soldered.jpg?height=500px)
+
+If you're fitting the optional WS2812B RGB LEDs, install them now. There are up
+to four positions (`RGB1`–`RGB4`); work through them in order and **test each
+LED before moving on to the next** — a single bad joint will stop every LED
+after it in the chain from lighting.
+
+![Diagram showing the correct WS2812B LED orientation](./led-orientation.jpg?height=400px)
+
+:::info
+LEDs are orientation-sensitive. Line up the notched (cut) corner of the LED with
+the `GND ▲` marking on the PCB.
+:::
+
+Use a temperature-controlled iron at around 320°C. Apply flux, pre-tin one pad,
+seat the LED with tweezers, tack it down on the pre-tinned pad, then solder the
+remaining three pads. Clean off the flux and test before continuing.
+
+## 4. Install the Diodes
+
+![1N4148 diodes soldered to the PCB](./diodes.jpg?height=500px)
+
+Install the 5 x 1N4148 diodes, one near each switch position.
+
+:::info
+Diodes are orientation-sensitive. The black bar (the `|` mark) on the diode must
+line up with the `|` side of the `▷|` marking on the PCB.
+:::
+
+Bend the legs, insert each diode from the front, solder from the back, then clip
+the excess legs flush. Re-flow each cut joint briefly so the exposed metal is
+sealed with solder.
+
+## 5. Test the Board
+
+![Testing key input by bridging the switch pads with tweezers](./function-test.jpg?height=500px)
+
+Before assembling the case, connect the board to your PC and confirm every key
+registers. Bridge each switch's two solder pads with tweezers (or a snipped
+diode leg) and check that a keypress is sent. Fixing a cold joint now is far
+easier than after the switches are on.
+
+## 6. Install the Rotary Encoder (Optional)
+
+If you're fitting the optional rotary encoder, solder it to the PCB now, before
+the top plate goes on. If your encoder uses the extra SMD diode position, fit
+that `1N4148W` diode as well.
+
+## 7. Attach the Pro Micro Protection Cover
+
+![Pro Micro protection cover fitted to the top plate](./promicro-cover.jpg?height=500px)
+
+Attach the acrylic Pro Micro protection cover to the top plate using the short
+M2 screws, spacers and nuts.
+
+:::caution
+Do not overtighten the screws — acrylic parts can crack. Snug is enough.
+:::
+
+## 8. Fit the Switches to the Top Plate
+
+![MX switches fitted into the top plate](./switches-plate.jpg?height=500px)
+
+Push your MX switches into the top plate until they click home. Make sure each
+switch is fully seated and that its pins are straight and not bent under the
+housing.
+
+## 9. Mount the Top Plate onto the PCB
+
+![Top plate with switches lowered onto the main PCB](./mount-plate-pcb.jpg?height=500px)
+
+Lower the top plate (with switches fitted) onto the main PCB, guiding all of the
+switch pins through their holes. Check from the side that every switch is seated
+flush before you solder anything.
+
+## 10. Solder the Switches
+
+![Switches being soldered from the back of the PCB](./solder-switches.jpg?height=500px)
+
+With the switches fully seated, solder each pin from the back of the PCB. Clean
+off any flux residue when you're done.
+
+## 11. Attach the Bottom Plate & Feet
+
+![Bottom plate and rubber feet attached](./bottom-plate.jpg?height=500px)
+
+Fit the metal spacers to the bottom plate with M2 screws, place the top
+plate + PCB assembly on top, and secure it by screwing down from the top-plate
+side. Finally, stick a rubber foot in each of the four corners of the bottom
+plate.
+
+## 12. Install the Keycaps
+
+![Keycaps installed on the Reviung 5](./keycaps.jpg?height=500px)
+
+Press on your keycaps and you're all done!
+
+![The completed Reviung 5 keyboard](./complete.jpg?height=500px)

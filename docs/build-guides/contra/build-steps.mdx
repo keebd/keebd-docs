@@ -3,17 +3,19 @@ sidebar_position: 2
 description: Step by step guide to build this keyboard
 ---
 
+import FlashController from '../_flash-controller.mdx';
+
 # Build Steps
 
 ![](./step_00.png)
 
 1. Prepare Diodes
 2. Install Diodes
-3. Solder Pro Micro Headers & Reset Button
+3. Solder Controller Headers & Reset Button
 4. Install Stabilizer (Optional)
 5. Screw on Standoffs
 6. Solder Switches
-7. Install Pro Micro Controller
+7. Flash & Install the Controller
 8. Screw on Bottom Plate
 
 ## 1. Prepare Diodes
@@ -32,16 +34,16 @@ Install diodes to the top of the PCB. Solder diode pins where they stick out of 
 Diodes are direction sensitive. Be sure to install all diodes with the black side aligned to the side with the square solder pad and line through the diode outline (as shown in illustration).
 :::
 
-## 3. Solder Pro Micro Headers & Reset Button
+## 3. Solder Controller Headers & Reset Button
 
 ![](./step_03.png?height=300px)
 
-Install Pro Micro headers so that shorter pins are in the PCB and black plastic is on the bottom of the PCB. Solder pins where they stick out of the top of the PCB.
+Install the controller headers so that shorter pins are in the PCB and black plastic is on the bottom of the PCB. Solder pins where they stick out of the top of the PCB.
 
 Install reset button to the bottom of the PCB. Solder reset button pins where they stick out of the top.
 
 :::info
-Do not install the Pro Micro itself until Step 7.
+Do not install the controller itself until Step 7.
 :::
 
 ## 4. Install Stabilizer (Optional)
@@ -58,7 +60,7 @@ Only Cherry-style PCB mount stabilizers can be used.
 
 ![](./step_05.png?height=300px)
 
-Install 5 screws and standoffs to the PCB, so that the standoffs are on the bottom (the same side as the Pro Micro legs).
+Install 5 screws and standoffs to the PCB, so that the standoffs are on the bottom (the same side as the controller legs).
 
 ## 6. Solder Switches
 
@@ -66,14 +68,16 @@ Install 5 screws and standoffs to the PCB, so that the standoffs are on the bott
 
 Starting from the outer corners, install all switches by snapping them in to top switch plate and then pressing the pins through the top of the PCB. Solder metal switch pins on the bottom of the PCB where they stick through.
 
-## 7. Install Pro Micro Controller
+## 7. Flash & Install the Controller
+
+<FlashController board="Contra" />
 
 ![](./step_07a.png?height=300px)
 ![](./step_07b.png?height=300px)
 
-Install the Pro Micro on to the bottom of the PCB so that the components face down (away from the PCB).
+Install the controller on to the bottom of the PCB so that the components face down (away from the PCB).
 
-Solder pins to Pro Micro where they stick through. Take care to prevent or remove any solder bridges (solder connecting one pin to another) that may form.
+Solder pins to the controller where they stick through. Take care to prevent or remove any solder bridges (solder connecting one pin to another) that may form.
 
 ## 8. Screw on Bottom Plate
 

@@ -3,9 +3,11 @@ sidebar_position: 2
 description: Step by step guide to build this keyboard
 ---
 
+import FlashController from '../_flash-controller.mdx';
+
 # Build Steps
 
-The Reviung 5 is a Pro Micro board, so unlike a fully through-hole kit there are
+The Reviung 5 is a Pro Micro-footprint board, so unlike a fully through-hole kit there are
 only a handful of components to solder. We'll prepare the controller first, then
 work through the PCB from the lowest components upward before assembling the
 plates.
@@ -17,25 +19,22 @@ The LEDs (Step 3) and rotary encoder (Step 6) are optional. If you're not
 fitting them, simply skip those steps.
 :::
 
-## 1. Prepare the Pro Micro
+## 1. Prepare the Controller
 
 ![Pro Micro with Conthrough spring-pin headers soldered on](./promicro-headers.jpg?height=500px)
 
-The Pro Micro is socketed onto the PCB using two Conthrough spring-pin headers,
-so it can be removed later if needed. Solder the two headers to the Pro Micro
-with the end whose holes sit **closer to the pins** inserted into the Pro Micro.
+The controller is socketed onto the PCB using two Conthrough spring-pin headers,
+so it can be removed later if needed. Solder the two headers to the controller
+with the end whose holes sit **closer to the pins** inserted into the controller.
 
-Before soldering, flash your firmware while the board is still easy to handle:
+Before soldering, flash the controller while it's still easy to handle:
 
-1. Install [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases).
-2. Connect the Pro Micro over USB and flash the Reviung 5 firmware (a VIA/REMAP
-   compatible build is available, so you can remap keys later in
-   [REMAP](https://remap-keys.app/)).
+<FlashController board="Reviung 5" />
 
 :::info
-The Reviung 5 uses a Micro-USB connector on the Pro Micro. Reinforcing the
-connector with a little glue is a good idea, as Micro-USB ports are prone to
-tearing off with repeated use.
+If your controller has a Micro-USB connector (like a classic Pro Micro),
+reinforce it with a little glue before you start. Micro-USB ports are prone
+to tearing off with repeated use.
 :::
 
 ## 2. Solder the Reset Switch

@@ -1,0 +1,26 @@
+{/* Shared "flash your controller" steps, imported by the build guides.
+    Usage: import FlashController from '../_flash-controller.mdx';
+           <FlashController board="Reviung 39" /> */}
+
+Controllers aren't included with our kits, so the firmware you need depends on
+the Pro Micro-compatible controller you chose when ordering (or sourced
+yourself). Download the {props.board} firmware for **your** controller from the
+[firmware page](/firmware), then flash it:
+
+| Your controller | Firmware page tab | File | How to flash |
+|-----------------|-------------------|------|--------------|
+| [Helios](/controllers/helios) or [SVLinky](/controllers/svlinky) (RP2040) | Helios / Svlinky | `.uf2` | Double-tap the reset button (or hold BOOT while plugging in). A drive called `RPI-RP2` appears; drag the `.uf2` onto it. |
+| [StemCell](/controllers/stemcell) (STM32) | StemCell | `.uf2` | Double-tap the reset button. A drive appears; drag the `.uf2` onto it. Check the StemCell page for any jumpers your board needs. |
+| Classic Pro Micro (ATmega32U4) | Pro Micro | `.hex` | Open the `.hex` in [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases), tick **Auto-Flash**, then briefly short `RST` to `GND` (or press reset) to start flashing. |
+
+Each controller has two firmware options:
+
+* **Default:** standard QMK firmware with the keymap built in.
+* **VIAL:** the same firmware, plus live key remapping in [Vial](https://vial.rocks/) without rebuilding anything.
+
+:::tip
+Flash your controller **before** soldering it to the PCB, while it's still easy
+to handle. If it shows up as a drive (or flashes successfully in QMK Toolbox),
+it's working. If it doesn't, see
+[Entering the Bootloader](/troubleshooting/entering-bootloader).
+:::

@@ -3,6 +3,8 @@ sidebar_position: 2
 description: Step by step guide to build this keyboard
 ---
 
+import FlashController from '../_flash-controller.mdx';
+
 # Build Steps
 
 ## 1. Solder Components
@@ -38,6 +40,10 @@ Place the Kailh hot swap sockets onto the board and while heating each pad, add 
 ![](./headers.jpg?height=700px)
 
 You can skip this step if you want to direct attach the controller and OLED display. The above are [Machined Breakable Female Headers](https://keebd.com/products/40-pin-machined-ic-breakable-female-header-strip) and used with [Mill-Max Pins](https://keebd.com/products/mill-max-low-profile-controller-pins-pack-of-25) allow the controller to be hot swapped (removed, replaced, upgraded etc).
+
+Flash the controller before attaching it, so you know it works:
+
+<FlashController board="Yampad" />
 
 Attach the controller first to the top side of the board and then attach the OLED Display to the board second using the controller as a table for the display to reset evenly on.
 

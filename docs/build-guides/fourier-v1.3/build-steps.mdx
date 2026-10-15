@@ -3,6 +3,8 @@ sidebar_position: 2
 description: Step by step guide to build this keyboard
 ---
 
+import FlashController from '../_flash-controller.mdx';
+
 # Build Steps
 
 ## 1. Prepare Components
@@ -93,13 +95,15 @@ Due to the multiple layout options, it may be helpful to put keycaps on the swit
 
 All the switches installed and soldered in.
 
-## 4. Solder Pro Micro
+## 4. Flash & Solder the Controller
 
-Time to install the Pro Micro now that the switches have been soldered in.
+Time to install the controller now that the switches have been soldered in.
 
-:::info
-Flash your Pro Micro before installing it on the board to ensure it works as expected and the controller connects to the PCB face down (so you cannot see the controller components)
-:::
+Flash the controller before installing it, so you know it works:
+
+<FlashController board="Fourier" />
+
+The controller connects to the PCB face down, so you won't be able to see its components once it's installed.
 
 ![](./controller-mill-max.jpg?height=700px)
 
@@ -113,9 +117,9 @@ Place Controller onto the Mill-Max pins and solder into place.
 
 Soldering complete for each of the pins into the Controller.
 
-Repeat the process of stabilizer, switch, and Pro Micro installation on the right PCB.
+Repeat the process of stabilizer, switch, and controller installation on the right PCB.
 
-Once again, the component side of the Pro Micro will be hidden from you.
+Once again, the component side of the controller will be hidden from you.
 
 ## 5. Solder RGB Strip (Optional)
 

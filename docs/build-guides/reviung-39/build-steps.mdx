@@ -3,11 +3,13 @@ sidebar_position: 2
 description: Step by step guide to build this keyboard
 ---
 
+import FlashController from '../_flash-controller.mdx';
+
 # Build Steps
 
 The Reviung 39 Mk-II is a surface-mount, hotswap build: the diodes, LEDs and
 switch sockets are all soldered to the PCB, and your switches simply push into
-the sockets afterwards. We'll prepare the Pro Micro first, then solder the SMD
+the sockets afterwards. We'll prepare the controller first, then solder the SMD
 components from smallest to largest before assembling the plate stack.
 
 The front of the main PCB (switches and top plate mount here):
@@ -23,25 +25,22 @@ Have no-clean flux and fine tweezers on hand before you start. Surface-mount
 work is far easier with flux, and every SMD part is placed with tweezers.
 :::
 
-## 1. Prepare the Pro Micro
+## 1. Prepare the Controller
 
 ![Pro Micro with Conthrough spring-pin headers soldered on](./promicro-headers.jpg?height=500px)
 
-The Pro Micro is socketed onto the PCB with two Conthrough spring-pin headers so
-it can be removed later. Solder the two headers to the Pro Micro with the end
-whose holes sit **closer to the pins** inserted into the Pro Micro.
+The controller is socketed onto the PCB with two Conthrough spring-pin headers so
+it can be removed later. Solder the two headers to the controller with the end
+whose holes sit **closer to the pins** inserted into the controller.
 
-Before soldering, flash your firmware while the board is still easy to handle:
+Before soldering, flash the controller while it's still easy to handle:
 
-1. Install [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases).
-2. Connect the Pro Micro over USB and flash the Reviung 39 firmware. A
-   VIA/REMAP compatible build is available so you can remap keys later in
-   [REMAP](https://remap-keys.app/).
+<FlashController board="Reviung 39" />
 
 :::info
-The Pro Micro uses a Micro-USB connector, which is prone to tearing off with
-repeated use. Reinforcing it with a little glue before you start is well worth
-the effort.
+If your controller has a Micro-USB connector (like a classic Pro Micro),
+reinforce it with a little glue before you start. Micro-USB ports are prone
+to tearing off with repeated use.
 :::
 
 ## 2. Solder the Reset Switch
